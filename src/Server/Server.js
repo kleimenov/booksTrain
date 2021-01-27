@@ -44,7 +44,9 @@ app.use(function (req, res, next) {
 */
 //absolute path of the directory
 app.use(express.static(path.join(__dirname, 'public')))
-//------------
+
+
+//------------ Test route --------//
 app.get('/', (req, res) => {
     //res.status(200).send('Hello World!');
     db.getAll().then(result => {
