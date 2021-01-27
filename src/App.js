@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 //import components
-import MockFunction from './components/Example'
-import Nav from './components/Nav'
+import Nav from './components/HeaderComponents/Nav'
+
 
 
 
@@ -14,7 +14,6 @@ function App() {
       </div>
       <div className='contianer'>
         <h1>Hello booksTrain!</h1>  
-        <MockFunction />
       </div>
     </div>
       
