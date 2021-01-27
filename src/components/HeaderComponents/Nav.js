@@ -1,11 +1,15 @@
-import React, { useLayoutEffect } from 'react'
+import React from 'react'
 
-const Nav = () => (
+const Nav = (props) => (
     <div className='NavWrapper'>
-        <h3>Hello books lover!</h3>
+        <h3>Hello { props.myName } books lover!</h3>
         <ul>
             <li>allBookes</li>
             <li>myBooks</li>
+        </ul>
+        <ul>
+            <li>login</li>
+            <li>logout</li>
         </ul>
     </div>
 )
