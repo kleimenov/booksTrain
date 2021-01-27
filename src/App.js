@@ -4,8 +4,18 @@ import Nav from './components/HeaderComponents/Nav'
 
 
 
-
 function App() {
+
+  useEffect(()=> {
+    getAllUsersFromDatabase();
+  }, [])
+
+  const getAllUsersFromDatabase = async () => {
+    const response = await fetch('http://localhost:3002');
+    const data = await response.json();
+    console.log(data)
+  }
+  
 
   return (
     <div className='App'>
