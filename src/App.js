@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 //import components
-import Nav from './components/HeaderComponents/Nav'
+import Header from './components/HeaderComponents/Header'
 import User from './components/MainComponents/User'
 
 
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className='App'>
       <div className='header'>
-        <Nav />
+        <Header />
       </div>
       <div className='contianer'>
         <h1>Hello booksTrain!</h1>

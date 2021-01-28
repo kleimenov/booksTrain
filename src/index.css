@@ -1,3 +1,9 @@
+@font-face {
+  font-family: Hustlersrough;
+  font-weight: normal;
+  src: url('./fonts/Hustlersrough.otf') format("opentype");
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,7 +19,9 @@ code {
 }
 
 .header {
-  background-color: gray;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  /*background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);*/
+  /*background-image: linear-gradient(to top, #88d3ce 0%, #6e45e2 100%);*/
 }
 
 .NavWrapper {
@@ -32,4 +40,13 @@ code {
 .green {
   color: green;
   font-size: 25px;
+}
+
+.custom-logo-font {
+  margin: 0;
+  padding: 0;
+  font-family: Hustlersrough;
+  font-size: 85px;
+  color: white;
+  text-shadow: 0 0 5px gray;
 }
