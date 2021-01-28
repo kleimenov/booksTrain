@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Authentication = () => (
     <div>
         <button className="btn signIn-submit-button">Sign In</button>
