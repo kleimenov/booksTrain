@@ -1,23 +1,20 @@
 import React from 'react';
+import Dropdown from 'react-bootstrap/Dropdown'
+//import DropdownButton from 'react-bootstrap/DropdownButton'
 
 const Nav = () => (
-    <ul>
-        <li>
-            <a href="">allBookes</a>
-        </li>   
-        <li>
-            <a href="">myBooks</a> 
-        </li>
-        <li>
-            <a href="">addBook</a>  
-        </li>
-        <li>
-            <a href="">deleteBook</a> 
-        </li>
-        <li>
-            <a href="">books that are read</a> 
-        </li>
-    </ul>
+    <Dropdown>
+        <Dropdown.Toggle className="custom-button" variant="white text-white" id="dropdown-basic">
+        Library
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu className="custom-dropdown-menu">
+          <Dropdown.Item href="#/action-1">All books</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">My books list</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">About library</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Contact us</Dropdown.Item>
+        </Dropdown.Menu>
+    </Dropdown>
 );
 
 export default Nav;
