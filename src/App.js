@@ -10,12 +10,12 @@ import Registrationform from './components/Maincomponents/Registrationform'
 
 
 function App() {
-
+  
   const [usersData, setUsersData] = useState([])
   
   useEffect(()=> {
     getAllUsersFromDatabase();
-  }, [])
+  },[])
 
   const getAllUsersFromDatabase = async () => {
     const response = await fetch('http://localhost:3002');
@@ -24,12 +24,7 @@ function App() {
     setUsersData(data)
   }
 
-  /*
-
-        {usersData.map(user => (
-          <User userName={user.first_name} key={user.id} />
-        ))}
-  */
+  
   
   return (
     <Router>
@@ -38,11 +33,16 @@ function App() {
           <Header />
         </div>
         <div className='contianer'>
-          <switch>
-            <Route path='/' exact component={ Homepage }/>
+          <Switch>
+            
+            <Route path="/" exact>
+            {usersData.map(user => (
+              <Homepage userName={user.first_name} key={user.id} />
+            ))}
+            </Route>
             <Route path='/loginform' component={ Loginform }/>
             <Route path='/registrationform' component={ Registrationform }/>
-          </switch>
+          </Switch>
         </div>
         <div className="footer">
           <Footer />
@@ -53,6 +53,22 @@ function App() {
   );
 }
 
+
 export default App;
 
 
+
+/*
+
+
+
+
+
+    {usersData.map(user => (
+      <User userName={user.first_name} key={user.id} />
+    ))}
+
+    {usersData.map(user => (
+              <Homepage userName={user.first_name} key={user.id} />
+            ))}
+  */
