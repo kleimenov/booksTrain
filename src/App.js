@@ -8,7 +8,7 @@ import User from './components/MainComponents/User'
 function App() {
 
   const [usersData, setUsersData] = useState([])
-
+  
   useEffect(()=> {
     getAllUsersFromDatabase();
   }, [])
