@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //import components
-import Header from './components/HeaderComponents/Header'
-import User from './components/MainComponents/User'
-import Footer from './components/FooterComponents/Footer'
-
+import Header from './components/Headercomponents/Header'
+import User from './components/Maincomponents/User'
+import Footer from './components/Footercomponents/Footer'
+import Homepage from './components/Maincomponents/Homepage'
+import Loginform from './components/Maincomponents/Loginform'
+import Registrationform from './components/Maincomponents/Registrationform'
 
 
 function App() {
@@ -21,24 +23,33 @@ function App() {
     //console.log(data)
     setUsersData(data)
   }
-  
-  
-  return (
-    <div className='App'>
-      <div className='header'>
-        <Header />
-      </div>
-      <div className='contianer'>
-        <h1>Hello booksTrain!</h1>
+
+  /*
+
         {usersData.map(user => (
           <User userName={user.first_name} key={user.id} />
         ))}
+  */
+  
+  return (
+    <Router>
+        <div className='App'>
+        <div className='header'>
+          <Header />
+        </div>
+        <div className='contianer'>
+          <switch>
+            <Route path='/' exact component={ Homepage }/>
+            <Route path='/loginform' component={ Loginform }/>
+            <Route path='/registrationform' component={ Registrationform }/>
+          </switch>
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
-      <div className="footer">
-        <Footer />
-      </div>
-    </div>
-      
+    </Router>
+    
   );
 }
 
