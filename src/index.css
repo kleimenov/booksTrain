@@ -54,10 +54,19 @@ code {
 }
 
 .custom-button {
+  color: white;
   font-size: 22px;
   font-weight: 700;
   background-color: none;
   border: none;
+}
+
+.custom-button:hover {
+  color: gray;
+}
+
+.custom-button:active {
+  color: white;
 }
 
 .custom-dropdown-menu {
@@ -81,7 +90,24 @@ code {
 
 .dropdown-item.active, 
 .dropdown-item:active {
-  color: black;
+  color: white;
   text-decoration: none;
   background-color: white;
+}
+
+.enroll-submit-button,
+.signIn-submit-button {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.enroll-submit-button:hover,
+.signIn-submit-button:hover {
+    color: gray;
+}
+
+.enroll-submit-button:active,
+.signIn-submit-button:active {
+    color: white;
 }

@@ -4,7 +4,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 const Nav = () => (
     <Dropdown>
-        <Dropdown.Toggle className="custom-button" variant="white text-white" id="dropdown-basic">
+        <Dropdown.Toggle className="custom-button" variant="white" id="dropdown-basic">
         Library
         </Dropdown.Toggle>
 

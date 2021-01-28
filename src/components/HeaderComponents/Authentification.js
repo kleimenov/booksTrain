@@ -2,8 +2,8 @@ import React from 'react';
 
 const Authentication = () => (
     <div>
-        <button>logIn</button>
-        <button>Sign In</button>
+        <button className="btn signIn-submit-button">Sign In</button>
+        <button className="btn enroll-submit-button">Enroll</button>
     </div>
 )
 
