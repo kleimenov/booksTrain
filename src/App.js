@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 //import components
 import Header from './components/HeaderComponents/Header'
 import User from './components/MainComponents/User'
+import Footer from './components/FooterComponents/Footer'
 
 
 
@@ -31,6 +32,9 @@ function App() {
         {usersData.map(user => (
           <User userName={user.first_name} key={user.id} />
         ))}
+      </div>
+      <div className="footer">
+        <Footer />
       </div>
     </div>
       
