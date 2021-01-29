@@ -27,7 +27,7 @@ const Loginform = () => {
     };
 
     const data = await loginUser(dataHolder);
-    console.log(data);
+    console.log(data.userData[0]);
   };
 
   return (
@@ -45,8 +45,7 @@ const Loginform = () => {
             className="form-control ml-0 my-1"
             type="email"
             name="email"
-            required
-            autoFocus
+            required autoFocus
             onChange={(evt) => setEmail(evt.target.value)}
           ></input>
           <label
@@ -59,8 +58,7 @@ const Loginform = () => {
             className="form-control ml-0 my-1"
             type="password"
             name="password"
-            required
-            autoFocus
+            required autoFocus
             onChange={(evt) => setPassword(evt.target.value)}
           ></input>
           <button

@@ -1,16 +1,15 @@
 //setup libraries
-const express = require('express');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const cors = require('cors')
+const express = require("express");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
 //const bcrypt = require('bcrypt');
-const path = require('path')
-
+const path = require("path");
 
 //const saltRounds = 10;
 //const PORT = process.env.PORT || 3002; //set new port (cli) export PORT= <new port value>
 const PORT = 3002;
-const db = require('../Database/Database.js');
+const db = require("../Database/Database.js");
 //const handlers = require('./handlers.js');
 
 //set up application
@@ -19,13 +18,13 @@ const app = express();
 //we will parse data as JSON
 app.use(bodyParser.json());
 
-app.use(cors())
+app.use(cors());
 
 //let set ejs as the view enjine
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
 //for POST requests we will use urlencoded like: applicaton/x-ww-form-urlencoded
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //add cookie parser
 app.use(cookieParser());
@@ -43,67 +42,62 @@ app.use(function (req, res, next) {
 });
 */
 //absolute path of the directory
-app.use(express.static(path.join(__dirname, 'public')))
-
+app.use(express.static(path.join(__dirname, "public")));
 
 //------------ Test route --------//
-app.get('/', (req, res) => {
-    //res.status(200).send('Hello World!');
-    db.getAll().then(result => {
-        res.status(200).send(result);
-      })
-      .catch(error => {
-        res.status(500).send(error);
-      })
-  })
-
+app.get("/", (req, res) => {
+  //res.status(200).send('Hello World!');
+  db.getAll()
+    .then((result) => {
+      res.status(200).send(result);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
 
 //------------ login route --------//
-app.post('/login', (req, res) => {
-  console.log(req.body)
+app.post("/login", (req, res) => {
   const email = req.body.userEmail;
   const password = req.body.userPass;
 
-  const data = { 
+  const data = {
     user: true,
     usetId: 5,
-    userEmail: email
- }
+    userEmail: email,
+  };
 
- db.getUserByEmail(email).then(result => {
-   if (!result[0].case) {
-    const data = {
-      user: false,
-      message: "User doesn't exist!"
-    }
-    res.json(data)
+  db.getUserByEmail(email).then((result) => {
+    if (!result[0].case) {
+      const data = {
+        user: false,
+        message: "User doesn't exist!",
+      };
+      res.json(data);
     } else {
-      db.checkUsersPassword(email, password).then(result => {
-        console.log(result)
-        if(result) {
-          const data = {
-            user: true,
-            message: "User exist!"
-          }
-          res.json(data);
-        }
-        else {
+      db.checkUsersPassword(email, password).then((result) => {
+        if (!result) {
           const data = {
             user: true,
             password: false,
-            message: "Wrong password!"
-          }
+            message: "Wrong password!",
+          };
+          res.json(data);
+        } else {
+          const data = {
+            user: true,
+            userData: result,
+            message: "User exist!"
+          };
           res.json(data);
         }
-      })
+      });
     }
- })
-})
-
-
+  });
+});
 
 //------------
-//set port and start listen requests 
+//set port and start listen requests
 app.listen(PORT, () => {
-    console.log(`Server is listeninig ${PORT}........../`)
-  });
+  console.log(`Server is listeninig ${PORT}........../`);
+});

@@ -26,7 +26,7 @@ const getUserByEmail = (email) => {
 const checkUsersPassword = (email, password) => {
   return pool.query('select password from users where email = $1', [email]).then(res => {
     if(res.rows[0].password === password) {
-      return true;
+      return pool.query('select * from users where password = $1', [password]).then(res => res.rows);
     }
     return false;
   });
