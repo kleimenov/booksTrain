@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Redirect } from 'react-router-dom'
 
 
 
@@ -25,16 +26,16 @@ const Loginform = () => {
       userEmail: userEmail,
       userPass: userPass,
     };
-
     const data = await loginUser(dataHolder);
-    console.log(data.userData[0]);
-  };
+    console.log(data.user);
 
+  };
+  
   return (
     <div className="container">
       <h1 className="text-secondary">Login form page</h1>
       <div className="d-flex flex-column">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
           <label
             className="text-secondary mt-2 login-text-holder"
             htmlFor="email"
