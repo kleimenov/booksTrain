@@ -61,6 +61,12 @@ app.get('/', (req, res) => {
   //------------ Test route --------//
 app.post('/login', (req, res) => {
   console.log(req.body)
+  const data = { 
+    user: true,
+    usetId: 5,
+    userEmail: req.body.userEmail
+ }
+  res.json(data)
 })
 
 
