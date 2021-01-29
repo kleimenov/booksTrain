@@ -61,12 +61,44 @@ app.get('/', (req, res) => {
   //------------ Test route --------//
 app.post('/login', (req, res) => {
   console.log(req.body)
+  const email = req.body.userEmail;
+  const password = req.body.userPass;
+
   const data = { 
     user: true,
     usetId: 5,
-    userEmail: req.body.userEmail
+    userEmail: email
  }
-  res.json(data)
+
+ db.getUserByEmail(email).then(result => {
+   //console.log(result[0].case)
+   if (!result[0].case) {
+    const data = {
+      user: false,
+      message: "User doesn't exist!"
+    }
+    res.json(data)
+    } else {
+      db.checkUsersPassword(email, password).then(result => {
+        console.log(result)
+        if(result) {
+          const data = {
+            user: true,
+            message: "User exist!"
+          }
+          res.json(data);
+        }
+        else {
+          const data = {
+            user: true,
+            password: false,
+            message: "Wrong password!"
+          }
+          res.json(data);
+        }
+      })
+    }
+ })
 })
 
 
