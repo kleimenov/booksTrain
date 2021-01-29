@@ -10,13 +10,16 @@ import Registrationform from './components/Maincomponents/Registrationform'
 import Welcome from './test';
 
 
+
 function App() {
+
+  const [token, setToken] = useState();
 
   const [usersData, setUsersData] = useState([])
   
   useEffect(()=> {
     getAllUsersFromDatabase();
-  },[])
+  }, [])
 
   const getAllUsersFromDatabase = async () => {
     const response = await fetch('http://localhost:3002');

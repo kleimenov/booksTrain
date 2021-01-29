@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 
 async function loginUser(credentials) {
+    
     return fetch('http://localhost:3002/login', {
       method: 'POST',
       headers: {
@@ -10,7 +11,9 @@ async function loginUser(credentials) {
       },
       body: JSON.stringify(credentials)
     })
-      .then(data => data.json())
+    
+    .then(data => data.json())
+    
    }
 
 const Loginform = () => {
@@ -22,14 +25,13 @@ const Loginform = () => {
 
    const handleSubmit = async (evt) => {
        evt.preventDefault();
-
+       
        const dataHolder = {
         userEmail: userEmail,
         userPass: userPass
        }
 
     const data = await loginUser(dataHolder);
-    console.log(data)
    }
 
     return (
