@@ -58,7 +58,7 @@ app.get('/', (req, res) => {
   })
 
 
-  //------------ Test route --------//
+//------------ login route --------//
 app.post('/login', (req, res) => {
   console.log(req.body)
   const email = req.body.userEmail;
@@ -71,7 +71,6 @@ app.post('/login', (req, res) => {
  }
 
  db.getUserByEmail(email).then(result => {
-   //console.log(result[0].case)
    if (!result[0].case) {
     const data = {
       user: false,
