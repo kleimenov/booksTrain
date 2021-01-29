@@ -7,10 +7,11 @@ import Footer from './components/Footercomponents/Footer'
 import Homepage from './components/Maincomponents/Homepage'
 import Loginform from './components/Maincomponents/Loginform'
 import Registrationform from './components/Maincomponents/Registrationform'
+import Welcome from './test';
 
 
 function App() {
-  
+
   const [usersData, setUsersData] = useState([])
   
   useEffect(()=> {
@@ -31,6 +32,7 @@ function App() {
         <div className='App'>
         <div className='header'>
           <Header />
+          <Welcome />
         </div>
         <div className='contianer'>
           <Switch>

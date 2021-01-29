@@ -58,6 +58,13 @@ app.get('/', (req, res) => {
   })
 
 
+  //------------ Test route --------//
+app.post('/login', (req, res) => {
+  console.log(req.body)
+})
+
+
+
 //------------
 //set port and start listen requests 
 app.listen(PORT, () => {
