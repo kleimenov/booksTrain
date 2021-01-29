@@ -52,18 +52,3 @@ function App() {
 }
 
 export default App;
-
-/*
-
-
-
-
-
-    {usersData.map(user => (
-      <User userName={user.first_name} key={user.id} />
-    ))}
-
-    {usersData.map(user => (
-              <Homepage userName={user.first_name} key={user.id} />
-            ))}
-  */
