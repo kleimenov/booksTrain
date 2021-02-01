@@ -28,7 +28,6 @@ const Loginform = () => {
     };
     const data = await loginUser(dataHolder);
     console.log(data.user);
-
   };
   
   return (
