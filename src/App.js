@@ -11,7 +11,6 @@ import Welcome from "./test";
 
 function App() {
   const [token, setToken] = useState();
-
   const [usersData, setUsersData] = useState([]);
 
   useEffect(() => {
