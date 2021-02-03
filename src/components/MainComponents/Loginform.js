@@ -32,7 +32,7 @@ const Loginform = ( props ) => {
       userEmail: userEmail,
       userPass: userPass,
     });
-    props.title = data.user;
+    
     console.log('Loginform side II Token is' +props.title)
   };
   
