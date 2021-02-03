@@ -26,8 +26,7 @@ function App() {
     setUsersData(data);
   };
 
-
-  console.log('App component = Token is ' + token)
+  console.log("App component = Token is " + token);
 
   return (
     <Router>
@@ -43,7 +42,10 @@ function App() {
                 <Homepage userName={user.first_name} key={user.id} />
               ))}
             </Route>
-            <Route path="/loginform" render={(props) => <Loginform {...props} setToken={setToken} />}/>
+            <Route
+              path="/loginform"
+              render={(props) => <Loginform {...props} setToken={setToken} />}
+            />
             <Route path="/registrationform" component={Registrationform} />
           </Switch>
         </div>
