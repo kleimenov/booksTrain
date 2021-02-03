@@ -21,13 +21,16 @@ const Loginform = ({ setToken }) => {
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
-
+    /*
     const dataHolder = {
       userEmail: userEmail,
       userPass: userPass,
-    };
-    const data = await loginUser(dataHolder);
-    //console.log(data.user);
+    };*/
+    const data = await loginUser({
+      userEmail: userEmail,
+      userPass: userPass,
+    });
+    console.log(data.user);
   };
   
   return (

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //import components
 import Header from "./components/Headercomponents/Header";
-import User from "./components/Maincomponents/User";
+//import User from "./components/Maincomponents/User";
 import Footer from "./components/Footercomponents/Footer";
 import Homepage from "./components/Maincomponents/Homepage";
 import Loginform from "./components/Maincomponents/Loginform";
