@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom'
 
 
@@ -15,9 +16,10 @@ async function loginUser(credentials) {
 }
 
 
-const Loginform = ({ setToken }) => {
+const Loginform = ( props ) => {
   const [userEmail, setEmail] = useState();
   const [userPass, setPassword] = useState();
+  
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
@@ -30,7 +32,14 @@ const Loginform = ({ setToken }) => {
       userEmail: userEmail,
       userPass: userPass,
     });
-    console.log(data.user);
+    const serverRespnse = data.user;
+    
+    console.log( 'token from App is ' + props.token )
+    
+   
+
+    console.log('I server response is ' +serverRespnse)
+
   };
   
   return (
@@ -75,5 +84,7 @@ const Loginform = ({ setToken }) => {
     </div>
   );
 };
+
+
 
 export default Loginform;

@@ -8,6 +8,7 @@ import Homepage from "./components/Maincomponents/Homepage";
 import Loginform from "./components/Maincomponents/Loginform";
 import Registrationform from "./components/Maincomponents/Registrationform";
 import Welcome from "./test";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 function App() {
   const [token, setToken] = useState();
@@ -24,7 +25,9 @@ function App() {
     setUsersData(data);
   };
 
-  console.log(token)
+
+
+  console.log('Token is ' +token)
 
   return (
     <Router>
@@ -40,7 +43,7 @@ function App() {
                 <Homepage userName={user.first_name} key={user.id} />
               ))}
             </Route>
-            <Route path="/loginform" component={Loginform} />
+            <Route path="/loginform" component={Loginform} token={ token }/>
             <Route path="/registrationform" component={Registrationform} />
           </Switch>
         </div>
