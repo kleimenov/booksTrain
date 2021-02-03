@@ -24,6 +24,8 @@ function App() {
     setUsersData(data);
   };
 
+  console.log(token)
+
   return (
     <Router>
       <div className="App">

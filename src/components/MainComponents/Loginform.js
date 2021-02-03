@@ -15,7 +15,7 @@ async function loginUser(credentials) {
 }
 
 
-const Loginform = () => {
+const Loginform = ({ setToken }) => {
   const [userEmail, setEmail] = useState();
   const [userPass, setPassword] = useState();
 
@@ -27,7 +27,7 @@ const Loginform = () => {
       userPass: userPass,
     };
     const data = await loginUser(dataHolder);
-    console.log(data.user);
+    //console.log(data.user);
   };
   
   return (
