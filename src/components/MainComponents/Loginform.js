@@ -16,11 +16,13 @@ async function loginUser(credentials) {
 }
 
 
-const Loginform = ( props ) => {
+
+
+const Loginform = ( {setToken} ) => {
   const [userEmail, setEmail] = useState();
   const [userPass, setPassword] = useState();
   
-  console.log('Loginform side Token is ' +props.title)
+  
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     /*
@@ -32,8 +34,7 @@ const Loginform = ( props ) => {
       userEmail: userEmail,
       userPass: userPass,
     });
-    
-    console.log('Loginform side II Token is' +props.title)
+    setToken(data.user)
   };
   
   return (
