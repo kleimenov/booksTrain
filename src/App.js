@@ -7,8 +7,9 @@ import Footer from "./components/Footercomponents/Footer";
 import Homepage from "./components/Maincomponents/Homepage";
 import Loginform from "./components/Maincomponents/Loginform";
 import Registrationform from "./components/Maincomponents/Registrationform";
-import Welcome from "./test";
+import Welcome from "./components/Maincomponents/Testcomp";
 import { propTypes } from "react-bootstrap/esm/Image";
+import { text } from "body-parser";
 
 function App() {
   const [token, setToken] = useState();
@@ -26,8 +27,7 @@ function App() {
   };
 
 
-
-  console.log('Token is ' +token)
+  console.log('App component = Token is ' +token)
 
   return (
     <Router>
@@ -43,8 +43,9 @@ function App() {
                 <Homepage userName={user.first_name} key={user.id} />
               ))}
             </Route>
-            <Route path="/loginform" component={Loginform} token={ token }/>
+            <Route path="/loginform" render={(props) => <Loginform {...props} title={token} />}/>
             <Route path="/registrationform" component={Registrationform} />
+            
           </Switch>
         </div>
         <div className="footer">

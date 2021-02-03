@@ -3,9 +3,10 @@ import axios from 'axios'
 
 const Registrationform = () => (
     <div className="container">
-        <h1 className="text-secondary">Registration form page</h1>
+        <h1 className="text-secondary">Registration form page </h1>
         <div className="d-flex flex-column">
             <form action="">
+               
                 <label className="text-secondary mt-2 login-text-holder" htmlFor="first_name">Please enter your first name</label>
                 <input className="form-control ml-0 my-1" type="first_name" name="first_name" required autoFocus></input>
                 <label className="text-secondary mt-2 login-text-holder" htmlFor="last_name">Please enter your last name</label>

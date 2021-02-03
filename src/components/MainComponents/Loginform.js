@@ -20,7 +20,7 @@ const Loginform = ( props ) => {
   const [userEmail, setEmail] = useState();
   const [userPass, setPassword] = useState();
   
-
+  console.log('Loginform side Token is ' +props.title)
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     /*
@@ -32,20 +32,15 @@ const Loginform = ( props ) => {
       userEmail: userEmail,
       userPass: userPass,
     });
-    const serverRespnse = data.user;
-    
-    console.log( 'token from App is ' + props.token )
-    
-   
-
-    console.log('I server response is ' +serverRespnse)
-
+    props.title = data.user;
+    console.log('Loginform side II Token is' +props.title)
   };
   
   return (
     <div className="container">
       <h1 className="text-secondary">Login form page</h1>
       <div className="d-flex flex-column">
+      
         <form onSubmit={handleSubmit} >
           <label
             className="text-secondary mt-2 login-text-holder"
