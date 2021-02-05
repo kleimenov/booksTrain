@@ -2,6 +2,7 @@ import React from "react";
 
 const Homepage = (props) => {
   console.log(localStorage);
+  
   return (
     <div className="container">
       <h3 className="text-secondary">
