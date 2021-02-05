@@ -41,6 +41,7 @@ app.use(function (req, res, next) {
     next();
 });
 */
+
 //absolute path of the directory
 app.use(express.static(path.join(__dirname, "public")));
 
