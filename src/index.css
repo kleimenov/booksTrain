@@ -1,20 +1,20 @@
 @font-face {
   font-family: Hustlersrough;
   font-weight: normal;
-  src: url('./fonts/Hustlersrough.otf') format("opentype");
+  src: url("./fonts/Hustlersrough.otf") format("opentype");
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -38,7 +38,6 @@ code {
   width: 800px;
 }
 
-
 .green {
   color: green;
   font-size: 25px;
@@ -51,7 +50,6 @@ code {
   font-size: 85px;
   color: white;
   text-shadow: 0 0 5px gray;
-  
 }
 
 .NavWrapper a:hover {
@@ -85,7 +83,8 @@ code {
   background-color: white;
 }
 
-.dropdown-item:focus, .dropdown-item:hover{
+.dropdown-item:focus,
+.dropdown-item:hover {
   text-decoration: none;
   color: white;
   font-weight: 500;
@@ -93,7 +92,7 @@ code {
   text-shadow: 0 0 2px black;
 }
 
-.dropdown-item.active, 
+.dropdown-item.active,
 .dropdown-item:active {
   color: white;
   text-decoration: none;
@@ -102,27 +101,26 @@ code {
 
 .enroll-submit-button,
 .signIn-submit-button {
-    font-size: 20px;
-    font-weight: 600;
-    color: white;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
 }
 
 .enroll-submit-button:hover,
 .signIn-submit-button:hover {
-    color: gray;
+  color: gray;
 }
 
 .enroll-submit-button:active,
 .signIn-submit-button:active {
-    color: white;
+  color: white;
 }
 
 .registration-submit-button {
   font-size: 25px;
   border: none;
-  background: #66a6ff ;
+  background: #66a6ff;
 }
-
 
 .footer {
   background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
