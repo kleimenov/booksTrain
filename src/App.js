@@ -35,7 +35,6 @@ function App() {
           <Welcome />
         </div>
         <div className="contianer">
-          <h1>HHCd</h1>
           <Switch>
             <Route path="/" exact>
               {usersData.map((user) => (
