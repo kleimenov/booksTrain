@@ -33,14 +33,15 @@ function App() {
   };
   console.log("App component = Token is " + token);
   //console.log("App component = user data is " + userData);
-  userData.map(data=> console.log(data))
+
+  //userData ? userData.map(data=> console.log(data)): console.log(undefined);
 
   if (!token) {
     return (
       <Router>
         <div className="App">
           <div className="header">
-            <Header token={ token } />
+            <Header token={token} />
           </div>
           <div className="contianer">
             <Switch>
@@ -52,8 +53,8 @@ function App() {
                 render={(props) => (
                   <Loginform
                     {...props}
-                    setToken={ setToken }
-                    setUserData={ setUserData }
+                    setToken={setToken}
+                    setUserData={setUserData}
                   />
                 )}
               />
@@ -71,15 +72,15 @@ function App() {
       <Redirect to="/" />
       <div className="App">
         <div className="header">
-          <Header token={ token }/>
-          <Welcome />
+          <Header token={token} />
         </div>
         <div className="contianer">
           <Switch>
             <Route path="/" exact>
-              {userData.map((user) => (
-                <Homepage userName={user.first_name} key={user.id} />
-              ))}
+              <Homepage
+                userName={userData[0].first_name}
+                key={userData[0].id}
+              />
             </Route>
           </Switch>
         </div>
