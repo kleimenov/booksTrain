@@ -38,7 +38,7 @@ function App() {
       <Router>
         <div className="App">
           <div className="header">
-            <Header token={ token }/>
+            <Header token={ token } />
           </div>
           <div className="contianer">
             <Switch>
@@ -68,7 +68,7 @@ function App() {
       <Redirect to="/" />
       <div className="App">
         <div className="header">
-          <Header />
+          <Header token={ token }/>
           <Welcome />
         </div>
         <div className="contianer">
