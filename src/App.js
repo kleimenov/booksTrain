@@ -26,31 +26,6 @@ function App() {
     setUsersData(data);
   };
   console.log("App component = Token is " + token);
-  
-  if(!token) {
-    return (
-      <Router>
-        <div className="App">
-          <div className="header">
-            <Header />
-            <Welcome />
-          </div>
-          <div className="contianer">
-            <Switch>
-              <Route path="/" exact>
-                  <Homepage />
-              </Route>
-              <Route
-                path="/loginform"
-                render={(props) => <Loginform {...props} setToken={setToken} />}
-              />
-              <Route path="/registrationform" component={Registrationform} />
-            </Switch>
-          </div>
-        </div>
-      </Router>
-    )
-  }
 
   return (
     <Router>
@@ -60,6 +35,7 @@ function App() {
           <Welcome />
         </div>
         <div className="contianer">
+          <h1>HHCd</h1>
           <Switch>
             <Route path="/" exact>
               {usersData.map((user) => (
