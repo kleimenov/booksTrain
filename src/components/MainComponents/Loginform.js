@@ -23,6 +23,7 @@ const Loginform = ({ setToken, setUserData, history }) => {
       userEmail: userEmail,
       userPass: userPass,
     });
+    console.log(data)
     setUserData(data.userData)
     setToken(data.user);
     

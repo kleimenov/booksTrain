@@ -2,7 +2,7 @@ import React from 'react';
 
 const Homepage = (props) => (
     <div className="container">
-        <h1 className="text-secondary">Hello booksTrain! Welcome { props.userName }</h1> 
+        <h3 className="text-secondary">Welcome { props.userName }, let's find right book for you!</h3> 
     </div>
 )
 

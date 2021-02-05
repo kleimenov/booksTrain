@@ -32,8 +32,8 @@ function App() {
     //console.log(data)
   };
   console.log("App component = Token is " + token);
-  //console.log("App component = user data is " + userData);
 
+  
   //userData ? userData.map(data=> console.log(data)): console.log(undefined);
 
   if (!token) {
@@ -41,7 +41,7 @@ function App() {
       <Router>
         <div className="App">
           <div className="header">
-            <Header token={token} />
+            <Header token={ token } />
           </div>
           <div className="contianer">
             <Switch>
@@ -53,8 +53,8 @@ function App() {
                 render={(props) => (
                   <Loginform
                     {...props}
-                    setToken={setToken}
-                    setUserData={setUserData}
+                    setToken={ setToken }
+                    setUserData={ setUserData }
                   />
                 )}
               />
@@ -72,15 +72,12 @@ function App() {
       <Redirect to="/" />
       <div className="App">
         <div className="header">
-          <Header token={token} />
+          <Header token={ token }/>
         </div>
         <div className="contianer">
           <Switch>
             <Route path="/" exact>
-              <Homepage
-                userName={userData[0].first_name}
-                key={userData[0].id}
-              />
+                <Homepage userName={userData[0].first_name} key={userData[0].id}  />
             </Route>
           </Switch>
         </div>
