@@ -30,6 +30,7 @@ const Loginform = ({ setToken }) => {
     setToken(data.user);
   };
 
+  
   return (
     <div className="container">
       <h1 className="text-secondary">Login form page</h1>
