@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 async function loginUser(credentials) {
   return fetch("http://localhost:3002/login", {
@@ -12,7 +12,7 @@ async function loginUser(credentials) {
   }).then((response) => response.json());
 }
 
-const Loginform = ({ setToken, setRedirection }) => {
+const Loginform = ({ setToken, setRedirection, history }) => {
   const [userEmail, setEmail] = useState();
   const [userPass, setPassword] = useState();
 
@@ -28,7 +28,7 @@ const Loginform = ({ setToken, setRedirection }) => {
       userPass: userPass,
     });
     setToken(data.user);
-    setRedirection(true)
+    
   };
 
   

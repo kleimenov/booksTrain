@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useHistory,
+} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 //import components
 import Header from "./components/Headercomponents/Header";
 //import User from "./components/Maincomponents/User";
@@ -14,7 +20,6 @@ import { text } from "body-parser";
 function App() {
   const [token, setToken] = useState();
   const [usersData, setUsersData] = useState([]);
-  const [redirectionState, setRedirection] = useState(false)
 
   useEffect(() => {
     getAllUsersFromDatabase();
@@ -27,10 +32,37 @@ function App() {
     setUsersData(data);
   };
   console.log("App component = Token is " + token);
-  console.log("App component = Redirection is " + redirectionState);
 
+  if (!token) {
+    return (
+      <Router>
+        <div className="App">
+          <div className="header">
+            <Header />
+          </div>
+          <div className="contianer">
+            <Switch>
+              <Route path="/" exact>
+                <Homepage />
+              </Route>
+              <Route
+                path="/loginform"
+                render={(props) => (
+                  <Loginform
+                    {...props}
+                    setToken={setToken}
+                  />
+                )}
+              />
+            </Switch>
+          </div>
+        </div>
+      </Router>
+    );
+  }
   return (
     <Router>
+      <Redirect to="/" />
       <div className="App">
         <div className="header">
           <Header />
@@ -43,11 +75,6 @@ function App() {
                 <Homepage userName={user.first_name} key={user.id} />
               ))}
             </Route>
-            <Route
-              path="/loginform"
-              render={(props) => <Loginform {...props} setToken={ setToken } setRedirection={ setRedirection } />}
-            />
-            <Route path="/registrationform" component={Registrationform} />
           </Switch>
         </div>
         <div className="footer">
