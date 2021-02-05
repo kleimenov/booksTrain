@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Redirect, Link } from "react-router-dom";
 
 const Logout = () => {
-  const logout = () => {
+  const logoutHandler = () => {
     localStorage.clear();
-    window.location.href = "/";
+    document.location.href = "/";
   };
   return (
     <div>
       <Link to="/">
-        <button onClick={logout} className="btn signIn-submit-button">
+        <button onClick={logoutHandler} className="btn signIn-submit-button">
           Log Out
         </button>
       </Link>
