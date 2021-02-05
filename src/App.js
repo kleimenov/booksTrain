@@ -58,6 +58,7 @@ function App() {
                   />
                 )}
               />
+              <Route path="/registrationform" component={ Registrationform }/>
             </Switch>
           </div>
           <div className="footer">

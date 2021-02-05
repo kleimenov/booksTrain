@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Redirect, Link } from "react-router-dom";
 
-const Logout = ({ setToken }) => {
- 
-
+const Logout = () => {
+    const logout = () => {
+        localStorage.clear();
+        window.location.href = '/';
+    }
   return (
     <div>
       <Link to="/">
-        <button className="btn signIn-submit-button">Log Out</button>
+        <button onClick={ logout } className="btn signIn-submit-button">Log Out</button>
       </Link>
     </div>
   );

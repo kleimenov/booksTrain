@@ -4,7 +4,7 @@ import Authentication from "./Authentification";
 import Logout from "./Logout";
 import { Link } from "react-router-dom";
 
-const Header = ({ token, setToken }) => {
+const Header = ({ token }) => {
   if (!token) {
     return (
       <div className="NavWrapper">
