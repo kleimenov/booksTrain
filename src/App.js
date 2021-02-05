@@ -20,6 +20,7 @@ import { text } from "body-parser";
 function App() {
   const [token, setToken] = useState();
   const [usersData, setUsersData] = useState([]);
+  const [userData, setUserData] = useState([]);
 
   useEffect(() => {
     getAllUsersFromDatabase();
@@ -29,9 +30,10 @@ function App() {
     const response = await fetch("http://localhost:3002");
     const data = await response.json();
     //console.log(data)
-    setUsersData(data);
   };
   console.log("App component = Token is " + token);
+  //console.log("App component = user data is " + userData);
+  userData.map(data=> console.log(data))
 
   if (!token) {
     return (
@@ -50,7 +52,8 @@ function App() {
                 render={(props) => (
                   <Loginform
                     {...props}
-                    setToken={setToken}
+                    setToken={ setToken }
+                    setUserData={ setUserData }
                   />
                 )}
               />

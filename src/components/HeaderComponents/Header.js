@@ -21,7 +21,7 @@ const Header = ({ token, setToken }) => {
         <h1 className="custom-logo-font">booksTrain</h1>
       </Link>
       <Nav />
-      <Logout setToken={ setToken } />
+      <Logout />
     </div>
   );
 };

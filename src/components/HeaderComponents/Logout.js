@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Redirect, Link } from "react-router-dom";
 
 const Logout = ({ setToken }) => {
-  console.log(setToken);
+ 
 
   return (
     <div>
