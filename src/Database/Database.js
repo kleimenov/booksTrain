@@ -9,7 +9,6 @@ const pool = new Pool({
 });
 
 //I will make a bunch of psql queries
-
 //0. lets get user id
 const getAll = () => {
   return pool.query("select * from users").then((res) => res.rows);
