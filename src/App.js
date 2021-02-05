@@ -77,7 +77,7 @@ function App() {
         <div className="contianer">
           <Switch>
             <Route path="/" exact>
-              {usersData.map((user) => (
+              {userData.map((user) => (
                 <Homepage userName={user.first_name} key={user.id} />
               ))}
             </Route>
