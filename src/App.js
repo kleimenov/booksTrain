@@ -31,7 +31,8 @@ function App() {
     const data = await response.json();
     //console.log(data)
   };
-  console.log("App component = Token is " + token);
+
+  //console.log("App component = Token is " + token);
   //userData ? userData.map(data=> console.log(data)): console.log(undefined);
 
   if (!token) {
