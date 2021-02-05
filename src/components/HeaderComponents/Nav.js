@@ -2,7 +2,9 @@ import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown'
 //import DropdownButton from 'react-bootstrap/DropdownButton'
 
-const Nav = () => (
+const Nav = () => {
+  
+  return (
     <Dropdown>
         <Dropdown.Toggle className="custom-button" variant="white" id="dropdown-basic">
         Library
@@ -15,6 +17,8 @@ const Nav = () => (
           <Dropdown.Item href="#/action-3">Contact us</Dropdown.Item>
         </Dropdown.Menu>
     </Dropdown>
-);
+  )
+    
+  };
 
 export default Nav;

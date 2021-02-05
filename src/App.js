@@ -38,7 +38,7 @@ function App() {
       <Router>
         <div className="App">
           <div className="header">
-            <Header />
+            <Header token={ token }/>
           </div>
           <div className="contianer">
             <Switch>
@@ -55,6 +55,9 @@ function App() {
                 )}
               />
             </Switch>
+          </div>
+          <div className="footer">
+            <Footer />
           </div>
         </div>
       </Router>
