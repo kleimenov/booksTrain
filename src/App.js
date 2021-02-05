@@ -14,6 +14,7 @@ import { text } from "body-parser";
 function App() {
   const [token, setToken] = useState();
   const [usersData, setUsersData] = useState([]);
+  const [redirectionState, setRedirection] = useState(false)
 
   useEffect(() => {
     getAllUsersFromDatabase();
@@ -26,6 +27,7 @@ function App() {
     setUsersData(data);
   };
   console.log("App component = Token is " + token);
+  console.log("App component = Redirection is " + redirectionState);
 
   return (
     <Router>
@@ -43,7 +45,7 @@ function App() {
             </Route>
             <Route
               path="/loginform"
-              render={(props) => <Loginform {...props} setToken={setToken} />}
+              render={(props) => <Loginform {...props} setToken={ setToken } setRedirection={ setRedirection } />}
             />
             <Route path="/registrationform" component={Registrationform} />
           </Switch>

@@ -12,7 +12,7 @@ async function loginUser(credentials) {
   }).then((response) => response.json());
 }
 
-const Loginform = ({ setToken }) => {
+const Loginform = ({ setToken, setRedirection }) => {
   const [userEmail, setEmail] = useState();
   const [userPass, setPassword] = useState();
 
@@ -28,6 +28,7 @@ const Loginform = ({ setToken }) => {
       userPass: userPass,
     });
     setToken(data.user);
+    setRedirection(true)
   };
 
   
