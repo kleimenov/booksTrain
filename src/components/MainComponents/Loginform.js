@@ -12,10 +12,11 @@ async function loginUser(credentials) {
   }).then((response) => response.json());
 }
 
+
 const Loginform = ({ setToken, setUserData, history }) => {
   const [userEmail, setEmail] = useState();
   const [userPass, setPassword] = useState();
-
+  
   const handleSubmit = async (evt) => {
     evt.preventDefault();
    
@@ -26,7 +27,7 @@ const Loginform = ({ setToken, setUserData, history }) => {
     //console.log(data)
     setUserData(data.userData)
     setToken(data.user);
-    
+
   };
 
   

@@ -18,7 +18,6 @@ import { text } from "body-parser";
 
 function App() {
   const [token, setToken] = useState();
-  const [usersData, setUsersData] = useState([]);
   const [userData, setUserData] = useState([]);
 
   useEffect(() => {
@@ -31,7 +30,8 @@ function App() {
     //console.log(data)
   };
 
-  console.log('App component ' +userData)
+  //console.log('App component token ' +token)
+  //console.log("App component state " +setToken);
   //console.log("App component = Token is " + token);
   //userData ? userData.map(data=> console.log(data)): console.log(undefined);
 
@@ -40,7 +40,7 @@ function App() {
       <Router>
         <div className="App">
           <div className="header">
-            <Header token={ token } setToken={ setToken } />
+            <Header token={ token } setToken={ setToken }/>
           </div>
           <div className="contianer">
             <Switch>
