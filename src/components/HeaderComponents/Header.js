@@ -5,8 +5,7 @@ import Logout from "./Logout";
 import { Link } from "react-router-dom";
 
 const Header = ({ token, setToken }) => {
-  console.log("from header");
-  console.log(setToken);
+  console.log("Header component " +setToken);
   if (!token) {
     return (
       <div className="NavWrapper">
