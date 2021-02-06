@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "./Nav";
 import Authentication from "./Authentification";
 import Logout from "./Logout";
 import { Link } from "react-router-dom";
 
-const Header = ({ token }) => {
+const Header = ({ token, setToken }) => {
+  console.log("from header");
+  console.log(setToken);
   if (!token) {
     return (
       <div className="NavWrapper">
@@ -21,7 +23,7 @@ const Header = ({ token }) => {
         <h1 className="custom-logo-font">booksTrain</h1>
       </Link>
       <Nav />
-      <Logout />
+      <Logout setToken={setToken} token={token} />
     </div>
   );
 };

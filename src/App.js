@@ -40,7 +40,7 @@ function App() {
       <Router>
         <div className="App">
           <div className="header">
-            <Header token={ token } />
+            <Header token={ token } setToken={ setToken } />
           </div>
           <div className="contianer">
             <Switch>
