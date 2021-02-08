@@ -24,6 +24,7 @@ function App() {
     getAllUsersFromDatabase();
   }, []);
 
+  //it is test of connection with server
   const getAllUsersFromDatabase = async () => {
     const response = await fetch("http://localhost:3002");
     const data = await response.json();
