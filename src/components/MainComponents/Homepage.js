@@ -5,21 +5,19 @@ import Books from "./Books";
 const Homepage = (props) => {
   const [books, setBookslist] = useState([]);
   const url = "";
-  const url2 = "https://www.googleapis.com/books/v1/volumes?q=categories=Pratchet";
-  
+  const url2 =
+    "https://www.googleapis.com/books/v1/volumes?q=categories=Pratchet";
 
   useEffect(() => {
     getBooksList();
   }, []);
 
- 
   const getBooksList = async () => {
     const response = await fetch(url2);
     const data = await response.json();
 
     setBookslist(data.items);
   };
-  
 
   /*
   // Just in case if I would like to use axios
@@ -32,7 +30,6 @@ const Homepage = (props) => {
     })
   };
  */
-  
 
   if (!props.token) {
     return (
@@ -41,7 +38,11 @@ const Homepage = (props) => {
         {books.map((book) => (
           <Books
             key={book.id}
-            image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : ''}
+            image={
+              book.volumeInfo.imageLinks
+                ? book.volumeInfo.imageLinks.smallThumbnail
+                : ""
+            }
             title={book.volumeInfo.title}
             author={book.volumeInfo.authors}
             desc={book.volumeInfo.publishedDate}
