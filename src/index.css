@@ -37,6 +37,7 @@ code {
   /*padding-top: 15px;*/
   margin: 0 auto;
   width: 800px;
+  min-height: calc(100vh - 143px);
 }
 
 .green {
@@ -134,6 +135,8 @@ code {
 }
 
 .homepage-background-img {
-  background: olive;
-  height: auto;
+  background-image: url("./Assets/Images/Background-image-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
