@@ -6,7 +6,7 @@ const Homepage = (props) => {
   const [books, setBookslist] = useState([]);
   const url = "";
 
-  const url2 = "https://www.googleapis.com/books/v1/volumes?q=categories=Harry Potter";
+  const url2 = "https://www.googleapis.com/books/v1/volumes?q=categories=Pratchet";
   
 
   useEffect(() => {
