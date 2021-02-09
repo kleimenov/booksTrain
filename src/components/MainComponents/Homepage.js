@@ -35,7 +35,7 @@ const Homepage = (props) => {
     return (
       <div className="container">
         <h3 className="text-center text-secondary py-2">Most popular for today!</h3>
-        {books.map((book) => (
+        {books.splice(0, 5).map((book) => (
           <Books
             key={book.id}
             image={
