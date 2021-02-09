@@ -21,16 +21,17 @@ function App() {
   const [userData, setUserData] = useState([]);
 
   useEffect(() => {
-    getAllUsersFromDatabase();
+    //getAllUsersFromDatabase();
   }, []);
 
   //it is test of connection with server
+  /*
   const getAllUsersFromDatabase = async () => {
     const response = await fetch("http://localhost:3002");
     const data = await response.json();
     //console.log(data)
   };
-
+*/
   //console.log('App component token ' +token)
   //console.log("App component state " +setToken);
   //console.log("App component = Token is " + token);
