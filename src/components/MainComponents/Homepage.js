@@ -34,7 +34,7 @@ const Homepage = (props) => {
   if (!props.token) {
     return (
       <div className="container">
-        <h3 className="text-secondary">let's find right book for you!</h3>
+        <h3 className="text-center text-secondary py-2">Most popular for today!</h3>
         {books.map((book) => (
           <Books
             key={book.id}
