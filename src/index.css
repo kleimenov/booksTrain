@@ -11,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -33,7 +34,7 @@ code {
 }
 
 .contianer {
-  padding-top: 15px;
+  /*padding-top: 15px;*/
   margin: 0 auto;
   width: 800px;
 }
@@ -130,4 +131,9 @@ code {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.homepage-background-img {
+  background: olive;
+  height: auto;
 }
