@@ -5,7 +5,6 @@ import Books from "./Books";
 const Homepage = (props) => {
   const [books, setBookslist] = useState([]);
   const url = "";
-
   const url2 = "https://www.googleapis.com/books/v1/volumes?q=categories=Pratchet";
   
 
@@ -19,11 +18,11 @@ const Homepage = (props) => {
     const data = await response.json();
 
     setBookslist(data.items);
-    //console.log(books[1].volumeInfo.title)
   };
-  //console.log(books);
+  
 
   /*
+  // Just in case if I would like to use axios
   const getBooksList =  async () => {
     axios.request(url).then((response) => {
       setBookslist(response.data.items);
