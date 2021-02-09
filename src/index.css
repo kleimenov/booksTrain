@@ -1,7 +1,7 @@
 @font-face {
   font-family: Hustlersrough;
   font-weight: normal;
-  src: url("./fonts/Hustlersrough.otf") format("opentype");
+  src: url("./Assets/fonts/Hustlersrough.otf") format("opentype");
 }
 
 body {
