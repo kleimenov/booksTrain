@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+//import axios from "axios";
 import Books from "./Books";
 
 const Homepage = (props) => {
@@ -53,7 +53,7 @@ const Homepage = (props) => {
   }
   return (
     <div className="container">
-      <h3 className="text-secondary">
+      <h3 className="text-center text-secondary py-2">
         Welcome {props.userName}, let's find right book for you!
       </h3>
     </div>
