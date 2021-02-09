@@ -4,9 +4,9 @@ import Books from "./Books";
 
 const Homepage = (props) => {
   const [books, setBookslist] = useState([]);
-  const url =
-    "https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699&key=AIzaSyAsjgXclc-8h_dCPaSFIler-zx8pzKPaFY";
+  const url = "";
 
+  const url2 = "https://www.googleapis.com/books/v1/volumes?q=bestsellers";
   const [counter, setCOunter] = useState(0);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const Homepage = (props) => {
 
  
   const getBooksList = async () => {
-    const response = await fetch(url);
+    const response = await fetch(url2);
     const data = await response.json();
 
     setBookslist(data.items);
@@ -44,7 +44,7 @@ const Homepage = (props) => {
             key={book.id}
             image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : ''}
             title={book.volumeInfo.title}
-            author={book.volumeInfo.authors[0]}
+            author={book.volumeInfo.authors}
             desc={book.volumeInfo.publishedDate}
           />
         ))}
