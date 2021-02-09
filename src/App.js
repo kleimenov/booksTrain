@@ -46,7 +46,7 @@ function App() {
           <div className="contianer">
             <Switch>
               <Route path="/" exact>
-                <Homepage />
+                <Homepage token={ token } setToken={ setToken }/>
               </Route>
               <Route
                 path="/loginform"
@@ -78,7 +78,7 @@ function App() {
         <div className="contianer">
           <Switch>
             <Route path="/" exact>
-                <Homepage userName={userData[0].first_name} key={userData[0].id}  />
+                <Homepage userName={userData[0].first_name} key={userData[0].id} token={ token } />
             </Route>
           </Switch>
         </div>
