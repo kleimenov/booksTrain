@@ -13,10 +13,10 @@ const Nav = () => {
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="custom-dropdown-menu">
-        <Dropdown.Item href="#/action-1">All books</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">My books list</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">About library</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Contact us</Dropdown.Item>
+        <Dropdown.Item href="/allbooks">All books</Dropdown.Item>
+        <Dropdown.Item href="/myBooks">My books list</Dropdown.Item>
+        <Dropdown.Item href="/about">About library</Dropdown.Item>
+        <Dropdown.Item href="/contact">Contact us</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );

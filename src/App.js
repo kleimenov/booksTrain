@@ -12,6 +12,7 @@ import Footer from "./components/Footercomponents/Footer";
 import Homepage from "./components/Maincomponents/Homepage";
 import Loginform from "./components/Maincomponents/Loginform";
 import Registrationform from "./components/Maincomponents/Registrationform";
+import Allbooks from "./components/Maincomponents/Allbooks"
 import Welcome from "./components/Maincomponents/Testcomp";
 import { propTypes } from "react-bootstrap/esm/Image";
 import { text } from "body-parser";
@@ -85,6 +86,7 @@ function App() {
                 token={token}
               />
             </Route>
+           
           </Switch>
         </div>
         <div className="footer">
