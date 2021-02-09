@@ -12,14 +12,8 @@ const Homepage = (props) => {
   useEffect(() => {
     getBooksList();
   }, []);
-  /*
-  const getBooksList =  async () => {
-    const response = await axios.request(url);
-    const data = response.data.items;
 
-    console.log(data)
-  }
-  */
+ 
   const getBooksList = async () => {
     const response = await fetch(url);
     const data = await response.json();
@@ -27,7 +21,7 @@ const Homepage = (props) => {
     setBookslist(data.items);
     //console.log(books[1].volumeInfo.title)
   };
-  console.log(books);
+  //console.log(books);
 
   /*
   const getBooksList =  async () => {
@@ -38,8 +32,8 @@ const Homepage = (props) => {
       console.error(error);
     })
   };
-  <Books title={books[1].volumeInfo.title}/>
-  */
+ */
+  
 
   if (!props.token) {
     return (
@@ -47,6 +41,7 @@ const Homepage = (props) => {
         <h3 className="text-secondary">let's find right book for you!</h3>
         {books.map((book) => (
           <Books
+            key={book.id}
             image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : ''}
             title={book.volumeInfo.title}
             author={book.volumeInfo.authors[0]}
