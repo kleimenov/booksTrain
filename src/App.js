@@ -41,24 +41,24 @@ function App() {
       <Router>
         <div className="App">
           <div className="header">
-            <Header token={ token } setToken={ setToken }/>
+            <Header token={token} setToken={setToken} />
           </div>
           <div className="contianer">
             <Switch>
               <Route path="/" exact>
-                <Homepage token={ token } setToken={ setToken }/>
+                <Homepage token={token} setToken={setToken} />
               </Route>
               <Route
                 path="/loginform"
                 render={(props) => (
                   <Loginform
                     {...props}
-                    setToken={ setToken }
-                    setUserData={ setUserData }
+                    setToken={setToken}
+                    setUserData={setUserData}
                   />
                 )}
               />
-              <Route path="/registrationform" component={ Registrationform }/>
+              <Route path="/registrationform" component={Registrationform} />
             </Switch>
           </div>
           <div className="footer">
@@ -73,12 +73,16 @@ function App() {
       <Redirect to="/" />
       <div className="App">
         <div className="header">
-          <Header token={ token }/>
+          <Header token={token} />
         </div>
         <div className="contianer">
           <Switch>
             <Route path="/" exact>
-                <Homepage userName={userData[0].first_name} key={userData[0].id} token={ token } />
+              <Homepage
+                userName={userData[0].first_name}
+                key={userData[0].id}
+                token={token}
+              />
             </Route>
           </Switch>
         </div>
