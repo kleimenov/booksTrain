@@ -27,7 +27,6 @@ const Loginform = ({ setToken, setUserData, history }) => {
     //console.log(data)
     setUserData(data.userData)
     setToken(data.user);
-
   };
 
   
