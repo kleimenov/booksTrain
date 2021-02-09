@@ -86,7 +86,7 @@ function App() {
                 token={token}
               />
             </Route>
-           
+            <Route path="/allbooks" component={Allbooks} />
           </Switch>
         </div>
         <div className="footer">
