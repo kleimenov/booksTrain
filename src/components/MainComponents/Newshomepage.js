@@ -1,11 +1,11 @@
 import React from 'react';
 
-const News = () => {
+const News = (props) => {
 
-    
+
     return (
         <div className="newscontainer">
-            <h2 className="text-secondary">Hello news!</h2>
+            <li>{props.news}</li>
         </div>
     )
 }

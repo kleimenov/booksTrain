@@ -5,11 +5,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Books from "./Books";
 import News from "./Newshomepage";
 
-
-
 const Homepage = (props) => {
   const [books, setBookslist] = useState([]);
-  const [news, setNews] = useState([])
+  const [news, setNews] = useState([]);
   const url = "";
   const url2 =
     "https://www.googleapis.com/books/v1/volumes?q=categories=Pratchet";
@@ -38,15 +36,12 @@ const Homepage = (props) => {
   };
  */
 
+  const getAllNewsFromDatabase = async () => {
+    const response = await fetch("http://localhost:3002/news");
+    const data = await response.json();
+    setNews(data);
+  };
 
-
-const getAllNewsFromDatabase = async () => {
-  const response = await fetch("http://localhost:3002/news");
-  const data = await response.json();
-  setNews(data)
-};
-
-console.log(news)
 
   if (!props.token) {
     return (
@@ -71,7 +66,9 @@ console.log(news)
         </Carousel>
         <div>
           <h3 className="text-center text-secondary">Library news!</h3>
-          <News />
+          {news.map((artical) => (
+            <News key={ artical.news_id } news={ artical.news_text } />
+          ))}
         </div>
       </div>
     );
