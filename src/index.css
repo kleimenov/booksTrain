@@ -178,6 +178,23 @@ code {
   margin: 5px;
 }
 
-.newscontainer {
-  background-color: lightgray;
+.news-list-news {
+  position: relative;
+  padding-left: 15px;
+  list-style: none;
+  padding-bottom: 10px;
+}
+
+
+.news-list-news::before {
+  content: "";
+  position: absolute;
+  top: -17px;
+  left: -50px;
+  width: 69px;
+  height: 51px;
+  background-size: 100%;
+  background-image: url('./Assets/Images/news.png');
+  background-repeat: no-repeat;
+  /* border: 1px dotted fuchsia; */
 }

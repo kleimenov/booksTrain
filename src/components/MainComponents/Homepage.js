@@ -65,10 +65,12 @@ const Homepage = (props) => {
           ))}
         </Carousel>
         <div>
-          <h3 className="text-center text-secondary">Library news!</h3>
-          {news.map((artical) => (
-            <News key={ artical.news_id } news={ artical.news_text } />
-          ))}
+          <h3 className="text-center text-secondary mt-4">Library news!</h3>
+          <ul className="newscontainer py-2">
+            {news.map((artical) => (
+              <News key={ artical.news_id } news={ artical.news_text } />
+            ))}
+          </ul>
         </div>
       </div>
     );
