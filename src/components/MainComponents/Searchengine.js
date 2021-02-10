@@ -18,7 +18,12 @@ const Searchengine = () => {
             <Form.Label>Book's Country</Form.Label>
             <Form.Control type="Country" required />
           </Form.Group>
-          <Button className="w-50 btn-secondary search-button-settings" type="search">Search</Button>
+          <Button
+            className="w-50 btn-secondary search-button-settings"
+            type="search"
+          >
+            Search
+          </Button>
         </Form>
       </Card.Body>
     </Card>
