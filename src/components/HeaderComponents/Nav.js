@@ -14,8 +14,7 @@ const Nav = () => {
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="custom-dropdown-menu">
-        <Dropdown.Item as={Link} to="/allbooks">All books</Dropdown.Item>
-        <Dropdown.Item href="/myBooks">My books list</Dropdown.Item>
+        <Dropdown.Item as={Link} to="/mybooks">My books list</Dropdown.Item>
         <Dropdown.Item href="/about">About library</Dropdown.Item>
         <Dropdown.Item href="/contact">Contact us</Dropdown.Item>
       </Dropdown.Menu>

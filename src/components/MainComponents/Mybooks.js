@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Allbooks = () => {
+const Mybooks = () => {
     
     return (
         <div className="container">
-            <h3>This is all books page</h3>
+            <h3>This is Mybooks books page</h3>
         </div>
     )
 }
 
-export default Allbooks;
+export default Mybooks;
