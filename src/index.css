@@ -148,6 +148,10 @@ code {
   margin-bottom: 5px;
 }
 
+.book-title {
+  text-shadow:  0 0 5px gray;
+}
+
 .book-desc {
   display: flex;
   flex-direction: column;
@@ -162,3 +166,10 @@ code {
 }
 
 
+.carousel-root .carousel .slide {
+  background: lightgray; 
+}
+
+.carousel-root .carousel .slide img {
+  width: 50%;
+}
