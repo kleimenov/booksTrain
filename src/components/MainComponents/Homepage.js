@@ -3,6 +3,8 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 //import axios from "axios";
 import Books from "./Books";
+import News from "./Newshomepage";
+
 
 const Homepage = (props) => {
   const [books, setBookslist] = useState([]);
@@ -56,6 +58,7 @@ const Homepage = (props) => {
         </Carousel>
         <div>
           <h3 className="text-center text-secondary">Library news!</h3>
+          <News />
         </div>
       </div>
     );

@@ -177,3 +177,7 @@ code {
 .carousel-root .carousel .thumbs-wrapper {
   margin: 5px;
 }
+
+.newscontainer {
+  background-color: lightgray;
+}
