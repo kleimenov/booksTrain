@@ -42,7 +42,6 @@ const Homepage = (props) => {
     setNews(data);
   };
 
-
   if (!props.token) {
     return (
       <div className="container">
@@ -68,7 +67,7 @@ const Homepage = (props) => {
           <h3 className="text-center text-secondary mt-4">Library news!</h3>
           <ul className="newscontainer py-2">
             {news.map((artical) => (
-              <News key={ artical.news_id } news={ artical.news_text } />
+              <News key={artical.news_id} news={artical.news_text} />
             ))}
           </ul>
         </div>
