@@ -80,7 +80,7 @@ function App() {
         <div className="contianer">
           <Switch>
             <Route path="/" exact>
-              <Homepage
+              <Homepage 
                 userName={userData[0].first_name}
                 key={userData[0].id}
                 token={token}
