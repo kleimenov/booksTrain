@@ -43,10 +43,10 @@ const Homepage = (props) => {
 const getAllNewsFromDatabase = async () => {
   const response = await fetch("http://localhost:3002/news");
   const data = await response.json();
-  console.log(data)
   setNews(data)
 };
 
+console.log(news)
 
   if (!props.token) {
     return (
@@ -54,7 +54,7 @@ const getAllNewsFromDatabase = async () => {
         <h3 className="text-center text-secondary py-2">
           Most popular for today!
         </h3>
-        <Carousel>
+        <Carousel showThumbs={false} /*autoPlay*/>
           {books.splice(0, 5).map((book) => (
             <Books
               key={book.id}
