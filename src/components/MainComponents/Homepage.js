@@ -3,6 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 //import axios from "axios";
 import Books from "./Books";
+import Booksfilters from "./Booksfilters";
 import News from "./Newshomepage";
 
 const Homepage = (props) => {
@@ -78,6 +79,7 @@ const Homepage = (props) => {
     <div className="container">
       <h3 className="text-center text-secondary py-2">
         Welcome {props.userName}, let's find right book for you!
+        <Booksfilters />
       </h3>
     </div>
   );

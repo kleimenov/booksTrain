@@ -182,6 +182,7 @@ code {
   padding-left: 15px;
   list-style: none;
   padding-bottom: 10px;
+  
 }
 
 .news-list-news::before {
@@ -195,4 +196,5 @@ code {
   background-image: url("./Assets/Images/news.png");
   background-repeat: no-repeat;
   /* border: 1px dotted fuchsia; */
+  
 }
