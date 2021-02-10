@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 //import axios from "axios";
 import Books from "./Books";
 
 const Homepage = (props) => {
-
   const [books, setBookslist] = useState([]);
   const url = "";
   const url2 =
@@ -34,14 +33,14 @@ const Homepage = (props) => {
   };
  */
 
-
- 
   if (!props.token) {
     return (
       <div className="container">
-        <h3 className="text-center text-secondary py-2">Most popular for today!</h3>
+        <h3 className="text-center text-secondary py-2">
+          Most popular for today!
+        </h3>
         <Carousel>
-        {books.splice(0, 5).map((book) => (
+          {books.splice(0, 5).map((book) => (
             <Books
               key={book.id}
               image={
@@ -53,7 +52,7 @@ const Homepage = (props) => {
               author={book.volumeInfo.authors}
               desc={book.volumeInfo.publishedDate}
             />
-        ))}
+          ))}
         </Carousel>
         <div>
           <h3 className="text-center text-secondary">Library news!</h3>
