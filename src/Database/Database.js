@@ -41,9 +41,14 @@ const checkUsersPassword = (email, password) => {
       return false;
     });
 };
+//3. Let's get all news
+const getAllNews = () => {
+  return pool.query("select * from library_news").then((res) => res.rows);
+};
 
 module.exports = {
   getAll,
   getUserByEmail,
   checkUsersPassword,
+  getAllNews,
 };

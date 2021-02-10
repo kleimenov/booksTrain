@@ -6,14 +6,17 @@ import Books from "./Books";
 import News from "./Newshomepage";
 
 
+
 const Homepage = (props) => {
   const [books, setBookslist] = useState([]);
+  const [news, setNews] = useState([])
   const url = "";
   const url2 =
     "https://www.googleapis.com/books/v1/volumes?q=categories=Pratchet";
 
   useEffect(() => {
     getBooksList();
+    getAllNewsFromDatabase();
   }, []);
 
   const getBooksList = async () => {
@@ -34,6 +37,16 @@ const Homepage = (props) => {
     })
   };
  */
+
+
+
+const getAllNewsFromDatabase = async () => {
+  const response = await fetch("http://localhost:3002/news");
+  const data = await response.json();
+  console.log(data)
+  setNews(data)
+};
+
 
   if (!props.token) {
     return (

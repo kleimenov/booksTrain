@@ -56,6 +56,18 @@ app.get("/", (req, res) => {
       res.status(500).send(error);
     });
 });
+//------------ Homepage news route (whatever user logged in or not)--------//
+app.get("/news", (req, res) => {
+  //res.status(200).send('Hello World!');
+  db.getAllNews()
+    .then((result) => {
+      res.status(200).send(result);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
 
 //------------ login route --------//
 app.post("/login", (req, res) => {
