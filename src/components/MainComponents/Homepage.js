@@ -71,12 +71,10 @@ function showSlides() {
               author={book.volumeInfo.authors}
               desc={book.volumeInfo.publishedDate}
             />
-
-          
         ))}
         </Carousel>
         <div>
-          <h3>Library news!</h3>
+          <h3 className="text-center text-secondary">Library news!</h3>
         </div>
       </div>
     );

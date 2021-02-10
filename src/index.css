@@ -171,5 +171,9 @@ code {
 }
 
 .carousel-root .carousel .slide img {
-  width: 50%;
+  width: 40%;
+}
+
+.carousel-root .carousel .thumbs-wrapper {
+  margin: 5px;
 }
