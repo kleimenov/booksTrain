@@ -149,7 +149,7 @@ code {
 }
 
 .book-title {
-  text-shadow:  0 0 5px gray;
+  text-shadow: 0 0 5px gray;
 }
 
 .book-desc {
@@ -165,9 +165,8 @@ code {
   padding: 0;
 }
 
-
 .carousel-root .carousel .slide {
-  background: lightgray; 
+  background: lightgray;
 }
 
 .carousel-root .carousel .slide img {
@@ -185,7 +184,6 @@ code {
   padding-bottom: 10px;
 }
 
-
 .news-list-news::before {
   content: "";
   position: absolute;
@@ -194,7 +192,7 @@ code {
   width: 69px;
   height: 51px;
   background-size: 100%;
-  background-image: url('./Assets/Images/news.png');
+  background-image: url("./Assets/Images/news.png");
   background-repeat: no-repeat;
   /* border: 1px dotted fuchsia; */
 }
