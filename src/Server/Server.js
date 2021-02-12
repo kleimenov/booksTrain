@@ -75,15 +75,9 @@ app.post("/booksSearch", (req, res) => {
   const country = req.body.searchCountry;
   const data = req.body;
 
-
- 
-
-  //const arrayHandler = []
-  //Object.keys(data).map(item => item ? arrayHandler.push(item) : '')
-
-  db.getDataForSearchEngine(author, genre, country).then((result)=>console.log(result))
-
-  res.json("data");
+  db.getDataForSearchEngine(author, genre, country).then((result) =>
+    res.json(result)
+  );
 });
 
 //------------ login route --------//
