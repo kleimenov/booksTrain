@@ -15,7 +15,7 @@ const Searchengine = () => {
   const [Author, setAuthor] = useState();
   const [Genre, setGenre] = useState();
   const [Country, setCountry] = useState();
-  const [searchResponse, setResponse] = useState([])
+  const [searchResponse, setResponse] = useState([]);
 
   const data = {
     searchAuthor: Author,
@@ -36,13 +36,15 @@ const Searchengine = () => {
     const requestPermit = false;
     evt.preventDefault();
 
-    if(checkEmptyInputs(data, requestPermit)) {
-      const serverResponse = await searchRequest(data) 
-      setResponse(serverResponse)
-    } else{console.log('Xyi')}
-    console.log(searchResponse)
+    if (checkEmptyInputs(data, requestPermit)) {
+      const serverResponse = await searchRequest(data);
+      setResponse(serverResponse);
+    } else {
+      console.log("Xyi");
+    }
+    console.log(searchResponse);
   };
-  
+
   return (
     <Card className="text-left">
       <Card.Body>
