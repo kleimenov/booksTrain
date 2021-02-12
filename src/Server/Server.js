@@ -70,13 +70,14 @@ app.get("/news", (req, res) => {
 
 //------------ user's book search route --------//
 app.post("/booksSearch", (req, res) => {
-  //const author = req.body.searchAuthor;
-  //const genre = req.body.searchGenre;
-  //const country = req.body.searchCountry;
-  const data = req.body;
+  const author = req.body.searchAuthor;
+  const genre = req.body.searchGenre;
+  const country = req.body.searchCountry;
+  //const data = req.body;
 
-  const arrayHandler = []
-  Object.keys(data).map(item => item ? arrayHandler.push(item) : '')
+  
+  //const arrayHandler = []
+  //Object.keys(data).map(item => item ? arrayHandler.push(item) : '')
 
   
 

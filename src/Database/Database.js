@@ -48,7 +48,13 @@ const getAllNews = () => {
 
 //4 Let's get specific data according to user conditions
 const getDataForSearchEngine = (author, genre, country) => {
-  return pool.query("").then((res) => res.rows);
+  let authorTrue = `where authour = ${author}`;
+  let genreTrue = `where genre = ${genre}`;
+  let countryTru; `where country = ${country};`
+   
+
+  
+  return pool.query(`select * from library`).then((res) => res.rows);
 };
 
 module.exports = {
