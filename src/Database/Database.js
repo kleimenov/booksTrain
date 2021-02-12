@@ -47,10 +47,14 @@ const getAllNews = () => {
 };
 
 //4 Let's get specific data according to user conditions
+const getDataForSearchEngine = (author, genre, country) => {
+  return pool.query("").then((res) => res.rows);
+};
 
 module.exports = {
   getAll,
   getUserByEmail,
   checkUsersPassword,
   getAllNews,
+  getDataForSearchEngine
 };
