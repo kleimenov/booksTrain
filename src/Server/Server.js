@@ -76,6 +76,7 @@ app.post("/booksSearch", (req, res) => {
   const data = req.body;
 
   
+  //Object.keys(data).map(item => item ? console.log(item) : console.log('Nah nexyiya'))
   //Object.keys(data).map(item => console.log(item))
 
   res.json('data');
