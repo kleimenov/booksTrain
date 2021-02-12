@@ -46,6 +46,8 @@ const getAllNews = () => {
   return pool.query("select * from library_news").then((res) => res.rows);
 };
 
+//4 Let's get specific data according to user conditions
+
 module.exports = {
   getAll,
   getUserByEmail,

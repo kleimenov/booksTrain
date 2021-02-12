@@ -75,13 +75,12 @@ app.post("/booksSearch", (req, res) => {
   const country = req.body.searchCountry;
   const data = req.body;
 
-  
   //Object.keys(data).map(item => item ? console.log(item) : console.log('Nah nexyiya'))
   //Object.keys(data).map(item => console.log(item))
 
-  res.json('data');
+  res.json("data");
 });
-  
+
 //------------ login route --------//
 app.post("/login", (req, res) => {
   const email = req.body.userEmail;
@@ -113,7 +112,7 @@ app.post("/login", (req, res) => {
           const data = {
             user: true,
             userData: result,
-            message: "User exist!"
+            message: "User exist!",
           };
           res.json(data);
         }
