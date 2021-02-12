@@ -48,13 +48,20 @@ const getAllNews = () => {
 
 //4 Let's get specific data according to user conditions
 const getDataForSearchEngine = (author, genre, country) => {
-  let authorTrue = `where authour = ${author}`;
-  let genreTrue = `where genre = ${genre}`;
-  let countryTru; `where country = ${country};`
-   
+  let fullQuery = "select * from library where ";
 
-  
-  return pool.query(`select * from library`).then((res) => res.rows);
+  if (author) {
+    fullQuery += `author LIKE '%${author}%' and `;
+  }
+  if (genre) {
+    fullQuery += `genre LIKE '%${genre}%' and `;
+  }
+  if (country) {
+    fullQuery += `country = '${country}' and `;
+  }
+
+  let queryText = fullQuery.substr(0, fullQuery.length - 4);
+  return pool.query(`${queryText};`).then((res) => res.rows);
 };
 
 module.exports = {
@@ -62,5 +69,5 @@ module.exports = {
   getUserByEmail,
   checkUsersPassword,
   getAllNews,
-  getDataForSearchEngine
+  getDataForSearchEngine,
 };
