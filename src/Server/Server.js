@@ -80,19 +80,7 @@ app.post("/booksSearch", (req, res) => {
 
   res.json('data');
 });
-  /*
-  const author = req.body.searchAuthor;
-  const genre = req.body.searchGenre;
-  const country = req.body.searchCountry;
-
-  const data = {
-    author: author,
-    genre: genre,
-    country: country
-  };
-
-  console.log(data)
-  */
+  
 //------------ login route --------//
 app.post("/login", (req, res) => {
   const email = req.body.userEmail;

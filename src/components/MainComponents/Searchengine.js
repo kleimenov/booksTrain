@@ -40,8 +40,9 @@ const Searchengine = () => {
       const serverResponse = await searchRequest(data) 
       setResponse(serverResponse)
     } else{console.log('Xyi')}
+    console.log(searchResponse)
   };
-
+  
   return (
     <Card className="text-left">
       <Card.Body>
