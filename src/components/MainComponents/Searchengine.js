@@ -1,10 +1,21 @@
 import React, { useState } from "react";
 import { Form, Card, Button } from "react-bootstrap";
 
+async function searchRequest(credentials) {
+  return fetch("http://localhost:3002/booksSearch", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(credentials),
+  }).then((response) => response.json());
+}
+
 const Searchengine = () => {
   const [Author, setAuthor] = useState();
   const [Genre, setGenre] = useState();
   const [Country, setCountry] = useState();
+  const [searchResponse, setResponse] = useState([])
 
   const data = {
     searchAuthor: Author,
@@ -18,17 +29,17 @@ const Searchengine = () => {
         cnt++;
       }
     }
-    cnt > 2 ? (passPermit = false) : (passPermit = true);
+    return cnt > 2 ? (passPermit = false) : (passPermit = true);
   };
 
-  const searchHandler = (evt) => {
+  const searchHandler = async (evt) => {
     const requestPermit = false;
-
     evt.preventDefault();
 
-    //if(Object.values(data)==undefined){console.log('Xyi')}else{console.log('Ne Xyi')}
-
-    checkEmptyInputs(data, requestPermit);
+    if(checkEmptyInputs(data, requestPermit)) {
+      const serverResponse = await searchRequest(data) 
+      setResponse(serverResponse)
+    } else{console.log('Xyi')}
   };
 
   return (
