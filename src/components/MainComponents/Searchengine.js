@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Card, Button } from "react-bootstrap";
 
 async function searchRequest(credentials) {
@@ -12,6 +12,10 @@ async function searchRequest(credentials) {
 }
 
 const Searchengine = () => {
+  useEffect(()=> {
+    searchRequest()
+  }, [])
+
   const [Author, setAuthor] = useState();
   const [Genre, setGenre] = useState();
   const [Country, setCountry] = useState();
@@ -42,6 +46,7 @@ const Searchengine = () => {
     if (checkEmptyInputs(data, requestPermit)) {
       const serverResponse = await searchRequest(data);
       setResponse(serverResponse);
+      console.log(serverResponse)
     } else {
       console.log("Xyi");
     }
