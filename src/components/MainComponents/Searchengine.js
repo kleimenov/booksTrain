@@ -22,7 +22,7 @@ const Searchengine = () => {
     searchAuthor: Author,
     searchGenre: Genre,
     searchCountry: Country,
-    searchBookName: BookName
+    searchBookName: BookName,
   };
 
   const checkEmptyInputs = (data, passPermit) => {
@@ -44,9 +44,7 @@ const Searchengine = () => {
       setResponse(serverResponse);
     } else {
       console.log("Xyi");
-      
     }
-    
   };
   console.log(searchResponse);
   return (
