@@ -46,7 +46,7 @@ const Searchengine = () => {
       console.log("Xyi");
     }
   };
-  console.log(searchResponse);
+  //console.log(searchResponse);
   return (
     <Card className="text-left">
       <Card.Body>
