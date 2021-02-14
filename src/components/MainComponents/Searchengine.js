@@ -15,13 +15,16 @@ const Searchengine = () => {
   const [Author, setAuthor] = useState();
   const [Genre, setGenre] = useState();
   const [Country, setCountry] = useState();
+  const [BookName, setBookName] = useState();
   const [searchResponse, setResponse] = useState([]);
 
   const data = {
     searchAuthor: Author,
     searchGenre: Genre,
     searchCountry: Country,
+    searchBookName: BookName
   };
+
   const checkEmptyInputs = (data, passPermit) => {
     let cnt = 0;
     for (let item in data) {
@@ -29,7 +32,7 @@ const Searchengine = () => {
         cnt++;
       }
     }
-    return cnt > 2 ? (passPermit = false) : (passPermit = true);
+    return cnt > 3 ? (passPermit = false) : (passPermit = true);
   };
 
   const searchHandler = async (evt) => {
@@ -43,9 +46,9 @@ const Searchengine = () => {
       console.log("Xyi");
       
     }
-    console.log(searchResponse);
+    
   };
-
+  console.log(searchResponse);
   return (
     <Card className="text-left">
       <Card.Body>
@@ -72,6 +75,13 @@ const Searchengine = () => {
             <Form.Control
               type="Country"
               onChange={(evt) => setCountry(evt.target.value)}
+            />
+          </Form.Group>
+          <Form.Group id="bookName">
+            <Form.Label>Search by book's name</Form.Label>
+            <Form.Control
+              type="bookName"
+              onChange={(evt) => setBookName(evt.target.value)}
             />
           </Form.Group>
           <Button

@@ -73,9 +73,11 @@ app.post("/booksSearch", (req, res) => {
   const author = req.body.searchAuthor;
   const genre = req.body.searchGenre;
   const country = req.body.searchCountry;
+  const bookName = req.body.searchBookName;
   const data = req.body;
+ 
 
-  db.getDataForSearchEngine(author, genre, country).then((result) =>
+  db.getDataForSearchEngine(author, genre, country, bookName).then((result) =>
     res.json(result)
   );
 });

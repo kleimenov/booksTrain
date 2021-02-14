@@ -47,7 +47,7 @@ const getAllNews = () => {
 };
 
 //4 Let's get specific data according to user conditions
-const getDataForSearchEngine = (author, genre, country) => {
+const getDataForSearchEngine = (author, genre, country, bookName) => {
   let fullQuery = "select * from library where ";
 
   if (author) {
@@ -57,7 +57,10 @@ const getDataForSearchEngine = (author, genre, country) => {
     fullQuery += `genre LIKE '%${genre}%' and `;
   }
   if (country) {
-    fullQuery += `country = '${country}' and `;
+    fullQuery += `country LIKE '%${country}%' and `;
+  }
+  if (bookName) {
+    fullQuery += `book_name LIKE '%${bookName}%' and `;
   }
 
   let queryText = fullQuery.substr(0, fullQuery.length - 4);
