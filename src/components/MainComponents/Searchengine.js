@@ -48,7 +48,7 @@ const Searchengine = () => {
       setResponse(serverResponse);
       console.log(serverResponse)
     } else {
-      console.log("Xyi");
+      alert('Please fill out at least one input line (whatever you want)');
     }
   };
 
