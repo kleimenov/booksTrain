@@ -5,13 +5,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Books from "./Books";
 import Searchengine from "./Searchengine";
 import News from "./Newshomepage";
+import Clock from "./Clock";
 
 const Homepage = (props) => {
   const [books, setBookslist] = useState([]);
   const [news, setNews] = useState([]);
   const url = "";
-  const url2 =
-    "https://www.googleapis.com/books/v1/volumes?q=Orwell";
+  const url2 = "https://www.googleapis.com/books/v1/volumes?q=Orwell";
 
   useEffect(() => {
     getBooksList();
@@ -46,9 +46,12 @@ const Homepage = (props) => {
   if (!props.token) {
     return (
       <div className="container">
-        <h3 className="text-center text-secondary py-2">
-          Most popular for today!
-        </h3>
+        <div className="d-flex flex-row justify-content-around align-items-center py-2">
+          <h3 className="text-center text-secondary">
+            Most popular for today!
+          </h3>
+          <Clock date={new Date()} />
+        </div>
         <Carousel showThumbs={false} /*autoPlay*/>
           {books.splice(0, 5).map((book) => (
             <Books
