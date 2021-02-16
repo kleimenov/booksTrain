@@ -13,8 +13,6 @@ const Homepage = (props) => {
   const [news, setNews] = useState([]);
   const [searchResponse, setResponse] = useState(false);
 
-  //console.log(searchResponse)
-
   const url = "";
   const url2 = "https://www.googleapis.com/books/v1/volumes?q=Orwell";
 
@@ -26,7 +24,6 @@ const Homepage = (props) => {
   const getBooksList = async () => {
     const response = await fetch(url2);
     const data = await response.json();
-
     setBookslist(data.items);
   };
 
