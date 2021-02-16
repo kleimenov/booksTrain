@@ -13,11 +13,11 @@ const myBooksFetch = async (credentials) => {
 const Mybooks = ({ myBooks, setMyBooks, userData }) => {
   console.log(userData.id);
 
-  const userBooks = myBooksFetch({
+  myBooksFetch({
     userId: userData.id,
-  }).then(res => setMyBooks(res));
-  
-  console.log('result on Mybooks ' +myBooks);
+  }).then((res) => setMyBooks(res));
+
+  console.log("result on Mybooks " + myBooks);
 
   return (
     <div>
