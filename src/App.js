@@ -81,8 +81,6 @@ function App() {
                 key={userData[0].id}
                 userName={userData[0].first_name}
                 token={token}
-                myBooks={myBooks}
-                setMyBooks={setMyBooks}
               />
             </Route>
             <Route
