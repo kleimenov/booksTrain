@@ -102,7 +102,7 @@ const Homepage = (props) => {
       {searchResponse.length > 0 ? (
         <Searchresult searchResult={searchResponse} />
       ) : (
-        <h3>I am afraid I didn't find anything for you......</h3>
+        <h4 className="text-secondary">I am afraid I didn't find anything for you......</h4>
       )}
     </div>
   );
