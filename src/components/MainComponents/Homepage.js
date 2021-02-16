@@ -99,9 +99,9 @@ const Homepage = (props) => {
   }
   return (
     <div className="container">
-      <h3 className="text-center text-secondary mt-4 py-2">
-        {props.userName}, this is result of your search!
-      </h3>
+      <h4 className="text-center text-secondary mt-4 py-2">
+        {props.userName}, this is result of your search...
+      </h4>
       <Searchresult searchResult={searchResponse} />
     </div>
   );
