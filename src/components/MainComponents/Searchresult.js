@@ -5,7 +5,7 @@ const Searchresult = ({ searchResult }) => {
   console.log(searchResult);
   return (
     <div className="container">
-      <ul className="">
+      <ul className="list-unstyled ">
         {searchResult.map((item) => (
           <Searchresultitem
             key={item.book_id}

@@ -4,7 +4,7 @@ const Searchresultitem =({ bookName, bookAuthor })=>{
 
     return (
     <li>
-       <h5>{ bookName } / { bookAuthor } </h5> 
+       <h5 className="text-secondary">{ bookName } / { bookAuthor } </h5> 
     </li>
     )
 }
