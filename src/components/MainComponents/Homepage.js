@@ -83,7 +83,7 @@ const Homepage = (props) => {
   if (searchResponse == []) {
     return (
       <div className="container">
-        <h3 className="text-center text-secondary mt-4 py-2">
+        <h3 className="text-center text-secondary py-2">
           Welcome {props.userName}, let's find right book for you!
         </h3>
         <Searchengine
@@ -96,7 +96,7 @@ const Homepage = (props) => {
   }
   return (
     <div className="container">
-      <h4 className="text-center text-secondary mt-4 py-2">
+      <h4 className="text-center text-secondary py-2">
         {props.userName}, this is result of your search...
       </h4>
       {searchResponse.length > 0 ? (
