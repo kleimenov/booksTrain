@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const myBooksFetch = async (credentials) => {
-  return fetch("http://localhost:3002/userBooks", {
+  return fetch("http://localhost:3002/userbooks", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -11,13 +11,17 @@ const myBooksFetch = async (credentials) => {
 };
 
 const Mybooks = ({ myBooks, setMyBooks, userData }) => {
-  console.log(userData);
+  console.log(userData.id);
 
+  const userBooks = myBooksFetch({
+    userId: userData.id,
+  }).then(res => setMyBooks(res));
   
+  console.log('result on Mybooks ' +myBooks);
 
   return (
     <div>
-      <h3 className="text-secondary">{userData.first_name} books page</h3>
+      <h3 className="text-secondary">{userData.first_name} books page </h3>
     </div>
   );
 };

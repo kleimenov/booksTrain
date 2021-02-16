@@ -34,7 +34,7 @@ function App() {
     //console.log(data)
   };
 */
-  console.log(userData);
+ 
 
   if (!token) {
     return (

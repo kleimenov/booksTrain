@@ -68,6 +68,13 @@ app.get("/news", (req, res) => {
     });
 });
 
+//------------ specific user books list route --------//
+app.post("/userbooks", (req, res) => {
+  const userId = req.body.userId;
+  res.json('Hello')
+})
+
+
 //------------ user's book search route --------//
 app.post("/booksSearch", (req, res) => {
   
