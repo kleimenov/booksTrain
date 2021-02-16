@@ -70,17 +70,18 @@ app.get("/news", (req, res) => {
 
 //------------ user's book search route --------//
 app.post("/booksSearch", (req, res) => {
+  
   const author = req.body.searchAuthor;
   const genre = req.body.searchGenre;
   const country = req.body.searchCountry;
   const bookName = req.body.searchBookName;
   const data = req.body;
 
-  console.log(data)
-
+  
   db.getDataForSearchEngine(author, genre, country, bookName).then((result) =>
     res.json(result)
   );
+  
 });
 
 //------------ login route --------//

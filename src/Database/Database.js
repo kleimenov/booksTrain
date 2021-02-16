@@ -48,6 +48,7 @@ const getAllNews = () => {
 
 //4 Let's get specific data according to user conditions
 const getDataForSearchEngine = (author, genre, country, bookName) => {
+  
   let fullQuery = "select * from library where ";
 
   if (author) {

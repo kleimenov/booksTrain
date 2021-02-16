@@ -22,6 +22,7 @@ const Searchengine = ({ setResponse }) => {
   const [BookName, setBookName] = useState();
   //const [searchResponse, setResponse] = useState([]);
 
+  
   const toLowerCase = (variable) => {
     for (let item in variable) {
       if(variable[item]) {
@@ -29,7 +30,7 @@ const Searchengine = ({ setResponse }) => {
       }
     }
   }
-
+  
   const data = {
     searchAuthor: Author,
     searchGenre: Genre,
