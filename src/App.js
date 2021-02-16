@@ -20,6 +20,7 @@ import { text } from "body-parser";
 function App() {
   const [token, setToken] = useState();
   const [userData, setUserData] = useState([]);
+  const [myBooks, setMyBooks] = useState([]);
 
   useEffect(() => {
     //getAllUsersFromDatabase();
@@ -83,7 +84,7 @@ function App() {
                 token={token}
               />
             </Route>
-            <Route path="/mybooks" component={ Mybooks } />
+            <Route path="/mybooks" component={ Mybooks } myBooks={ myBooks } setMyBooks={ setMyBooks }/>
           </Switch>
         </div>
         <div className="footer">
