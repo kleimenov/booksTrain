@@ -76,6 +76,8 @@ app.post("/booksSearch", (req, res) => {
   const bookName = req.body.searchBookName;
   const data = req.body;
 
+  console.log(data)
+
   db.getDataForSearchEngine(author, genre, country, bookName).then((result) =>
     res.json(result)
   );

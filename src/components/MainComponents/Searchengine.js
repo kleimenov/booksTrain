@@ -22,12 +22,22 @@ const Searchengine = ({ setResponse }) => {
   const [BookName, setBookName] = useState();
   //const [searchResponse, setResponse] = useState([]);
 
+  const toLowerCase = (variable) => {
+    for (let item in variable) {
+      if(variable[item]) {
+        variable[item] = variable[item].charAt(0).toLowerCase() + variable[item].slice(1);
+      }
+    }
+  }
+
   const data = {
     searchAuthor: Author,
     searchGenre: Genre,
     searchCountry: Country,
     searchBookName: BookName,
   };
+
+  toLowerCase(data)
 
   const checkEmptyInputs = (data, passPermit) => {
     let cnt = 0;
