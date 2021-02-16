@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Form, Card, Button } from "react-bootstrap";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+  Link
+} from "react-router-dom";
+import Searchresult from "./Searchresult";
 
 async function searchRequest(credentials) {
   return fetch("http://localhost:3002/booksSearch", {
@@ -11,7 +19,7 @@ async function searchRequest(credentials) {
   }).then((response) => response.json());
 }
 
-const Searchengine = () => {
+const Searchengine = ( {setResponse} ) => {
   useEffect(()=> {
     searchRequest()
   }, [])
@@ -20,7 +28,7 @@ const Searchengine = () => {
   const [Genre, setGenre] = useState();
   const [Country, setCountry] = useState();
   const [BookName, setBookName] = useState();
-  const [searchResponse, setResponse] = useState([]);
+  //const [searchResponse, setResponse] = useState([]);
 
   const data = {
     searchAuthor: Author,
@@ -50,6 +58,7 @@ const Searchengine = () => {
     } else {
       alert('Please fill out at least one input line (whatever you want)');
     }
+  
   };
 
   return (

@@ -6,10 +6,15 @@ import Books from "./Books";
 import Searchengine from "./Searchengine";
 import News from "./Newshomepage";
 import Clock from "./Clock";
+import Searchresult from "./Searchresult";
 
 const Homepage = (props) => {
   const [books, setBookslist] = useState([]);
   const [news, setNews] = useState([]);
+  const [searchResponse, setResponse] = useState(false);
+
+  //console.log(searchResponse)
+
   const url = "";
   const url2 = "https://www.googleapis.com/books/v1/volumes?q=Orwell";
 
@@ -78,14 +83,24 @@ const Homepage = (props) => {
       </div>
     );
   }
-  return (
+  if(searchResponse==[]){
+    return (
+      <div className="container">
+        <h3 className="text-center text-secondary mt-4 py-2">
+          Welcome {props.userName}, let's find right book for you!
+        </h3>
+        <Searchengine {...props} searchResponse={searchResponse} setResponse={setResponse} />
+      </div>
+    );
+  }
+  return(
     <div className="container">
-      <h3 className="text-center text-secondary mt-4 py-2">
-        Welcome {props.userName}, let's find right book for you!
-      </h3>
-      <Searchengine />
+        <h3 className="text-center text-secondary mt-4 py-2">
+          {props.userName}, this is result of your search!
+        </h3>
+        <Searchresult searchResult={searchResponse}/>
     </div>
-  );
+  )
 };
 
 export default Homepage;
