@@ -5,9 +5,9 @@ import {
   Route,
   Switch,
   Redirect,
-  Link
+  Link,
 } from "react-router-dom";
-import Searchresult from "./Searchresult";
+
 
 async function searchRequest(credentials) {
   return fetch("http://localhost:3002/booksSearch", {
@@ -19,10 +19,10 @@ async function searchRequest(credentials) {
   }).then((response) => response.json());
 }
 
-const Searchengine = ( {setResponse} ) => {
-  useEffect(()=> {
-    searchRequest()
-  }, [])
+const Searchengine = ({ setResponse }) => {
+  useEffect(() => {
+    searchRequest();
+  }, []);
 
   const [Author, setAuthor] = useState();
   const [Genre, setGenre] = useState();
@@ -54,11 +54,10 @@ const Searchengine = ( {setResponse} ) => {
     if (checkEmptyInputs(data, requestPermit)) {
       const serverResponse = await searchRequest(data);
       setResponse(serverResponse);
-      console.log(serverResponse)
+      console.log(serverResponse);
     } else {
-      alert('Please fill out at least one input line (whatever you want)');
+      alert("Please fill out at least one input line (whatever you want)");
     }
-  
   };
 
   return (

@@ -83,24 +83,28 @@ const Homepage = (props) => {
       </div>
     );
   }
-  if(searchResponse==[]){
+  if (searchResponse == []) {
     return (
       <div className="container">
         <h3 className="text-center text-secondary mt-4 py-2">
           Welcome {props.userName}, let's find right book for you!
         </h3>
-        <Searchengine {...props} searchResponse={searchResponse} setResponse={setResponse} />
+        <Searchengine
+          {...props}
+          searchResponse={searchResponse}
+          setResponse={setResponse}
+        />
       </div>
     );
   }
-  return(
+  return (
     <div className="container">
-        <h3 className="text-center text-secondary mt-4 py-2">
-          {props.userName}, this is result of your search!
-        </h3>
-        <Searchresult searchResult={searchResponse}/>
+      <h3 className="text-center text-secondary mt-4 py-2">
+        {props.userName}, this is result of your search!
+      </h3>
+      <Searchresult searchResult={searchResponse} />
     </div>
-  )
+  );
 };
 
 export default Homepage;
