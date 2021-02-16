@@ -24,11 +24,7 @@ const Searchengine = ({ setResponse }) => {
 
   const toLowerCase = (variable) => {
     for (let item in variable) {
-      if (variable[item] && variable[item] != 'USA' || variable[item] == 'UAE' || variable[item] == 'UK') {
-        variable[item] =
-          variable[item].charAt(0).toLowerCase() + variable[item].slice(1);
-      }
-      if (variable[item] && variable[item] == 'USA' || variable[item] == 'UAE' || variable[item] == 'UK') {
+      if (variable[item]) {
         variable[item] = variable[item].toLowerCase();
       }
     }
@@ -60,7 +56,6 @@ const Searchengine = ({ setResponse }) => {
     if (checkEmptyInputs(data, requestPermit)) {
       const serverResponse = await searchRequest(data);
       setResponse(serverResponse);
-      
     } else {
       alert("Please fill out at least one input line (whatever you want)");
     }
