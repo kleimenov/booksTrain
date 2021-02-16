@@ -9,6 +9,10 @@ const Searchresult = ({ searchResult, setResponse }) => {
   const returnHandler = () => {
     setResponse(false)
   }
+  
+  const capitalizaResult = () => {
+    
+  }
 
   return (
     <div>
