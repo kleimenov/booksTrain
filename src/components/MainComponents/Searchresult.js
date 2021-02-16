@@ -2,8 +2,7 @@ import React from "react";
 import Searchresultitem from "./Searchresultitem";
 
 const Searchresult = ({ searchResult }) => {
-  
-    return (
+  return (
     <div className="container">
       <ul className="list-unstyled ">
         {searchResult.map((item) => (

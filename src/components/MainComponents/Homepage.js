@@ -99,7 +99,11 @@ const Homepage = (props) => {
       <h4 className="text-center text-secondary mt-4 py-2">
         {props.userName}, this is result of your search...
       </h4>
-      <Searchresult searchResult={searchResponse} />
+      {searchResponse.length > 0 ? (
+        <Searchresult searchResult={searchResponse} />
+      ) : (
+        <h3>I am afraid I didn't find anything for you......</h3>
+      )}
     </div>
   );
 };
