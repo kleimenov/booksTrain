@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Button } from "react-bootstrap";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 //import axios from "axios";
@@ -43,6 +44,10 @@ const Homepage = (props) => {
     const response = await fetch("http://localhost:3002/news");
     const data = await response.json();
     setNews(data);
+  };
+
+  const returnHandler = () => {
+    setResponse(false);
   };
 
   if (!props.token) {
@@ -94,20 +99,31 @@ const Homepage = (props) => {
       </div>
     );
   }
-  return (
-    <div>
-      <h4 className="text-center text-secondary py-2">
-        {props.userName}, this is result of your search...
-      </h4>
-      {searchResponse.length > 0 ? (
-        <Searchresult searchResult={searchResponse} />
-      ) : (
-        <h4 className="text-secondary">
-          I am afraid I didn't find anything for you......
+  if (searchResponse.length > 0) {
+    return (
+      <div>
+        <h4 className="text-center text-secondary py-2">
+          {props.userName}, this is result of your search...
         </h4>
-      )}
-    </div>
-  );
+        <Searchresult searchResult={searchResponse} setResponse={setResponse} />
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <h4 className="text-center text-secondary py-2">
+          {props.userName}, Sorry I didn't find anything..
+        </h4>
+        <Button
+          onClick={returnHandler}
+          className="btn-secondary search-button-settings"
+          type="submit"
+        >
+          Try searching again
+        </Button>
+      </div>
+    );
+  }
 };
 
 export default Homepage;

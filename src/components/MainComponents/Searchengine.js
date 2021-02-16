@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Form, Card, Button } from "react-bootstrap";
 
-
-
 async function searchRequest(credentials) {
   return fetch("http://localhost:3002/booksSearch", {
     method: "POST",
