@@ -47,7 +47,7 @@ const Homepage = (props) => {
 
   if (!props.token) {
     return (
-      <div className="container">
+      <div>
         <div className="d-flex flex-row justify-content-around align-items-center py-2">
           <h3 className="text-center text-secondary">
             Most popular for today!
@@ -82,7 +82,7 @@ const Homepage = (props) => {
   }
   if (searchResponse == []) {
     return (
-      <div className="container">
+      <div>
         <h3 className="text-center text-secondary py-2">
           Welcome {props.userName}, let's find right book for you!
         </h3>
@@ -95,14 +95,16 @@ const Homepage = (props) => {
     );
   }
   return (
-    <div className="container">
+    <div>
       <h4 className="text-center text-secondary py-2">
         {props.userName}, this is result of your search...
       </h4>
       {searchResponse.length > 0 ? (
         <Searchresult searchResult={searchResponse} />
       ) : (
-        <h4 className="text-secondary">I am afraid I didn't find anything for you......</h4>
+        <h4 className="text-secondary">
+          I am afraid I didn't find anything for you......
+        </h4>
       )}
     </div>
   );

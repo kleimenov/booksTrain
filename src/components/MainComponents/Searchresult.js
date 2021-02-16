@@ -3,7 +3,6 @@ import Searchresultitem from "./Searchresultitem";
 
 const Searchresult = ({ searchResult }) => {
   return (
-    <div className="container">
       <ul className="list-unstyled ">
         {searchResult.map((item) => (
           <Searchresultitem
@@ -13,7 +12,6 @@ const Searchresult = ({ searchResult }) => {
           />
         ))}
       </ul>
-    </div>
   );
 };
 
