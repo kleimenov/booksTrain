@@ -34,6 +34,7 @@ function App() {
     //console.log(data)
   };
 */
+  console.log(userData);
 
   if (!token) {
     return (
@@ -83,12 +84,14 @@ function App() {
                 token={token}
               />
             </Route>
-            <Route
-              path="/mybooks"
-              component={Mybooks}
-              myBooks={myBooks}
-              setMyBooks={setMyBooks}
-            />
+            <Route path="/mybooks">
+              <Mybooks
+                component={Mybooks}
+                myBooks={myBooks}
+                setMyBooks={setMyBooks}
+                userData={userData[0]}
+              />
+            </Route>
           </Switch>
         </div>
         <div className="footer">
