@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
-const User = (props) => (
-   <h1>{props.userName}</h1>
-)
+const User = (props) => <h1>{props.userName}</h1>;
 
-export default User
+export default User;
