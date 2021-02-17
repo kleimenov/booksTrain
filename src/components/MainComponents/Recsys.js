@@ -9,8 +9,6 @@ const Recsys = ({ userBooksData, userData }) => {
     getAllBooks();
   }, []);
 
-  //it is test of connection with server
-
   const getAllBooks = async () => {
     const response = await fetch("http://localhost:3002/alllibrary");
     const data = await response.json();
