@@ -40,19 +40,12 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
 
   //console.log("result on Mybooks " + myBooks[0]);
 
-  /*
-  const currentData = new Date()
-  const correntTime = new Date().toLocaleString()
-  console.log(currentData)
-  console.log(currentData.getTime())
-  console.log(correntTime)
-  */
-
+ 
   if (myBooks.length > 0) {
     return (
       <div>
         <h3 className="text-secondary py-2">
-          {userData.first_name} this is your current books list{" "}
+          {userData.first_name} this is your current books list
         </h3>
         <ul className="list-unstyled border-bottom border-secondary">
           {myBooks.map((item) => (
@@ -65,7 +58,7 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
           ))}
         </ul>
         <div>
-            <Recsys />
+            <Recsys userBooksData={ myBooks } userData={ userData } />
         </div>
       </div>
     );
