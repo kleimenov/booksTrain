@@ -1,4 +1,5 @@
 import React from "react";
+import Progressbar from "./Progressbar"
 
 const Userbook = ({ bookName, bookAuthor, date }) => {
   const countdounTime = (date) => {
@@ -23,6 +24,8 @@ const Userbook = ({ bookName, bookAuthor, date }) => {
     return newArr.join(" ");
   };
 
+  const leftTime = countdounTime(date);
+
   return (
     <li className="my-2">
       <h5 className="text-secondary pt-2">
@@ -41,6 +44,7 @@ const Userbook = ({ bookName, bookAuthor, date }) => {
             : `You have ${countdounTime(date)} one day the end of reading term`}
         </span>
       </h5>
+      <Progressbar leftTime={ leftTime } />
     </li>
   );
 };
