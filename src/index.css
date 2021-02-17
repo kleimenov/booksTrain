@@ -165,12 +165,14 @@ code {
   padding: 0;
 }
 
+
+
 .carousel-root .carousel .slide {
   background: lightgray;
 }
 
-.carousel-root .carousel .slide img {
-  width: 40%;
+.carousel-root .carousel.carousel-slider {
+  width: 50%;
 }
 
 .carousel-root .carousel .thumbs-wrapper {

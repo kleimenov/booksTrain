@@ -39,7 +39,7 @@ const Searchresult = ({ searchResult, setResponse }) => {
 
   return (
     <div>
-      <ul className="list-unstyled ">
+      <ul className="list-unstyled">
         {searchResult.map((item) => (
           <Searchresultitem
             key={item.book_id}

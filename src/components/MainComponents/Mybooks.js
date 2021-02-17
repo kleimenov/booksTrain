@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Userbook from "./Userbook";
 
 const Mybooks = ({ myBooks, setMyBooks, userData }) => {
-  console.log(userData.id);
+  //console.log(userData.id);
   //const [books, setBookslist] = useState([]);
   useEffect(() => {
     getBooksList();
@@ -48,13 +48,15 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
   return (
     <div>
       <h3 className="text-secondary">{userData.first_name} books page </h3>
-      {myBooks.map((item) => (
-        <Userbook
-          key={item.book_id}
-          bookName={item.book_name}
-          bookAuthor={item.author}
-        />
-      ))}
+      <ul className="list-unstyled">
+        {myBooks.map((item) => (
+          <Userbook
+            key={item.book_id}
+            bookName={item.book_name}
+            bookAuthor={item.author}
+          />
+        ))}
+      </ul>
     </div>
   );
 };
