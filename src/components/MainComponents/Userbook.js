@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 
-
 const Userbook = ({ bookName, bookAuthor, date }) => {
-
-  const [ textColor, setColor ] = useState()
-
   //let unixTime = parseInt(date);
   //const currentData = new Date().getTime();
   //console.log("Unix current time " +currentData)
@@ -14,14 +10,11 @@ const Userbook = ({ bookName, bookAuthor, date }) => {
   //let differenceTime = currentData - unixTime;
   //let value = Math.floor(differenceTime / (1000 * 60 * 60) / 24);
 
-
-
   const countdounTime = (date) => {
     const readingTerm = 14;
     const startUnixTime = parseInt(date);
     const currentuUixTime = new Date().getTime();
     const unixDiff = currentuUixTime - startUnixTime;
-
     return readingTerm - Math.floor(unixDiff / (1000 * 60 * 60) / 24);
   };
 
@@ -43,13 +36,19 @@ const Userbook = ({ bookName, bookAuthor, date }) => {
     <li className="my-2">
       <h5 className="text-secondary pt-2">
         {toCapitalize(bookName)} / {toCapitalize(bookAuthor)} /{" "}
-        <h6 className={countdounTime(date) > 5 ? }>
+        <span
+          className={
+            countdounTime(date) > 5
+              ? "text-success h6 font-italic"
+              :"text-danger h6 font-italic"
+          }
+        >
           {countdounTime(date) > 1
             ? `You have ${countdounTime(
                 date
               )} days till the end of reading term`
             : `You have ${countdounTime(date)} one day the end of reading term`}
-        </h6>
+        </span>
       </h5>
     </li>
   );
