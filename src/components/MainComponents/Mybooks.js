@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Userbook from "./Userbook";
 
 const Mybooks = ({ myBooks, setMyBooks, userData }) => {
   console.log(userData.id);
@@ -35,7 +36,7 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
 
   //myBooksFetch(data).then((res) => setMyBooks(res));
 
-  console.log("result on Mybooks " + myBooks[0]);
+  //console.log("result on Mybooks " + myBooks[0]);
 
   /*
   const currentData = new Date()
@@ -47,7 +48,13 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
   return (
     <div>
       <h3 className="text-secondary">{userData.first_name} books page </h3>
-      {myBooks.map((item) => console.log(item))}
+      {myBooks.map((item) => (
+        <Userbook
+          key={item.book_id}
+          bookName={item.book_name}
+          bookAuthor={item.author}
+        />
+      ))}
     </div>
   );
 };
