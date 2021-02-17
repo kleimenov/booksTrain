@@ -1,7 +1,12 @@
 import React from "react";
 
-const Userbook = ({ bookName, bookAuthor }) => {
-  
+const Userbook = ({ bookName, bookAuthor, date }) => {
+
+ let unixTime = parseInt(date)
+
+
+
+
  const toCapitalize = (string) => {
   let splitStr = string.split(' ');
   let newArr = [];
@@ -17,7 +22,7 @@ const Userbook = ({ bookName, bookAuthor }) => {
   return (
     <li className="my-2">
         <h5 className="text-secondary pt-2">
-          {toCapitalize(bookName)} / {toCapitalize(bookAuthor)}
+          {toCapitalize(bookName)} / {toCapitalize(bookAuthor) } / { unixTime }
         </h5>
     </li>
   );

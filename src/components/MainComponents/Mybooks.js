@@ -45,6 +45,7 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
   console.log(currentData.getTime())
   console.log(correntTime)
   */
+ 
   return (
     <div>
       <h3 className="text-secondary">{userData.first_name} books page </h3>
@@ -54,6 +55,7 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
             key={item.book_id}
             bookName={item.book_name}
             bookAuthor={item.author}
+            date ={item.start_date}
           />
         ))}
       </ul>
