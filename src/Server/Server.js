@@ -48,7 +48,18 @@ app.use(express.static(path.join(__dirname, "public")));
 //------------ Test route --------//
 app.get("/", (req, res) => {
   //res.status(200).send('Hello World!');
-  db.getAll()
+  db.getAllDataFromLibrary()
+    .then((result) => {
+      res.status(200).send(result);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+//------------ Test route --------//
+app.get("/alllibrary", (req, res) => {
+  //res.status(200).send('Hello World!');
+  db.getAllDataFromLibrary()
     .then((result) => {
       res.status(200).send(result);
     })

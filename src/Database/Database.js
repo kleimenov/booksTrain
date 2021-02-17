@@ -14,6 +14,11 @@ const getAll = () => {
   return pool.query("select * from users").then((res) => res.rows);
 };
 
+//0.1 lets get user id
+const getAllDataFromLibrary = () => {
+  return pool.query("select * from library").then((res) => res.rows);
+};
+
 //1. Let's get user by email
 const getUserByEmail = (email) => {
   //const email = request.body.userEmail;
@@ -76,6 +81,7 @@ const getSpecificUserBooks = (userId) => {
 
 module.exports = {
   getAll,
+  getAllDataFromLibrary,
   getUserByEmail,
   checkUsersPassword,
   getAllNews,
