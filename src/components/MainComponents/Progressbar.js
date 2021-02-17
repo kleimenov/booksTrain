@@ -23,15 +23,13 @@ const Progressbar = (leftTime) => {
 
   const labelStyles = {
     paddingRight: 5,
-    fontSize: 16,
     color: "white",
     fontWeight: "bold",
-   
   };
 
   return (
     <div style={containerStyles}>
-      <div style={fillerStyles}>
+      <div className="progress-bar progress-bar-striped" style={fillerStyles}>
         <span style={labelStyles}>{`${
           100 - Math.floor((leftTime.leftTime / 14) * 100)
         }%`}</span>
