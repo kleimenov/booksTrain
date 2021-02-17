@@ -71,14 +71,10 @@ app.get("/news", (req, res) => {
 //------------ specific user books list route --------//
 app.post("/userbooks", (req, res) => {
   const userId = req.body.userId;
-  //console.log(userId)
 
-   db.getSpecificUserBooks(userId).then((result) =>{
-     console.log(result)
-     res.json(result)
-   }
-  );
-  
+  db.getSpecificUserBooks(userId).then((result) => {
+    res.json(result);
+  });
 });
 
 //------------ user's book search route --------//
