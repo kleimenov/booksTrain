@@ -8,7 +8,7 @@ const Searchresultitem = ({ bookName, bookAuthor }) => {
         <h5 className="text-secondary ml-2 pt-2">
           {bookName} / {bookAuthor}{" "}
         </h5>
-        <Button className="btn-success p-0 px-1" type="submit">
+        <Button className="btn-success p-0 px-1 py-0" type="submit">
           +book
         </Button>
       </div>

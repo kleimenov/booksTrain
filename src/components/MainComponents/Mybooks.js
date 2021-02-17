@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Userbook from "./Userbook";
+import Recsys from "./Recsys";
 
 
 const Mybooks = ({ myBooks, setMyBooks, userData }) => {
@@ -53,7 +54,7 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
         <h3 className="text-secondary py-2">
           {userData.first_name} this is your current books list{" "}
         </h3>
-        <ul className="list-unstyled">
+        <ul className="list-unstyled border-bottom border-secondary">
           {myBooks.map((item) => (
             <Userbook
               key={item.book_id}
@@ -63,6 +64,9 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
             />
           ))}
         </ul>
+        <div>
+            <Recsys />
+        </div>
       </div>
     );
   }
