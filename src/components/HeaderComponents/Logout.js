@@ -21,5 +21,4 @@ const Logout = ({ token, setToken }) => {
   );
 };
 
-
 export default Logout;
