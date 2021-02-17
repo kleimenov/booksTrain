@@ -1,15 +1,6 @@
 import React, { useState } from "react";
 
 const Userbook = ({ bookName, bookAuthor, date }) => {
-  //let unixTime = parseInt(date);
-  //const currentData = new Date().getTime();
-  //console.log("Unix current time " +currentData)
-  //let uTime = new Date(unixTime);
-  //console.log("Human radable time from server" +uTime)
-
-  //let differenceTime = currentData - unixTime;
-  //let value = Math.floor(differenceTime / (1000 * 60 * 60) / 24);
-
   const countdounTime = (date) => {
     const readingTerm = 14;
     const startUnixTime = parseInt(date);
@@ -40,7 +31,7 @@ const Userbook = ({ bookName, bookAuthor, date }) => {
           className={
             countdounTime(date) > 5
               ? "text-success h6 font-italic"
-              :"text-danger h6 font-italic"
+              : "text-danger h6 font-italic"
           }
         >
           {countdounTime(date) > 1
