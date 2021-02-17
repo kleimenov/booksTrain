@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Userbook from "./Userbook";
 import Recsys from "./Recsys";
 
-
 const Mybooks = ({ myBooks, setMyBooks, userData }) => {
   //console.log(userData.id);
   //const [books, setBookslist] = useState([]);
@@ -40,7 +39,6 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
 
   //console.log("result on Mybooks " + myBooks[0]);
 
- 
   if (myBooks.length > 0) {
     return (
       <div>
@@ -58,7 +56,7 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
           ))}
         </ul>
         <div>
-            <Recsys userBooksData={ myBooks } userData={ userData } />
+          <Recsys userBooksData={myBooks} userData={userData} />
         </div>
       </div>
     );
