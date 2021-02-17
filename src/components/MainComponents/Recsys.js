@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 
 const Recsys = ({ userBooksData, userData }) => {
-  const [allBooks, setAllBooks] = useState()
- //console.log(userBooksData) //user book list
- //console.log(userData) //user personal data
+  const [allBooks, setAllBooks] = useState();
+  //console.log(userBooksData) //user book list
+  //console.log(userData) //user personal data
 
- useEffect(() => {
+  useEffect(() => {
     getAllBooks();
   }, []);
 
   //it is test of connection with server
-  
+
   const getAllBooks = async () => {
     const response = await fetch("http://localhost:3002/alllibrary");
     const data = await response.json();
@@ -18,13 +18,13 @@ const Recsys = ({ userBooksData, userData }) => {
     setAllBooks(data);
   };
 
-  console.log(allBooks)
- 
+  console.log(allBooks);
+
   return (
     <div>
       <h5 className="text-secondary py-2">
-        Our AI RecSys would like to reccomend fallow books for you { userData.first_name }
-        
+        Our AI RecSys would like to reccomend fallow books for you{" "}
+        {userData.first_name}
       </h5>
     </div>
   );
