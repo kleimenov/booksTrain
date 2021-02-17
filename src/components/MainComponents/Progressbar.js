@@ -4,11 +4,11 @@ const Progressbar = (leftTime) => {
   console.log(leftTime.leftTime);
 
   const containerStyles = {
-    height: 20,
+    height: 26,
     width: "50%",
     backgroundColor: "#e0e0de",
-    borderRadius: 50,
-    margin: 5,
+    borderRadius: 5,
+    margin: 1,
   };
 
   let width = 100 - Math.floor((leftTime.leftTime / 14) * 100);

@@ -45,7 +45,7 @@ const Userbook = ({ bookName, bookAuthor, date }) => {
             : `You have ${countdounTime(date)} one day the end of reading term`}
         </span>
       </h5>
-      <div>
+      <div className="d-flex flex-row">
         <Progressbar leftTime={leftTime} />
         <Returnbook leftTime={leftTime} />
       </div>

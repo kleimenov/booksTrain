@@ -9,7 +9,7 @@ const Returnbook = ({ leftTime }) => {
 
   return (
     <div>
-      <button className="btn return-book-button px-1 text-white" style={buttonStyles}>
+      <button className="btn return-book-button ml-2 px-1 py-0 text-white font-weight-bold" style={buttonStyles}>
         Return book
       </button>
     </div>
