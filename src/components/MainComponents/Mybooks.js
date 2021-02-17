@@ -45,18 +45,20 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
   console.log(currentData.getTime())
   console.log(correntTime)
   */
- 
-  if(myBooks.length > 0) {
+
+  if (myBooks.length > 0) {
     return (
       <div>
-        <h3 className="text-secondary py-2">{userData.first_name} this is your current books list </h3>
+        <h3 className="text-secondary py-2">
+          {userData.first_name} this is your current books list{" "}
+        </h3>
         <ul className="list-unstyled">
           {myBooks.map((item) => (
             <Userbook
               key={item.book_id}
               bookName={item.book_name}
               bookAuthor={item.author}
-              date ={item.start_date}
+              date={item.start_date}
             />
           ))}
         </ul>
@@ -65,10 +67,10 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
   }
   return (
     <div>
-      <h3 className="text-secondary py-2">{userData.first_name} your current books list is empty</h3>
-      <ul className="list-unstyled">
-        
-      </ul>
+      <h3 className="text-secondary py-2">
+        {userData.first_name} your current books list is empty
+      </h3>
+      <ul className="list-unstyled"></ul>
     </div>
   );
 };
