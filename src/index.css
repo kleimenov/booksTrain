@@ -149,6 +149,7 @@ code {
 }
 
 .book-title {
+  font-size: 20px;
   text-shadow: 0 0 5px gray;
 }
 
@@ -171,12 +172,18 @@ code {
   background: lightgray;
 }
 
-.carousel-root .carousel.carousel-slider {
+.carousel-root {
   width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .carousel-root .carousel .thumbs-wrapper {
   margin: 5px;
+}
+
+.carousel-root .carousel .slide img {
+  width: 50%;
 }
 
 .news-list-news {
