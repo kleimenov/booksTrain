@@ -56,7 +56,7 @@ app.get("/", (req, res) => {
       res.status(500).send(error);
     });
 });
-//------------ Test route --------//
+//------------ Rec sys route I--------//
 app.get("/alllibrary", (req, res) => {
   //res.status(200).send('Hello World!');
   db.getAllDataFromLibrary()
