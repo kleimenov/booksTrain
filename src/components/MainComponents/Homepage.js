@@ -50,7 +50,6 @@ const Homepage = (props) => {
     setResponse(false);
   };
 
-  console.log(searchResponse)
 
   if (!props.token) {
     return (

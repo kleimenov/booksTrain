@@ -32,7 +32,7 @@ const Recsys = ({ userBooksData, userData }) => {
 
   //console.log(trainData);
   //console.log(userBooksData)
-  console.log(userTrainData);
+  //console.log(userTrainData);
 
   //TF-IDF and Vectors
 
