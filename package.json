@@ -9,6 +9,7 @@
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.6.0",
+    "content-based-recommender": "^1.5.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -21,6 +22,8 @@
     "react-responsive-carousel": "^3.2.11",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "tf-idf": "^1.0.0",
+    "tfidf": "^0.2.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
