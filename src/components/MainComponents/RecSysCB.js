@@ -1,5 +1,5 @@
 const ContentBasedRecommender = require('content-based-recommender');
-
+/*
 const posts = [
   {
     id: '1000001',
@@ -88,7 +88,7 @@ const relatedTags = recommender.getSimilarDocuments(post.id);
 const tags = relatedTags.map(t => tagMap[t.id].content);
 //console.log(post.content, 'related tags:', tags);
 }
-
+*/
 
 
 const allTrainingData = [
@@ -161,6 +161,7 @@ const userTrainData = [
     id: 1,
     content: "A beautiful, aristocratic married woman from St. Petersburg whose pursuit of love and emotional honesty makes her an outcast from society. Annas adulterous affair catapults her into social exile, misery, and finally suicide.",
   },
+  /*
   {
     id: 2,
     content: "To Kill a Mockingbird by Harper Lee centres on Atticus Finch attempts to prove the innocence of Tom Robinson, a black man who has been wrongly accused of raping a white woman in 1930s Alabama.",
@@ -169,7 +170,10 @@ const userTrainData = [
     id: 3,
     content: "The Great Gatsby, third novel by F. Scott Fitzgerald, published in 1925 by Charles Scribners Sons. Set in Jazz Age New York, the novel tells the tragic story of Jay Gatsby, a self-made millionaire, and his pursuit of Daisy Buchanan, a wealthy young woman whom he loved in his youth.",
   },
+  */
 ]
+
+//multi collections
 
 const tagMapI = userTrainData.reduce((acc, tag) => {
   acc[tag.id] = tag;
@@ -184,7 +188,39 @@ booksRecommender.trainBidirectional(allTrainingData, userTrainData);
 
 
 for (let post of allTrainingData) {
+//console.log(post)
   const relatedTags = booksRecommender.getSimilarDocuments(post.id);
+ console.log(relatedTags)
   const tags = relatedTags.map(t => { return tagMapI[t.id] ? tagMapI[t.id].content : ''});
-  console.log(post.content, 'related tags:', tags);
+
+  //console.log(post.content, 'related tags:', tags);
   }
+  
+ /*
+ const ContentBasedRecommender = require('content-based-recommender')
+const recommender = new ContentBasedRecommender({
+  minScore: 0.0,
+  maxSimilarDocuments: 100
+});
+ 
+// prepare documents data
+const documents = [
+  { id: '1000001', content: 'Novel' },
+  { id: '1000002', content: 'Tolstoy novel about Russia' },
+  { id: '1000003', content: 'The novel chronicles the French invasion of Russia and the impact of the Napoleonic era' },
+  { id: '1000004', content: 'Hamlet Summary The ghost of the King of Denmark' },
+  { id: '1000005', content: 'Japan historic novell about life' },
+  { id: '1000006', content: 'The book is set in 1984 in Oceania one of three perpetually warring totalitarian states (the other two are Eurasia and Eastasia)'},
+  { id: '1000007', content: 'Crime and Punishment focuses on the mental anguish and moral dilemmas of Rodion Raskolnikov, an impoverished ex-student in Saint Petersburg' },
+  { id: '1000008', content: 'This is the authors epic tale of seven generations of the Buendia family that also spans a hundred years of turbulent Latin American history'},
+  { id: '1000009', content: 'To Kill a Mockingbird by Harper Lee centres on Atticus Finch attempts to prove the innocence of Tom Robinson, a black man who has been wrongly accused of raping a white woman in 1930s Alabama.' }
+];
+ 
+// start training
+recommender.train(documents);
+ 
+//get top 10 similar items to document 1000002
+const similarDocuments = recommender.getSimilarDocuments('1000002', 0, 10);
+ 
+console.log(similarDocuments);
+*/
