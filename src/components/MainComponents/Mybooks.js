@@ -9,6 +9,7 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
     getBooksList();
   }, []);
 
+ 
   const credentials = {
     userId: userData.id,
   };
@@ -22,6 +23,7 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
     });
     const data = await response.json();
     setMyBooks(data);
+    console.log(data)
   };
   /*
   const myBooksFetch = async (credentials) => {

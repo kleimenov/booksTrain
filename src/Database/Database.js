@@ -75,7 +75,7 @@ const getDataForSearchEngine = (author, genre, country, bookName) => {
 //5 let's get particular user's book list
 const getSpecificUserBooks = (userId) => {
   return pool.query(
-      "select users_books.user_id, users_books.book_id, library.book_name, library.author, users_books.start_date from users_books inner join library on library.book_id=users_books.book_id where user_id = $1",
+      "select users_books.user_id, users_books.book_id, library.book_name, library.author, library.description, users_books.start_date from users_books inner join library on library.book_id=users_books.book_id where user_id = $1",
       [userId]).then((res) => res.rows);
 };
 

@@ -3,12 +3,14 @@ import Progressbar from "./Progressbar";
 import Returnbook from "./Returnbook";
 
 const Userbook = ({ bookName, bookAuthor, date }) => {
+  
   const countdounTime = (date) => {
     const readingTerm = 14;
     const startUnixTime = parseInt(date);
     const currentuUixTime = new Date().getTime();
     const unixDiff = currentuUixTime - startUnixTime;
     return readingTerm - Math.floor(unixDiff / (1000 * 60 * 60) / 24);
+  
   };
 
   const toCapitalize = (string) => {

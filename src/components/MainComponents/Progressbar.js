@@ -1,7 +1,6 @@
 import React from "react";
 
 const Progressbar = (leftTime) => {
-  console.log(leftTime.leftTime);
 
   const containerStyles = {
     height: 26,
@@ -12,10 +11,11 @@ const Progressbar = (leftTime) => {
   };
 
   let width = 100 - Math.floor((leftTime.leftTime / 14) * 100);
+
   const fillerStyles = {
     height: "100%",
     width: `${width}%`,
-    backgroundColor: `${width}` < 50 ? "#46b946" : "#f52a2a",
+    backgroundColor: `${width}` < 60 ? "#46b946" : "#f52a2a",
     //backgroundColor: "#66a6ff",
     borderRadius: "inherit",
     textAlign: "right",

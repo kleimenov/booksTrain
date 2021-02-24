@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const Recsys = ({ userBooksData, userData }) => {
-  const [allBooks, setAllBooks] = useState();
-  //console.log(userBooksData) //user book list
-  //console.log(userData) //user personal data
+  const [allBooks, setAllBooks] = useState([]);
 
   useEffect(() => {
     getAllBooks();
@@ -12,11 +10,30 @@ const Recsys = ({ userBooksData, userData }) => {
   const getAllBooks = async () => {
     const response = await fetch("http://localhost:3002/alllibrary");
     const data = await response.json();
-    //console.log(data)
     setAllBooks(data);
   };
 
-  console.log(allBooks);
+  //const trainingData = allBooks.
+
+  const trainData = [];
+  const userTrainData = [];
+  
+  allBooks.map((item) => {
+    trainData.push({
+      book_id: item.book_id,
+      description: item.description,
+    });
+  });
+  userBooksData.map((item) => {
+    userTrainData.push({
+      book_id: item.book_id,
+      description: item.description,
+    });
+  });
+
+  //console.log(trainData);
+  //console.log(userBooksData)
+  console.log(userTrainData);
 
   return (
     <div>
