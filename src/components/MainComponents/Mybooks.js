@@ -23,7 +23,6 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
     });
     const data = await response.json();
     setMyBooks(data);
-    console.log(data)
   };
   /*
   const myBooksFetch = async (credentials) => {
