@@ -13,7 +13,6 @@ const Recsys = ({ userBooksData, userData }) => {
     setAllBooks(data);
   };
 
-  //const trainingData = allBooks.
 
   const trainData = [];
   const userTrainData = [];
