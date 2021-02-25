@@ -10,7 +10,8 @@ import {
   Redirect,
 } from "react-router-dom";
 
-const Searchresult = ({ searchResult, setResponse }) => {
+const Searchresult = ({ searchResult, setResponse, userName}) => {
+
   const returnHandler = () => {
     setResponse(false);
   };
@@ -43,8 +44,10 @@ const Searchresult = ({ searchResult, setResponse }) => {
         {searchResult.map((item) => (
           <Searchresultitem
             key={item.book_id}
-            bookName={item.book_name}
-            bookAuthor={item.author}
+            bookName ={item.book_name}
+            bookAuthor ={item.author}
+            userName = {userName}
+            bookId={item.book_id}
           />
         ))}
       </ul>

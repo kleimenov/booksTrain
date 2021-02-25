@@ -50,6 +50,7 @@ const Homepage = (props) => {
     setResponse(false);
   };
 
+  console.log(props.userName)
 
   if (!props.token) {
     return (
@@ -106,7 +107,7 @@ const Homepage = (props) => {
         <h4 className="text-center text-secondary py-2">
           {props.userName}, this is result of your search...
         </h4>
-        <Searchresult searchResult={searchResponse} setResponse={setResponse} />
+        <Searchresult searchResult={searchResponse} setResponse={setResponse} userName = {props.userName}/>
       </div>
     );
   } else {

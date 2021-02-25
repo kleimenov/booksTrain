@@ -79,10 +79,17 @@ app.get("/news", (req, res) => {
     });
 });
 
+//------------ add book route --------//
+app.post("/addbook", (req, res) => {
+  const data = req.body;
+  console.log(data)
+    res.json('Xyi from server');
+});
+
+
 //------------ specific user books list route --------//
 app.post("/userbooks", (req, res) => {
   const userId = req.body.userId;
-
   db.getSpecificUserBooks(userId).then((result) => {
     res.json(result);
   });
