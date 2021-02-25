@@ -1,4 +1,4 @@
-const { request, response } = require("express");
+const { request, response, query } = require("express");
 //const handlers = require('./handlers.js')
 const Pool = require("pg").Pool;
 const pool = new Pool({
@@ -52,31 +52,50 @@ const getAllNews = () => {
 };
 
 //4 Let's get specific data according to user conditions
+
+//select library.book_id, library.book_name, library.author, library.genre, users_books.user_id from library left outer join users_books on book_id=book_id where
+//select * from library where
 const getDataForSearchEngine = (author, genre, country, bookName) => {
-  let fullQuery = "select * from library where ";
+
+  let fullQuery =
+    "select library.book_id, library.book_name, library.author, library.genre, users_books.user_id from library left outer join users_books on library.book_id=users_books.book_id where ";
 
   if (author) {
-    fullQuery += `author LIKE '%${author}%' and `;
+    fullQuery += `library.author LIKE '%${author}%' and `;
   }
   if (genre) {
-    fullQuery += `genre LIKE '%${genre}%' and `;
+    fullQuery += `library.genre LIKE '%${genre}%' and `;
   }
   if (country) {
-    fullQuery += `country LIKE '%${country}%' and `;
+    fullQuery += `library.country LIKE '%${country}%' and `;
   }
   if (bookName) {
-    fullQuery += `book_name LIKE '%${bookName}%' and `;
+    fullQuery += `library.book_name LIKE '%${bookName}%' and `;
   }
 
   let queryText = fullQuery.substr(0, fullQuery.length - 4);
-  return pool.query(`${queryText};`).then((res) => res.rows);
+
+  return pool.query(`${queryText}`).then((res) => res.rows);
 };
 
 //5 let's get particular user's book list
 const getSpecificUserBooks = (userId) => {
-  return pool.query(
+  return pool
+    .query(
       "select users_books.user_id, users_books.book_id, library.book_name, library.author, library.description, users_books.start_date from users_books inner join library on library.book_id=users_books.book_id where user_id = $1",
-      [userId]).then((res) => res.rows);
+      [userId]
+    )
+    .then((res) => res.rows);
+};
+
+//6 let's add new book to user reading list
+const addBook = (userId, bookId, unixTime) => {
+  return pool
+    .query(
+      "insert into users_books (user_id, book_id, start_date) values ($1, $2,$3)",
+      [userId, bookId, unixTime]
+    )
+    .then((res) => res.rows);
 };
 
 module.exports = {
@@ -86,5 +105,6 @@ module.exports = {
   checkUsersPassword,
   getAllNews,
   getDataForSearchEngine,
-  getSpecificUserBooks
+  getSpecificUserBooks,
+  addBook,
 };

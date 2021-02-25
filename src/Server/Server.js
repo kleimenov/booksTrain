@@ -82,7 +82,10 @@ app.get("/news", (req, res) => {
 //------------ add book route --------//
 app.post("/addbook", (req, res) => {
   const data = req.body;
-    res.json('Server still love you!');
+
+  db.addBook(req.body.userId, req.body.bookId, req.body.unixTime).then(()=> {
+    res.json('Server still love you!')
+  })
 });
 
 
@@ -102,9 +105,16 @@ app.post("/booksSearch", (req, res) => {
   const bookName = req.body.searchBookName;
   const data = req.body;
 
-  db.getDataForSearchEngine(author, genre, country, bookName).then((result) =>
-    res.json(result)
-  );
+  if (!author && !genre && !country && !bookName) {
+    res.json('Server still love you!')
+  } else {
+
+    db.getDataForSearchEngine(author, genre, country, bookName).then((result) => {
+      res.json(result)
+    }
+    );
+  }
+
 });
 
 //------------ login route --------//

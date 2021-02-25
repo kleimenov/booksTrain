@@ -12,6 +12,8 @@ import {
 
 const Searchresult = ({ searchResult, setResponse, userName, userId}) => {
 
+  console.log(searchResult)
+  
   const returnHandler = () => {
     setResponse(false);
   };
