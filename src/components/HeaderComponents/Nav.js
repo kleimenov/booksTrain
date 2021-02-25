@@ -16,7 +16,9 @@ const Nav = () => {
         <Dropdown.Item as={Link} to="/mybooks">
           My books list
         </Dropdown.Item>
-        <Dropdown.Item as={Link} to="/wishlist">My books wish list</Dropdown.Item>
+        <Dropdown.Item as={Link} to="/wishlist">
+          My books wish list
+        </Dropdown.Item>
         <Dropdown.Item href="/about">About library</Dropdown.Item>
         <Dropdown.Item href="/contact">Contact us</Dropdown.Item>
       </Dropdown.Menu>
