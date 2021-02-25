@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 const Searchresultitem = ({
@@ -9,8 +9,7 @@ const Searchresultitem = ({
   userId,
   bookStatus,
 }) => {
-  
-  const [statatus, setStatus] = useState(bookStatus ? true : false)
+  const [status, setStatus] = useState(bookStatus ? true : false);
 
   const addBook = async (credientials) => {
     const response = await fetch("http://localhost:3002/addbook", {
@@ -25,23 +24,23 @@ const Searchresultitem = ({
   };
 
   const addReadingList = () => {
-    if (!statatus) {
+    if (!status) {
       addBook({
         userId: userId,
         bookId: bookId,
         userName: userName,
         unixTime: new Date().getTime(),
       });
-      setStatus(!statatus)
+      setStatus(!status);
     }
-    console.log('This book is already added')
+    console.log("This book is already added");
   };
 
   const addWishList = () => {
-    
+    console.log('Xyi, Kavkaz')
   };
-  
-  if (!statatus) {
+
+  if (!status) {
     return (
       <li className="my-2">
         <div className="d-flex flex-row justify-content-between w-50">
