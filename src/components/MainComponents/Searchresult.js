@@ -10,7 +10,7 @@ import {
   Redirect,
 } from "react-router-dom";
 
-const Searchresult = ({ searchResult, setResponse, userName}) => {
+const Searchresult = ({ searchResult, setResponse, userName, userId}) => {
 
   const returnHandler = () => {
     setResponse(false);
@@ -37,6 +37,7 @@ const Searchresult = ({ searchResult, setResponse, userName}) => {
   };
 
   capitalizaResult(searchResult);
+ 
 
   return (
     <div>
@@ -47,6 +48,7 @@ const Searchresult = ({ searchResult, setResponse, userName}) => {
             bookName ={item.book_name}
             bookAuthor ={item.author}
             userName = {userName}
+            userId={userId}
             bookId={item.book_id}
           />
         ))}

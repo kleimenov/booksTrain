@@ -28,6 +28,7 @@ const Homepage = (props) => {
     setBookslist(data.items);
   };
 
+  
   /*
   // Just in case if I would like to use axios
   const getBooksList =  async () => {
@@ -50,7 +51,6 @@ const Homepage = (props) => {
     setResponse(false);
   };
 
-  console.log(props.userName)
 
   if (!props.token) {
     return (
@@ -107,7 +107,7 @@ const Homepage = (props) => {
         <h4 className="text-center text-secondary py-2">
           {props.userName}, this is result of your search...
         </h4>
-        <Searchresult searchResult={searchResponse} setResponse={setResponse} userName = {props.userName}/>
+        <Searchresult searchResult={searchResponse} setResponse={setResponse} userName = {props.userName} userId={props.userId}/>
       </div>
     );
   } else {

@@ -21,7 +21,7 @@ function App() {
   const [token, setToken] = useState();
   const [userData, setUserData] = useState([]);
   const [myBooks, setMyBooks] = useState([]);
-
+  
   useEffect(() => {
     //getAllUsersFromDatabase();
   }, []);
@@ -81,6 +81,7 @@ function App() {
                 key={userData[0].id}
                 userName={userData[0].first_name}
                 token={token}
+                userId ={userData[0].id}
               />
             </Route>
             <Route path="/mybooks">

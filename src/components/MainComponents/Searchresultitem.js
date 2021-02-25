@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const Searchresultitem = ({ bookName, bookAuthor, userName, bookId }) => {
-
+const Searchresultitem = ({ bookName, bookAuthor, userName, bookId, userId }) => {
+  
   const addBook = async (credientials) => {
     const response = await fetch("http://localhost:3002/addbook", {
       method: "POST",
@@ -17,8 +17,8 @@ const Searchresultitem = ({ bookName, bookAuthor, userName, bookId }) => {
   
 
   const clickHandler = () => {
-
     addBook({
+      userId: userId,
       bookId: bookId,
       userName: userName,
       unixTime: new Date().getTime()

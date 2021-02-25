@@ -82,8 +82,7 @@ app.get("/news", (req, res) => {
 //------------ add book route --------//
 app.post("/addbook", (req, res) => {
   const data = req.body;
-  console.log(data)
-    res.json('Xyi from server');
+    res.json('Server still love you!');
 });
 
 
