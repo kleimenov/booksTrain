@@ -12,8 +12,8 @@ import {
 
 const Searchresult = ({ searchResult, setResponse, userName, userId}) => {
 
-  console.log(searchResult)
-  
+  //console.log(searchResult)
+
   const returnHandler = () => {
     setResponse(false);
   };
@@ -52,6 +52,7 @@ const Searchresult = ({ searchResult, setResponse, userName, userId}) => {
             userName = {userName}
             userId={userId}
             bookId={item.book_id}
+            bookStatus={item.user_id}
           />
         ))}
       </ul>
