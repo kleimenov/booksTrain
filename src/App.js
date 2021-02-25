@@ -13,6 +13,7 @@ import Homepage from "./components/Maincomponents/Homepage";
 import Loginform from "./components/Maincomponents/Loginform";
 import Registrationform from "./components/Maincomponents/Registrationform";
 import Mybooks from "./components/Maincomponents/Mybooks";
+import Wishlist from "./components/Maincomponents/Wishlist"
 import Welcome from "./components/Maincomponents/Testcomp";
 import { propTypes } from "react-bootstrap/esm/Image";
 import { text } from "body-parser";
@@ -91,6 +92,9 @@ function App() {
                 setMyBooks={setMyBooks}
                 userData={userData[0]}
               />
+            </Route>
+            <Route path="/wishlist">
+              <Wishlist />
             </Route>
           </Switch>
         </div>
