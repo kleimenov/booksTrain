@@ -4,12 +4,12 @@ import Recsys from "./Recsys";
 
 const Mybooks = ({ myBooks, setMyBooks, userData }) => {
 
-  //const [books, setBookslist] = useState([]);
+
+
   useEffect(() => {
     getBooksList();
   }, []);
 
- 
   const credentials = {
     userId: userData.id,
   };
@@ -24,7 +24,6 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
     const data = await response.json();
     setMyBooks(data);
   };
-  
 
   if (myBooks.length > 0) {
     return (

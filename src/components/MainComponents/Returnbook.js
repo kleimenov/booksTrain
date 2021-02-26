@@ -1,8 +1,8 @@
 import React from "react";
 
 const Returnbook = ({ leftTime, userId, bookId }) => {
-  console.log(bookId);
-  console.log(userId);
+
+
 
   let width = 100 - Math.floor((leftTime / 14) * 100);
   const buttonStyles = {

@@ -7,7 +7,7 @@ const Searchresultitem = ({
   userName,
   bookId,
   userId,
-  bookStatus,
+  bookStatus
 }) => {
   const [status, setStatus] = useState(bookStatus ? true : false);
 
@@ -33,6 +33,7 @@ const Searchresultitem = ({
       });
       setStatus(!status);
     }
+    
     console.log("This book is already added");
   };
 

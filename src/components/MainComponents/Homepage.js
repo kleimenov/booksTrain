@@ -28,18 +28,6 @@ const Homepage = (props) => {
     setBookslist(data.items);
   };
 
-  /*
-  // Just in case if I would like to use axios
-  const getBooksList =  async () => {
-    axios.request(url).then((response) => {
-      setBookslist(response.data.items);
-      //response.data.items.map((item)=> {console.log(item)})
-    }).catch((error) => {
-      console.error(error);
-    })
-  };
- */
-
   const getAllNewsFromDatabase = async () => {
     const response = await fetch("http://localhost:3002/news");
     const data = await response.json();

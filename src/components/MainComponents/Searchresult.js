@@ -10,7 +10,7 @@ import {
   Redirect,
 } from "react-router-dom";
 
-const Searchresult = ({ searchResult, setResponse, userName, userId}) => {
+const Searchresult = ({ searchResult, setResponse, userName, userId }) => {
 
   //console.log(searchResult)
 
