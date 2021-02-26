@@ -38,7 +38,7 @@ const Searchresultitem = ({
   };
 
   const addWishList = () => {
-    console.log('Xyi, Kavkaz')
+    console.log('Xyi, Kaukaz')
   };
 
   if (!status) {

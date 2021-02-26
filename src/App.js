@@ -15,8 +15,6 @@ import Registrationform from "./components/Maincomponents/Registrationform";
 import Mybooks from "./components/Maincomponents/Mybooks";
 import Wishlist from "./components/Maincomponents/Wishlist";
 
-
-
 function App() {
   const [token, setToken] = useState();
   const [userData, setUserData] = useState([]);
@@ -72,12 +70,7 @@ function App() {
               />
             </Route>
             <Route path="/mybooks">
-              <Mybooks
-                component={Mybooks}
-                //myBooks={myBooks}
-                //setMyBooks={setMyBooks}
-                userData={userData[0]}
-              />
+              <Mybooks component={Mybooks} userData={userData[0]} />
             </Route>
             <Route path="/wishlist">
               <Wishlist />
