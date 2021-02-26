@@ -23,6 +23,7 @@ const Returnbook = ({ leftTime, userId, bookId, getBooksList }) => {
       bookId: bookId,
     });
     getBooksList({ userId: userId });
+    console.log('clicked')
   };
 
   return (
