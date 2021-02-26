@@ -9,7 +9,6 @@ const Userbook = ({
   bookId,
   userId,
   getBooksList,
-  setMyBooks,
 }) => {
   const countdounTime = (date) => {
     const readingTerm = 14;
@@ -60,7 +59,6 @@ const Userbook = ({
           bookId={bookId}
           userId={userId}
           getBooksList={getBooksList}
-          setMyBooks={setMyBooks}
         />
       </div>
     </li>

@@ -20,7 +20,7 @@ import Wishlist from "./components/Maincomponents/Wishlist";
 function App() {
   const [token, setToken] = useState();
   const [userData, setUserData] = useState([]);
-  const [myBooks, setMyBooks] = useState([]);
+  //const [myBooks, setMyBooks] = useState([]);
 
   if (!token) {
     return (
@@ -74,8 +74,8 @@ function App() {
             <Route path="/mybooks">
               <Mybooks
                 component={Mybooks}
-                myBooks={myBooks}
-                setMyBooks={setMyBooks}
+                //myBooks={myBooks}
+                //setMyBooks={setMyBooks}
                 userData={userData[0]}
               />
             </Route>
