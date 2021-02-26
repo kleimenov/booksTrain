@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Userbook from "./Userbook";
 import Recsys from "./Recsys";
-import Emptycurrentlist from "./Emptycurrentlist"
+import Emptycurrentlist from "./Emptycurrentlist";
 
 const Mybooks = ({ myBooks, setMyBooks, userData }) => {
-  
-
-
   useEffect(() => {
     getBooksList();
   }, []);
@@ -51,9 +48,7 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
       </div>
     );
   }
-  return (
-    <Emptycurrentlist userName={userData.first_name}/>
-  );
+  return <Emptycurrentlist userName={userData.first_name} />;
 };
 
 export default Mybooks;
