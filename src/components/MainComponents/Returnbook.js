@@ -15,6 +15,8 @@ const Returnbook = ({ leftTime, userId, bookId, getBooksList }) => {
       body: JSON.stringify(credentials),
     });
     const data = await response.json();
+    console.log('return function invoked')
+    getBooksList({ userId: userId });
   };
 
   
@@ -24,8 +26,8 @@ const Returnbook = ({ leftTime, userId, bookId, getBooksList }) => {
       userId: userId,
       bookId: bookId,
     });
-    getBooksList({ userId: userId });
-    console.log('clicked')
+    
+    console.log('return button clicked')
   };
 
   return (
