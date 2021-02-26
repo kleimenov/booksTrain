@@ -98,6 +98,11 @@ const addBook = (userId, bookId, unixTime) => {
     .then((res) => res.rows);
 };
 
+//7. let's delete book from users_books table
+const removeBook = (userId, bookId) => {
+  return pool.query("delete from users_books where user_id=$1 and book_id=$2", [userId, bookId]).then((res) => res.rows);
+}
+
 module.exports = {
   getAll,
   getAllDataFromLibrary,
@@ -107,4 +112,5 @@ module.exports = {
   getDataForSearchEngine,
   getSpecificUserBooks,
   addBook,
+  removeBook,
 };

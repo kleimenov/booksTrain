@@ -82,8 +82,10 @@ app.get("/news", (req, res) => {
 //------------ return book route --------//
 app.post("/returnbook", (req, res) => {
   const data = req.body;
-  console.log(data)
+  
+  db.removeBook(data.userId, data.bookId).then(()=>{
     res.json('Server still love you!')
+  })
 });
 
 //------------ add book route --------//
