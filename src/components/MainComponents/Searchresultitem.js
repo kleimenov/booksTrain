@@ -7,7 +7,7 @@ const Searchresultitem = ({
   userName,
   bookId,
   userId,
-  bookStatus
+  bookStatus,
 }) => {
   const [status, setStatus] = useState(bookStatus ? true : false);
 
@@ -33,12 +33,12 @@ const Searchresultitem = ({
       });
       setStatus(!status);
     }
-    
+
     console.log("This book is already added");
   };
 
   const addWishList = () => {
-    console.log('Xyi, Kaukaz')
+    console.log("Xyi, Kaukaz");
   };
 
   if (!status) {
@@ -59,6 +59,7 @@ const Searchresultitem = ({
       </li>
     );
   }
+
   return (
     <li className="my-2">
       <div className="d-flex flex-row justify-content-between w-50">

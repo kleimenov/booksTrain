@@ -3,11 +3,8 @@ import Userbook from "./Userbook";
 import Recsys from "./Recsys";
 import Emptycurrentlist from "./Emptycurrentlist";
 
-const Mybooks = ({  userData }) => {
-
+const Mybooks = ({ userData }) => {
   const [myBooks, setMyBooks] = useState([]);
-
-  console.log()
 
   useEffect(() => {
     getBooksList();
@@ -26,7 +23,6 @@ const Mybooks = ({  userData }) => {
     });
     const data = await response.json();
     setMyBooks(data);
-    console.log("getbooklist invoked")
   };
 
   if (myBooks.length > 0) {
@@ -53,8 +49,8 @@ const Mybooks = ({  userData }) => {
         </div>
       </div>
     );
-  } 
-    return <Emptycurrentlist userName={userData.first_name} />;
+  }
+  return <Emptycurrentlist userName={userData.first_name} />;
 };
 
 export default Mybooks;

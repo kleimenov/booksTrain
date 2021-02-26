@@ -15,19 +15,15 @@ const Returnbook = ({ leftTime, userId, bookId, getBooksList }) => {
       body: JSON.stringify(credentials),
     });
     const data = await response.json();
-    console.log('return function invoked')
+    console.log("return function invoked");
     getBooksList({ userId: userId });
   };
-
-  
 
   const clickHandler = () => {
     returnBook({
       userId: userId,
       bookId: bookId,
     });
-    
-    console.log('return button clicked')
   };
 
   return (
