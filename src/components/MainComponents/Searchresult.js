@@ -2,13 +2,7 @@ import React from "react";
 import Searchresultitem from "./Searchresultitem";
 import { Button } from "react-bootstrap";
 import Searchengine from "./Searchengine";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Link,
-  Redirect,
-} from "react-router-dom";
+
 
 const Searchresult = ({ searchResult, setResponse, userName, userId }) => {
 
