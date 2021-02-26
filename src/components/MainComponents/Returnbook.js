@@ -1,9 +1,6 @@
 import React from "react";
 
 const Returnbook = ({ leftTime, userId, bookId, getBooksList }) => {
-
-
-
   let width = 100 - Math.floor((leftTime / 14) * 100);
   const buttonStyles = {
     backgroundColor: `${width}` < 50 ? "#46b946" : "#f52a2a",
@@ -20,16 +17,14 @@ const Returnbook = ({ leftTime, userId, bookId, getBooksList }) => {
     const data = await response.json();
   };
 
-
   const clickHandler = () => {
-    
     returnBook({
       userId: userId,
       bookId: bookId,
     });
-    getBooksList({userId: userId});
+    getBooksList({ userId: userId });
   };
-  
+
   return (
     <div>
       <button
