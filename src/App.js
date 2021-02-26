@@ -13,7 +13,7 @@ import Homepage from "./components/Maincomponents/Homepage";
 import Loginform from "./components/Maincomponents/Loginform";
 import Registrationform from "./components/Maincomponents/Registrationform";
 import Mybooks from "./components/Maincomponents/Mybooks";
-import Wishlist from "./components/Maincomponents/Wishlist"
+import Wishlist from "./components/Maincomponents/Wishlist";
 import Welcome from "./components/Maincomponents/Testcomp";
 import { propTypes } from "react-bootstrap/esm/Image";
 import { text } from "body-parser";
@@ -22,10 +22,6 @@ function App() {
   const [token, setToken] = useState();
   const [userData, setUserData] = useState([]);
   const [myBooks, setMyBooks] = useState([]);
-  
-
-
-  
 
   if (!token) {
     return (
@@ -73,7 +69,7 @@ function App() {
                 key={userData[0].id}
                 userName={userData[0].first_name}
                 token={token}
-                userId ={userData[0].id}
+                userId={userData[0].id}
               />
             </Route>
             <Route path="/mybooks">
