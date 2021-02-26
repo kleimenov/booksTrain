@@ -33,7 +33,6 @@ const Searchresultitem = ({
       });
       setStatus(!status);
     }
-
     console.log("This book is already added");
   };
 
