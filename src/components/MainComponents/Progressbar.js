@@ -16,7 +16,6 @@ const Progressbar = (leftTime) => {
     height: "100%",
     width: `${width}%`,
     backgroundColor: `${width}` < 60 ? "#46b946" : "#f52a2a",
-    //backgroundColor: "#66a6ff",
     borderRadius: "inherit",
     textAlign: "right",
   };
