@@ -222,5 +222,5 @@ recommender.train(documents);
 //get top 10 similar items to document 1000002
 const similarDocuments = recommender.getSimilarDocuments('1000002', 0, 10);
  
-console.log(similarDocuments);
+//console.log(similarDocuments);
 */
