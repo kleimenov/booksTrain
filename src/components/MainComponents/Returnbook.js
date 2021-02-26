@@ -1,6 +1,9 @@
 import React from "react";
 
-const Returnbook = ({ leftTime }) => {
+const Returnbook = ({ leftTime, userId, bookId }) => {
+
+  console.log(bookId)
+  console.log(userId)
 
   let width = 100 - Math.floor((leftTime / 14) * 100);
   const buttonStyles = {
@@ -23,13 +26,12 @@ const Returnbook = ({ leftTime }) => {
     returnBook({
       userId: userId,
       bookId: bookId
-
     })
   }
 
   return (
     <div>
-      <button onClisk={clickHandler} className="btn return-book-button ml-2 px-1 py-0 text-white font-weight-bold" style={buttonStyles}>
+      <button onClick={clickHandler} className="btn return-book-button ml-2 px-1 py-0 text-white font-weight-bold" style={buttonStyles}>
         Return book
       </button>
     </div>

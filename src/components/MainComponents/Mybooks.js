@@ -3,7 +3,7 @@ import Userbook from "./Userbook";
 import Recsys from "./Recsys";
 
 const Mybooks = ({ myBooks, setMyBooks, userData }) => {
-  //console.log(userData.id);
+
   //const [books, setBookslist] = useState([]);
   useEffect(() => {
     getBooksList();
@@ -24,20 +24,7 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
     const data = await response.json();
     setMyBooks(data);
   };
-  /*
-  const myBooksFetch = async (credentials) => {
-    return fetch("http://localhost:3002/userbooks", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(credentials),
-    }).then((response) => response.json());
-  };
-*/
-  //myBooksFetch(data).then((res) => setMyBooks(res));
-
-  //console.log("result on Mybooks " + myBooks[0]);
+  
 
   if (myBooks.length > 0) {
     return (
@@ -52,6 +39,8 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
               bookName={item.book_name}
               bookAuthor={item.author}
               date={item.start_date}
+              bookId={item.book_id}
+              userId={userData.id}
             />
           ))}
         </ul>

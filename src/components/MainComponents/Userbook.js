@@ -2,8 +2,10 @@ import React from "react";
 import Progressbar from "./Progressbar";
 import Returnbook from "./Returnbook";
 
-const Userbook = ({ bookName, bookAuthor, date }) => {
+const Userbook = ({ bookName, bookAuthor, date, bookId, userId }) => {
   
+  //console.log(userId)
+
   const countdounTime = (date) => {
     const readingTerm = 14;
     const startUnixTime = parseInt(date);
@@ -49,7 +51,7 @@ const Userbook = ({ bookName, bookAuthor, date }) => {
       </h5>
       <div className="d-flex flex-row">
         <Progressbar leftTime={leftTime} />
-        <Returnbook leftTime={leftTime} />
+        <Returnbook leftTime={leftTime} bookId={bookId} userId={userId}/>
       </div>
     </li>
   );
