@@ -42,7 +42,6 @@ const Mybooks = ({ myBooks, setMyBooks, userData }) => {
               bookId={item.book_id}
               userId={userData.id}
               getBooksList={getBooksList}
-              setMyBooks={setMyBooks}
             />
           ))}
         </ul>
