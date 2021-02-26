@@ -14,9 +14,8 @@ import Loginform from "./components/Maincomponents/Loginform";
 import Registrationform from "./components/Maincomponents/Registrationform";
 import Mybooks from "./components/Maincomponents/Mybooks";
 import Wishlist from "./components/Maincomponents/Wishlist";
-import Welcome from "./components/Maincomponents/Testcomp";
-import { propTypes } from "react-bootstrap/esm/Image";
-import { text } from "body-parser";
+
+
 
 function App() {
   const [token, setToken] = useState();
