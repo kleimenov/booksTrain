@@ -79,6 +79,13 @@ app.get("/news", (req, res) => {
     });
 });
 
+//------------ return book route --------//
+app.post("/returnbook", (req, res) => {
+  const data = req.body;
+  console.log(data)
+    res.json('Server still love you!')
+});
+
 //------------ add book route --------//
 app.post("/addbook", (req, res) => {
   const data = req.body;

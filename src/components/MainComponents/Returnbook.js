@@ -12,7 +12,7 @@ const Returnbook = ({ leftTime, userId, bookId }) => {
 
 
   const returnBook = async (credentils) => {
-    const response = await fetch("http//localhost:3002/returnbook", {
+    const response = await fetch("http://localhost:3002/returnbook", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
