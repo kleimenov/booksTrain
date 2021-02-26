@@ -13,10 +13,9 @@ const Recsys = ({ userBooksData, userData }) => {
     setAllBooks(data);
   };
 
-
   const trainData = [];
   const userTrainData = [];
-  
+
   allBooks.map((item) => {
     trainData.push({
       id: item.book_id,
@@ -35,12 +34,6 @@ const Recsys = ({ userBooksData, userData }) => {
   //console.log(userTrainData);
 
   //TF-IDF and Vectors
-
-  
-
-
-
-
 
   return (
     <div>
