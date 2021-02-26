@@ -2,17 +2,13 @@ import React from "react";
 import Progressbar from "./Progressbar";
 import Returnbook from "./Returnbook";
 
-const Userbook = ({ bookName, bookAuthor, date, bookId, userId }) => {
-  
-
-
+const Userbook = ({ bookName, bookAuthor, date, bookId, userId, getBooksList, setMyBooks }) => {
   const countdounTime = (date) => {
     const readingTerm = 14;
     const startUnixTime = parseInt(date);
     const currentuUixTime = new Date().getTime();
     const unixDiff = currentuUixTime - startUnixTime;
     return readingTerm - Math.floor(unixDiff / (1000 * 60 * 60) / 24);
-  
   };
 
   const toCapitalize = (string) => {
@@ -51,7 +47,13 @@ const Userbook = ({ bookName, bookAuthor, date, bookId, userId }) => {
       </h5>
       <div className="d-flex flex-row">
         <Progressbar leftTime={leftTime} />
-        <Returnbook leftTime={leftTime} bookId={bookId} userId={userId} />
+        <Returnbook
+          leftTime={leftTime}
+          bookId={bookId}
+          userId={userId}
+          getBooksList={getBooksList}
+          setMyBooks={setMyBooks}
+        />
       </div>
     </li>
   );

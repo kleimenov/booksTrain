@@ -1,6 +1,7 @@
 import React from "react";
 
-const Returnbook = ({ leftTime, userId, bookId }) => {
+const Returnbook = ({ leftTime, userId, bookId, getBooksList, setMyBooks }) => {
+
 
 
 
@@ -21,12 +22,14 @@ const Returnbook = ({ leftTime, userId, bookId }) => {
   };
 
   const clickHandler = () => {
+    
     returnBook({
       userId: userId,
       bookId: bookId,
     });
+    getBooksList({userId: userId});
   };
-
+  
   return (
     <div>
       <button
