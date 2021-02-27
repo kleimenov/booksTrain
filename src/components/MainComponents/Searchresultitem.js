@@ -10,8 +10,8 @@ const Searchresultitem = ({
   bookStatus,
 }) => {
   const [status, setStatus] = useState(bookStatus ? true : false);
-  const [whoRead, setReader] = useState(bookStatus)
-  console.log(bookStatus)
+  const [whoRead, setReader] = useState(bookStatus);
+  console.log(bookStatus);
   //console.log(bookId)
   //console.log(userId)
   const addBook = async (credientials) => {
@@ -35,9 +35,9 @@ const Searchresultitem = ({
         unixTime: new Date().getTime(),
       });
       setStatus(!status);
-      setReader(userId)
+      setReader(userId);
     }
-    
+
     console.log("This book is already added");
   };
 
@@ -63,7 +63,7 @@ const Searchresultitem = ({
       </li>
     );
   }
-  if(userId===whoRead) {
+  if (userId === whoRead) {
     return (
       <li className="my-2">
         <div className="d-flex flex-row justify-content-between w-50">
