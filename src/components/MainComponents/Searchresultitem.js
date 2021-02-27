@@ -10,7 +10,10 @@ const Searchresultitem = ({
   bookStatus,
 }) => {
   const [status, setStatus] = useState(bookStatus ? true : false);
-
+  const [whoRead, setReader] = useState(bookStatus)
+  console.log(bookStatus)
+  //console.log(bookId)
+  //console.log(userId)
   const addBook = async (credientials) => {
     const response = await fetch("http://localhost:3002/addbook", {
       method: "POST",
@@ -20,7 +23,7 @@ const Searchresultitem = ({
       body: JSON.stringify(credientials),
     });
     const data = await response.json();
-    console.log(data);
+    //console.log(data);
   };
 
   const addReadingList = () => {
@@ -32,7 +35,9 @@ const Searchresultitem = ({
         unixTime: new Date().getTime(),
       });
       setStatus(!status);
+      setReader(userId)
     }
+    
     console.log("This book is already added");
   };
 
@@ -58,7 +63,17 @@ const Searchresultitem = ({
       </li>
     );
   }
-
+  if(userId===whoRead) {
+    return (
+      <li className="my-2">
+        <div className="d-flex flex-row justify-content-between w-50">
+          <h5 className="text-secondary ml-2 pt-2">
+            {bookName} / {bookAuthor} / in your reading list
+          </h5>
+        </div>
+      </li>
+    );
+  }
   return (
     <li className="my-2">
       <div className="d-flex flex-row justify-content-between w-50">
