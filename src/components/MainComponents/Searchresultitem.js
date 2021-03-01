@@ -29,7 +29,7 @@ const Searchresultitem = ({
         userId: userId,
         bookId: bookId,
         userName: userName,
-        unixTime: new Date().getTime()
+        unixTime: new Date().getTime(),
       });
       setStatus(!status);
       setReader(userId);
@@ -53,7 +53,7 @@ const Searchresultitem = ({
     addBookWishList({
       userId: userId,
       bookId: bookId,
-      unixTime: new Date().getTime()
+      unixTime: new Date().getTime(),
     });
   };
 
