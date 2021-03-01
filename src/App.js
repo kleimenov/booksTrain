@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 //import components
 import Header from "./components/Headercomponents/Header";
@@ -18,7 +14,6 @@ function App() {
   const [token, setToken] = useState();
   const [userData, setUserData] = useState([]);
   //const [myBooks, setMyBooks] = useState([]);
-
 
   if (!token) {
     return (
