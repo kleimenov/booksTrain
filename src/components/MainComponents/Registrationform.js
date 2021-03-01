@@ -1,3 +1,5 @@
+import axios from "axios";
+import { response } from "express";
 import React from "react";
 
 
@@ -39,7 +41,17 @@ const addNewUser =  async () => {
 
 const Registrationform = () => {
 
-  
+  const addNewUser = async () => {
+    axios.request("").then((response) => {
+      console.log(response)
+    }).catch((error) => {
+      console.error(error)
+    })
+  }
+
+  const submitHandler = async () => {
+
+  }
 
   return (
     <div className="container">
