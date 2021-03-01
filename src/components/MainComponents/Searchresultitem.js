@@ -43,10 +43,10 @@ const Searchresultitem = ({
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(credientials)
-    })
+      body: JSON.stringify(credientials),
+    });
     const data = await response.json();
-  }
+  };
 
   const addWishList = () => {
     console.log("Xyi, Kaukaz");
