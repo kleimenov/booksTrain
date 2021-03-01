@@ -19,6 +19,7 @@ function App() {
   const [userData, setUserData] = useState([]);
   //const [myBooks, setMyBooks] = useState([]);
 
+
   if (!token) {
     return (
       <Router>
@@ -41,7 +42,7 @@ function App() {
                   />
                 )}
               />
-              <Route path="/registrationform" component={Registrationform} />
+              <Route path="/registrationform" component={Registrationform} setToken={setToken}/>
             </Switch>
           </div>
           <div className="footer">

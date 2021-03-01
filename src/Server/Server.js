@@ -125,18 +125,23 @@ app.post("/booksSearch", (req, res) => {
   }
 
 });
+//------------ register new user route --------//
+app.post("/registrationform", (req, res) => {
+  console.log(req.body)
+  res.json(req.body)
+})
 
 //------------ login route --------//
 app.post("/login", (req, res) => {
   const email = req.body.userEmail;
   const password = req.body.userPass;
-
+/*
   const data = {
     user: true,
     usetId: 5,
     userEmail: email,
   };
-
+*/
   db.getUserByEmail(email).then((result) => {
     if (!result[0].case) {
       const data = {

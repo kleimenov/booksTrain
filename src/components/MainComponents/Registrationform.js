@@ -15,26 +15,36 @@ const addNewUser = async () => {
 };
 */
 
-const Registrationform = () => {
+const Registrationform = ( { setToken }) => {
   const [firstName, setFirstName] = useState();
   const [secondName, setSecondName] = useState();
   const [phoneNumber, setPhoneNumber] = useState();
   const [userEmail, setEmail] = useState();
   const [userPassword, setPassword] = useState();
 
-  const addNewUser = async () => {
-    axios
-      .request("")
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+  console.log( )
 
-  const submitHandler = async () => {
-    console.log("Xyi tebe")
+  const credentials = {
+    firstName: firstName,
+    secondName: secondName,
+    phoneNumber: phoneNumber,
+    userEmail: userEmail,
+    userPassword: userPassword
+  }
+
+  const addNewUser = async () => {
+    const response = await fetch("http://localhost:3002/registrationform", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(credentials)
+    }).then((response) => response.json())
+  }
+
+  const submitHandler = async (credentials) => {
+    const data = await addNewUser(credentials);
+    console.log("done")
   };
 
   return (
