@@ -134,7 +134,6 @@ app.post("/registrationform", (req, res) => {
         userExist: true,
         message: "User exist!",
       };
-      console.log(data);
       res.json(data);
     } else {
       db.addNewUser(req).then((result) => {
@@ -146,7 +145,6 @@ app.post("/registrationform", (req, res) => {
             message: "User added!",
             userData: result2
           };
-          console.log(data);
           res.json(data);
         })
       });
