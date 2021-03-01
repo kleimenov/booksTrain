@@ -1,7 +1,34 @@
 import React from "react";
-import axios from "axios";
+
+
+/*
+async function addNewUser(credentials) {
+  return fetch("", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    }
+    body: JSON.stringify(credentials)
+  }).then((response) => response.json())
+}
+*/
+/*
+const addNewUser = async () => {
+  const response = await fetch("", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(credentials),
+  });
+  const data = await response.json();
+  //setNewUser(data);
+};
+*/
+
 
 const Registrationform = () => (
+
   <div className="container">
     <h1 className="text-secondary">Registration form page </h1>
     <div className="d-flex flex-column">
