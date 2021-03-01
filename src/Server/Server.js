@@ -91,6 +91,13 @@ app.post("/returnbook", (req, res) => {
   });
 });
 
+//------------ add book to wish list route --------//
+app.post("/wishlist", (req, res) => {
+  console.log(req.body)
+  res.json("Server is listening to you!");
+})
+
+
 //------------ add book route --------//
 app.post("/addbook", (req, res) => {
   const data = req.body;
