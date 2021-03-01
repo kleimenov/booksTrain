@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Logout = ({ token, setToken }) => {
+const Logout = () => {
   const logoutHandler = () => {
     localStorage.clear();
     document.location.href = "/";
