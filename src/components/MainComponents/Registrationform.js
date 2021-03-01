@@ -1,15 +1,5 @@
 import React, { useState } from "react";
 
-async function addNewUser(credentials) {
-  return fetch("http://localhost:3002/registrationform", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(credentials),
-  }).then((response) => response.json());
-}
-
 const Registrationform = ({ setToken, setUserData }) => {
   const [firstName, setFirstName] = useState();
   const [secondName, setSecondName] = useState();
@@ -17,15 +7,16 @@ const Registrationform = ({ setToken, setUserData }) => {
   const [userEmail, setEmail] = useState();
   const [userPassword, setPassword] = useState();
 
-  /*
-  const credentials = {
-    firstName: firstName,
-    secondName: secondName,
-    phoneNumber: phoneNumber,
-    userEmail: userEmail,
-    userPassword: userPassword,
+  const addNewUser = async (credentials) => {
+    return fetch("http://localhost:3002/registrationform", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(credentials),
+    }).then((response) => response.json());
   };
-*/
+
   const handleSubmit = async (evt) => {
     evt.preventDefault();
 
@@ -37,7 +28,7 @@ const Registrationform = ({ setToken, setUserData }) => {
       userPassword: userPassword,
     });
 
-    console.log(data)
+    console.log(data);
     setUserData(data.userData);
     setToken(data.userAdded);
   };
