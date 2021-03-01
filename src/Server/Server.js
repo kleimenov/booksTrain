@@ -127,8 +127,8 @@ app.post("/booksSearch", (req, res) => {
 });
 //------------ register new user route --------//
 app.post("/registrationform", (req, res) => {
-  console.log(req.body)
-  res.json(req.body)
+  
+  res.json("New user added")
 })
 
 //------------ login route --------//

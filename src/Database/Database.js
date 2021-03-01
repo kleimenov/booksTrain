@@ -1,5 +1,5 @@
 const { request, response, query } = require("express");
-//const handlers = require('./handlers.js')
+const handlers = require("../Server/Serverhandlers");
 const Pool = require("pg").Pool;
 const pool = new Pool({
   user: "deelooc21",
@@ -56,7 +56,6 @@ const getAllNews = () => {
 //select library.book_id, library.book_name, library.author, library.genre, users_books.user_id from library left outer join users_books on book_id=book_id where
 //select * from library where
 const getDataForSearchEngine = (author, genre, country, bookName) => {
-
   let fullQuery =
     "select library.book_id, library.book_name, library.author, library.genre, users_books.user_id from library left outer join users_books on library.book_id=users_books.book_id where ";
 
@@ -100,8 +99,26 @@ const addBook = (userId, bookId, unixTime) => {
 
 //7. let's delete book from users_books table
 const removeBook = (userId, bookId) => {
-  return pool.query("delete from users_books where user_id=$1 and book_id=$2", [userId, bookId]).then((res) => res.rows);
-}
+  return pool
+    .query("delete from users_books where user_id=$1 and book_id=$2", [
+      userId,
+      bookId,
+    ])
+    .then((res) => res.rows);
+};
+
+//8. Add new user
+
+const addNewUser = (request) => {
+  const { name, email, password } = request.body;
+  const userId = handlers.randomUserIdGen();
+  return pool
+    .query(
+      "INSERT INTO users (user_id, name, email, password) VALUES ($1, $2, $3, $4)",
+      [userId, name, email, password]
+    )
+    .then((res) => res.rows);
+};
 
 module.exports = {
   getAll,
