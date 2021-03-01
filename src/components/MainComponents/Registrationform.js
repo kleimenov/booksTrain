@@ -70,6 +70,7 @@ const Registrationform = () => {
             name="first_name"
             required
             autoFocus
+            onChange={}
           ></input>
           <label
             className="text-secondary mt-2 login-text-holder"
@@ -83,6 +84,7 @@ const Registrationform = () => {
             name="last_name"
             required
             autoFocus
+            onChange={}
           ></input>
           <label
             className="text-secondary mt-2 login-text-holder"
@@ -96,6 +98,7 @@ const Registrationform = () => {
             name="phone_number"
             required
             autoFocus
+            onChange={}
           ></input>
           <label
             className="text-secondary mt-2 login-text-holder"
@@ -109,6 +112,7 @@ const Registrationform = () => {
             name="email"
             required
             autoFocus
+            onChange={}
           ></input>
           <label
             className="text-secondary mt-2 login-text-holder"
@@ -122,6 +126,7 @@ const Registrationform = () => {
             name="password"
             required
             autoFocus
+            onChange={}
           ></input>
           <button
             type="submit"
