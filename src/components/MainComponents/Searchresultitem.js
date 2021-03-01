@@ -37,6 +37,17 @@ const Searchresultitem = ({
     console.log("This book is already added");
   };
 
+  const addBookWishList = async (credientials) => {
+    const response = await fetch("", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(credientials)
+    })
+    const data = await response.json();
+  }
+
   const addWishList = () => {
     console.log("Xyi, Kaukaz");
   };
