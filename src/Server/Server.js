@@ -94,7 +94,7 @@ app.post("/returnbook", (req, res) => {
 //------------ add book to wish list route --------//
 app.post("/wishlist", (req, res) => {
   
-  res.json("Server is listening to you!");
+  res.json("Server still love you!");
 })
 
 
