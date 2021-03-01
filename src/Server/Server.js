@@ -67,6 +67,7 @@ app.get("/alllibrary", (req, res) => {
       res.status(500).send(error);
     });
 });
+
 //------------ Homepage news route (whatever user logged in or not)--------//
 app.get("/news", (req, res) => {
   //res.status(200).send('Hello World!');
@@ -78,6 +79,8 @@ app.get("/news", (req, res) => {
       res.status(500).send(error);
     });
 });
+
+
 
 //------------ return book route --------//
 app.post("/returnbook", (req, res) => {
