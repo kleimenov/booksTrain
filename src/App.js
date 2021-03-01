@@ -14,6 +14,8 @@ function App() {
   const [token, setToken] = useState();
   const [userData, setUserData] = useState([]);
 
+  console.log(userData)
+
   if (!token) {
     return (
       <Router>
