@@ -42,7 +42,16 @@ function App() {
                   />
                 )}
               />
-              <Route path="/registrationform" component={Registrationform} setToken={setToken}/>
+              <Route
+                path="/registrationform"
+                render={(props) => (
+                  <Registrationform
+                    {...props}
+                    setToken={setToken}
+                    setUserData={setUserData}
+                  />
+                )}
+              />
             </Switch>
           </div>
           <div className="footer">

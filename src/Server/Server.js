@@ -82,21 +82,20 @@ app.get("/news", (req, res) => {
 //------------ return book route --------//
 app.post("/returnbook", (req, res) => {
   const data = req.body;
-  
-  db.removeBook(data.userId, data.bookId).then(()=>{
-    res.json('Server still love you!')
-  })
+
+  db.removeBook(data.userId, data.bookId).then(() => {
+    res.json("Server still love you!");
+  });
 });
 
 //------------ add book route --------//
 app.post("/addbook", (req, res) => {
   const data = req.body;
 
-  db.addBook(req.body.userId, req.body.bookId, req.body.unixTime).then(()=> {
-    res.json('Server still love you!')
-  })
+  db.addBook(req.body.userId, req.body.bookId, req.body.unixTime).then(() => {
+    res.json("Server still love you!");
+  });
 });
-
 
 //------------ specific user books list route --------//
 app.post("/userbooks", (req, res) => {
@@ -115,27 +114,51 @@ app.post("/booksSearch", (req, res) => {
   const data = req.body;
 
   if (!author && !genre && !country && !bookName) {
-    res.json('Server still love you!')
+    res.json("Server still love you!");
   } else {
-
-    db.getDataForSearchEngine(author, genre, country, bookName).then((result) => {
-      res.json(result)
-    }
+    db.getDataForSearchEngine(author, genre, country, bookName).then(
+      (result) => {
+        res.json(result);
+      }
     );
   }
-
 });
 //------------ register new user route --------//
 app.post("/registrationform", (req, res) => {
-  
-  res.json("New user added")
-})
+  //console.log(req.body.userEmail);
+
+  db.getUserByEmail(req.body.userEmail).then((result) => {
+    if (result[0].case) {
+      const data = {
+        userAdded: false,
+        userExist: true,
+        message: "User exist!",
+      };
+      console.log(data);
+      res.json(data);
+    } else {
+      db.addNewUser(req).then((result) => {
+        db.checkUsersPassword(req.body.userEmail, req.body.userPassword).then((result2)=>{
+          console.log(result2);
+          const data = {
+            userAdded: true,
+            userExist: false,
+            message: "User added!",
+            userData: result2
+          };
+          console.log(data);
+          res.json(data);
+        })
+      });
+    }
+  });
+});
 
 //------------ login route --------//
 app.post("/login", (req, res) => {
   const email = req.body.userEmail;
   const password = req.body.userPass;
-/*
+  /*
   const data = {
     user: true,
     usetId: 5,

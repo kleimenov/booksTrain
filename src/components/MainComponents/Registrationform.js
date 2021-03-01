@@ -1,57 +1,52 @@
 import React, { useState } from "react";
-import axios from "axios";
 
-/*
-const addNewUser = async () => {
-  const response = await fetch("", {
+async function addNewUser(credentials) {
+  return fetch("http://localhost:3002/registrationform", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(credentials),
-  });
-  const data = await response.json();
-  //setNewUser(data);
-};
-*/
+  }).then((response) => response.json());
+}
 
-const Registrationform = ( { setToken }) => {
+const Registrationform = ({ setToken, setUserData }) => {
   const [firstName, setFirstName] = useState();
   const [secondName, setSecondName] = useState();
   const [phoneNumber, setPhoneNumber] = useState();
   const [userEmail, setEmail] = useState();
   const [userPassword, setPassword] = useState();
 
-  console.log( )
-
+  /*
   const credentials = {
     firstName: firstName,
     secondName: secondName,
     phoneNumber: phoneNumber,
     userEmail: userEmail,
-    userPassword: userPassword
-  }
+    userPassword: userPassword,
+  };
+*/
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
 
-  const addNewUser = async () => {
-    const response = await fetch("http://localhost:3002/registrationform", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(credentials)
-    }).then((response) => response.json())
-  }
+    const data = await addNewUser({
+      firstName: firstName,
+      secondName: secondName,
+      phoneNumber: phoneNumber,
+      userEmail: userEmail,
+      userPassword: userPassword,
+    });
 
-  const submitHandler = async (credentials) => {
-    const data = await addNewUser(credentials);
-    console.log("done")
+    console.log(data)
+    setUserData(data.userData);
+    setToken(data.userAdded);
   };
 
   return (
     <div className="container">
       <h1 className="text-secondary">Registration form page </h1>
       <div className="d-flex flex-column">
-        <form onSubmit={submitHandler}>
+        <form onSubmit={handleSubmit}>
           <label
             className="text-secondary mt-2 login-text-holder"
             htmlFor="first_name"
@@ -64,7 +59,7 @@ const Registrationform = ( { setToken }) => {
             name="first_name"
             required
             autoFocus
-            onChange={(evt)=>setFirstName(evt.target.value)}
+            onChange={(evt) => setFirstName(evt.target.value)}
           ></input>
           <label
             className="text-secondary mt-2 login-text-holder"
@@ -78,7 +73,7 @@ const Registrationform = ( { setToken }) => {
             name="last_name"
             required
             autoFocus
-            onChange={(evt)=>setSecondName(evt.target.value)}
+            onChange={(evt) => setSecondName(evt.target.value)}
           ></input>
           <label
             className="text-secondary mt-2 login-text-holder"
@@ -92,7 +87,7 @@ const Registrationform = ( { setToken }) => {
             name="phone_number"
             required
             autoFocus
-            onChange={(evt)=>setPhoneNumber(evt.target.value)}
+            onChange={(evt) => setPhoneNumber(evt.target.value)}
           ></input>
           <label
             className="text-secondary mt-2 login-text-holder"
@@ -106,7 +101,7 @@ const Registrationform = ( { setToken }) => {
             name="email"
             required
             autoFocus
-            onChange={(evt)=>setEmail(evt.target.value)}
+            onChange={(evt) => setEmail(evt.target.value)}
           ></input>
           <label
             className="text-secondary mt-2 login-text-holder"
@@ -120,7 +115,7 @@ const Registrationform = ( { setToken }) => {
             name="password"
             required
             autoFocus
-            onChange={(evt)=>setPassword(evt.target.value)}
+            onChange={(evt) => setPassword(evt.target.value)}
           ></input>
           <button
             type="submit"

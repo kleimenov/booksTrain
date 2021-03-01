@@ -46,13 +46,13 @@ const checkUsersPassword = (email, password) => {
       return false;
     });
 };
+
 //3. Let's get all news
 const getAllNews = () => {
   return pool.query("select * from library_news").then((res) => res.rows);
 };
 
 //4 Let's get specific data according to user conditions
-
 //select library.book_id, library.book_name, library.author, library.genre, users_books.user_id from library left outer join users_books on book_id=book_id where
 //select * from library where
 const getDataForSearchEngine = (author, genre, country, bookName) => {
@@ -108,14 +108,20 @@ const removeBook = (userId, bookId) => {
 };
 
 //8. Add new user
-
-const addNewUser = (request) => {
-  const { name, email, password } = request.body;
+const addNewUser = (req) => {
+  const {
+    firstName,
+    secondName,
+    phoneNumber,
+    userEmail,
+    userPassword,
+  } = req.body;
   const userId = handlers.randomUserIdGen();
+  //console.log(userId)
   return pool
     .query(
-      "INSERT INTO users (user_id, name, email, password) VALUES ($1, $2, $3, $4)",
-      [userId, name, email, password]
+      "INSERT INTO users (id, first_name, last_name, email, password, phone_number) VALUES ($1, $2, $3, $4, $5, $6)",
+      [userId, firstName, secondName, userEmail, userPassword, phoneNumber]
     )
     .then((res) => res.rows);
 };
@@ -130,4 +136,5 @@ module.exports = {
   getSpecificUserBooks,
   addBook,
   removeBook,
+  addNewUser,
 };
