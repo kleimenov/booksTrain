@@ -1,19 +1,6 @@
+import React, { useState } from "react";
 import axios from "axios";
-import { response } from "express";
-import React from "react";
 
-
-/*
-async function addNewUser(credentials) {
-  return fetch("", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    }
-    body: JSON.stringify(credentials)
-  }).then((response) => response.json())
-}
-*/
 /*
 const addNewUser = async () => {
   const response = await fetch("", {
@@ -27,37 +14,34 @@ const addNewUser = async () => {
   //setNewUser(data);
 };
 */
-/*
-const addNewUser =  async () => {
-  axios.request(url).then((response) => {
-    setBookslist(response.data.items);
-    //response.data.items.map((item)=> {console.log(item)})
-  }).catch((error) => {
-    console.error(error);
-  })
-};
-
-*/
 
 const Registrationform = () => {
+  const [firstName, setFirstName] = useState();
+  const [secondName, setSecondName] = useState();
+  const [phoneNumber, setPhoneNumber] = useState();
+  const [userEmail, setEmail] = useState();
+  const [userPassword, setPassword] = useState();
 
   const addNewUser = async () => {
-    axios.request("").then((response) => {
-      console.log(response)
-    }).catch((error) => {
-      console.error(error)
-    })
-  }
+    axios
+      .request("")
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   const submitHandler = async () => {
-
-  }
+    console.log("Xyi tebe")
+  };
 
   return (
     <div className="container">
       <h1 className="text-secondary">Registration form page </h1>
       <div className="d-flex flex-column">
-        <form action="">
+        <form onSubmit={submitHandler}>
           <label
             className="text-secondary mt-2 login-text-holder"
             htmlFor="first_name"
@@ -70,7 +54,7 @@ const Registrationform = () => {
             name="first_name"
             required
             autoFocus
-            onChange={}
+            onChange={(evt)=>setFirstName(evt.target.value)}
           ></input>
           <label
             className="text-secondary mt-2 login-text-holder"
@@ -84,7 +68,7 @@ const Registrationform = () => {
             name="last_name"
             required
             autoFocus
-            onChange={}
+            onChange={(evt)=>setSecondName(evt.target.value)}
           ></input>
           <label
             className="text-secondary mt-2 login-text-holder"
@@ -98,7 +82,7 @@ const Registrationform = () => {
             name="phone_number"
             required
             autoFocus
-            onChange={}
+            onChange={(evt)=>setPhoneNumber(evt.target.value)}
           ></input>
           <label
             className="text-secondary mt-2 login-text-holder"
@@ -112,7 +96,7 @@ const Registrationform = () => {
             name="email"
             required
             autoFocus
-            onChange={}
+            onChange={(evt)=>setEmail(evt.target.value)}
           ></input>
           <label
             className="text-secondary mt-2 login-text-holder"
@@ -126,7 +110,7 @@ const Registrationform = () => {
             name="password"
             required
             autoFocus
-            onChange={}
+            onChange={(evt)=>setPassword(evt.target.value)}
           ></input>
           <button
             type="submit"
@@ -138,6 +122,6 @@ const Registrationform = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Registrationform;
