@@ -49,7 +49,7 @@ const Searchresultitem = ({
   };
 
   const addWishList = () => {
-    console.log("Xyi, Kaukaz");
+    console.log("Clicked");
   };
 
   if (!status) {
