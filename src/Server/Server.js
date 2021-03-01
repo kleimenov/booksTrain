@@ -80,8 +80,6 @@ app.get("/news", (req, res) => {
     });
 });
 
-
-
 //------------ return book route --------//
 app.post("/returnbook", (req, res) => {
   const data = req.body;
