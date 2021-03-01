@@ -53,7 +53,7 @@ const Searchresultitem = ({
     addBookWishList({
       userId: userId,
       bookId: bookId,
-      unixTime: new Date().getTime(),
+      unixTime: new Date().getTime()
     });
   };
 
