@@ -1,7 +1,7 @@
 import React from "react";
 
 const Wishlist = ({ userData }) => {
-  console.log(userData)
+  console.log(userData);
   return (
     <div>
       <h3 className="text-secondary py-2">
