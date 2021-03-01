@@ -12,7 +12,7 @@ async function loginUser(credentials) {
   }).then((response) => response.json());
 }
 
-const Loginform = ({ setToken, setUserData, history }) => {
+const Loginform = ({ setToken, setUserData }) => {
   const [userEmail, setEmail] = useState();
   const [userPass, setPassword] = useState();
 
@@ -23,7 +23,7 @@ const Loginform = ({ setToken, setUserData, history }) => {
       userEmail: userEmail,
       userPass: userPass,
     });
-    //console.log(data)
+
     setUserData(data.userData);
     setToken(data.user);
   };
