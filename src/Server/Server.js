@@ -125,7 +125,6 @@ app.post("/booksSearch", (req, res) => {
 });
 //------------ register new user route --------//
 app.post("/registrationform", (req, res) => {
-  //console.log(req.body.userEmail);
 
   db.getUserByEmail(req.body.userEmail).then((result) => {
     if (result[0].case) {
