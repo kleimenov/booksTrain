@@ -50,7 +50,11 @@ const Searchresultitem = ({
   };
 
   const addWishList = () => {
-    addBookWishList({ userId: userId });
+    addBookWishList({ 
+      userId: userId,
+      bookId: bookId,
+      unixTime: new Date().getTime()
+     });
   };
 
   if (!status) {
