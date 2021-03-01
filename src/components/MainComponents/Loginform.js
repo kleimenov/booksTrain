@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 async function loginUser(credentials) {
   return fetch("http://localhost:3002/login", {
