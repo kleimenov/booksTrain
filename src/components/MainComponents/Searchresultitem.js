@@ -46,12 +46,11 @@ const Searchresultitem = ({
       body: JSON.stringify(credientials),
     });
     const data = await response.json();
-    console.log(data)
+    console.log(data);
   };
 
-
   const addWishList = () => {
-    addBookWishList({userId: userId})
+    addBookWishList({ userId: userId });
   };
 
   if (!status) {
