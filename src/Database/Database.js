@@ -117,7 +117,7 @@ const addNewUser = (req) => {
     userPassword,
   } = req.body;
   const userId = handlers.randomUserIdGen();
-  //console.log(userId)
+
   return pool
     .query(
       "INSERT INTO users (id, first_name, last_name, email, password, phone_number) VALUES ($1, $2, $3, $4, $5, $6)",
@@ -136,5 +136,5 @@ module.exports = {
   getSpecificUserBooks,
   addBook,
   removeBook,
-  addNewUser,
+  addNewUser
 };
