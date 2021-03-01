@@ -2,7 +2,7 @@ import React from 'react'
 
 class Welcome extends React.Component {
     render() {
-      return <h1>Hello, {this.props.token} Fuck</h1>;
+      return <h1>Hello, {this.props.token} Foo</h1>;
     }
   }
 
