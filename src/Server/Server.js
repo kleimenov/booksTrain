@@ -95,7 +95,6 @@ app.post("/wishlist", (req, res) => {
   res.json("Server still love you!");
 })
 
-
 //------------ add book route --------//
 app.post("/addbook", (req, res) => {
   const data = req.body;
