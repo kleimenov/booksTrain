@@ -28,9 +28,9 @@ const Registrationform = ({ setToken, setUserData }) => {
       userPassword: userPassword,
     });
 
-    console.log(data);
     setUserData(data.userData);
     setToken(data.userAdded);
+    
   };
 
   return (
