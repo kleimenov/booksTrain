@@ -15,7 +15,6 @@ const Returnbook = ({ leftTime, userId, bookId, getBooksList }) => {
       body: JSON.stringify(credentials),
     });
     const data = await response.json();
-    console.log("return function invoked");
     getBooksList({ userId: userId });
   };
 
