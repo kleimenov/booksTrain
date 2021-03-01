@@ -76,7 +76,7 @@ function App() {
               <Mybooks component={Mybooks} userData={userData[0]} />
             </Route>
             <Route path="/wishlist">
-              <Wishlist />
+              <Wishlist component={Wishlist} userData={userData[0]} />
             </Route>
           </Switch>
         </div>
