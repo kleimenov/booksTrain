@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
-
 const Clock = () => {
   const [currentTime, setCurrentTime] = useState(
     new Date().toLocaleTimeString()
