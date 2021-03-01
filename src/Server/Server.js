@@ -10,7 +10,6 @@ const path = require("path");
 //const PORT = process.env.PORT || 3002; //set new port (cli) export PORT= <new port value>
 const PORT = 3002;
 const db = require("../Database/Database.js");
-//const handlers = require('./handlers.js');
 
 //set up application
 const app = express();
