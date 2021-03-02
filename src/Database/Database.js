@@ -109,12 +109,11 @@ const addWishList = (req) => {
 };
 
 //7.1 get data from wish list
-const getWishList = (req) => {
-  const { userId, bookId } = req.body;
+const getWishList = (userId) => {
+  
   return pool
-    .query("select * from users_wish_list where user_id=$1 and book_id=$2", [
-      userId,
-      bookId,
+    .query("select * from users_wish_list where user_id=$1", [
+      userId
     ])
     .then((res) => res.row);
 };
@@ -157,4 +156,5 @@ module.exports = {
   removeBook,
   addNewUser,
   addWishList,
+  getWishList
 };

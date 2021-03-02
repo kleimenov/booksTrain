@@ -91,10 +91,24 @@ app.post("/returnbook", (req, res) => {
 
 //------------ add book to wish list route --------//
 app.post("/wishlist", (req, res) => {
-  db.addWishList(req).then(() => {
-      res.json("Server added to wish list!");
-    });
+  const userId = req.body.userId;
+  //console.log("before " +userId);
+
+
+  db.addWishList(req).then((result) => {
+    //console.log("after " +userId);
+    res.json("book added to the wish list")
+  });
 });
+
+//------------ get wish list route --------//
+app.get("allwishlist", (req, res) => {
+  db.getWishList(userId).then((result) => {
+    console.log(result)
+    res.json(result);
+  })
+})
+
 
 //------------ add book route --------//
 app.post("/addbook", (req, res) => {

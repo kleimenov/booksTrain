@@ -11,4 +11,4 @@ const Wishlist = ({ userData }) => {
   );
 };
 
-export default Wishlist;
+export default Wishlist; 
