@@ -6,7 +6,7 @@ const pool = new Pool({
   host: "localhost",
   database: "bookstrain",
   port: "5432",
-});
+}); 
 
 //I will make a bunch of psql queries
 //0. lets get user id
@@ -97,7 +97,7 @@ const addBook = (userId, bookId, unixTime) => {
     .then((res) => res.rows);
 };
 
-//7. let's delete book from users_books table
+//8. let's delete book from users_books table
 const removeBook = (userId, bookId) => {
   return pool
     .query("delete from users_books where user_id=$1 and book_id=$2", [
@@ -107,7 +107,7 @@ const removeBook = (userId, bookId) => {
     .then((res) => res.rows);
 };
 
-//8. Add new user
+//9. Add new user
 const addNewUser = (req) => {
   const {
     firstName,
