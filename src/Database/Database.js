@@ -124,7 +124,7 @@ const removeBook = (userId, bookId) => {
   return pool
     .query("delete from users_books where user_id=$1 and book_id=$2", [
       userId,
-      bookId,
+      bookId, 
     ])
     .then((res) => res.rows);
 };
