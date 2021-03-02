@@ -102,7 +102,9 @@ app.post("/wishlist", (req, res) => {
 });
 
 //------------ get wish list route --------//
-app.get("allwishlist", (req, res) => {
+app.post("/allwishlist", (req, res) => {
+  const userId = req.body.userId;
+  console.log(userId)
   db.getWishList(userId).then((result) => {
     console.log(result)
     res.json(result);

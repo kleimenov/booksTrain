@@ -110,12 +110,7 @@ const addWishList = (req) => {
 
 //7.1 get data from wish list
 const getWishList = (userId) => {
-  
-  return pool
-    .query("select * from users_wish_list where user_id=$1", [
-      userId
-    ])
-    .then((res) => res.row);
+  return pool.query("select * from users_wish_list where user_id=$1", [userId]).then((res) => res.rows);
 };
 
 //8. let's delete book from users_books table
