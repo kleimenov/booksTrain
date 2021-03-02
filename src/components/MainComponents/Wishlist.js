@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
+import Wishbook from "./Wishbook";
 
 const Wishlist = ({ userData }) => {
-
   const [myWishlist, setmyWishlist] = useState([]);
 
   useEffect(() => {
     getWishlist();
-  }, []); 
+  }, []);
 
   const credentials = {
     userId: userData.id,
@@ -23,19 +23,24 @@ const Wishlist = ({ userData }) => {
     setmyWishlist(data);
   };
 
-  console.log(myWishlist)
-  
-
-
-
+  //console.log(myWishlist);
 
   return (
     <div>
       <h3 className="text-secondary py-2">
         {userData.first_name} this is your wish list
       </h3>
+      <ul>
+        {myWishlist.map((item) => (
+          <Wishbook
+          key={item.book_id}
+          bookName={item.book_name}
+          bookAuthor={item.author}
+        />
+      ))}
+      </ul>
     </div>
   );
 };
 
-export default Wishlist; 
+export default Wishlist;
