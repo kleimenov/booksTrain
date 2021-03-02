@@ -120,12 +120,9 @@ const getWishList = (req) => {
 };
 
 //8. let's delete book from users_books table
-const removeBook = (userId, bookId) => {
+const removeBook = (userId) => {
   return pool
-    .query("delete from users_books where user_id=$1 and book_id=$2", [
-      userId,
-      bookId, 
-    ])
+    .query("delete from users_books where user_id=$1", [userId])
     .then((res) => res.rows);
 };
 
