@@ -108,6 +108,17 @@ const addWishList = (req) => {
     .then((res) => res.rows);
 };
 
+//7.1 get data from wish list
+const getWishList = (req) => {
+  const { userId, bookId } = req.body;
+  return pool
+    .query("select * from users_wish_list where user_id=$1 and book_id=$2", [
+      userId,
+      bookId,
+    ])
+    .then((res) => res.row);
+};
+
 //8. let's delete book from users_books table
 const removeBook = (userId, bookId) => {
   return pool
