@@ -110,7 +110,12 @@ const addWishList = (req) => {
 
 //7.1 get data from wish list
 const getWishList = (userId) => {
-  return pool.query("select * from users_wish_list where user_id=$1", [userId]).then((res) => res.rows);
+  return pool
+    .query(
+      "select users_wish_list.user_id, users_wish_list.book_id, library.book_name, library.author, users_wish_list.add_date from users_wish_list inner join library on library.book_id=users_wish_list.book_id where user_id=$1",
+      [userId]
+    )
+    .then((res) => res.rows);
 };
 
 //8. let's delete book from users_books table
@@ -151,5 +156,5 @@ module.exports = {
   removeBook,
   addNewUser,
   addWishList,
-  getWishList
+  getWishList,
 };

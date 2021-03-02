@@ -23,6 +23,9 @@ const Wishlist = ({ userData }) => {
     setmyWishlist(data);
   };
 
+  console.log(myWishlist)
+  
+
 
 
 
