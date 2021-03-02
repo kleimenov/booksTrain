@@ -92,7 +92,7 @@ app.post("/returnbook", (req, res) => {
 //------------ add book to wish list route --------//
 app.post("/wishlist", (req, res) => {
   db.addWishList(req).then(() => {
-      res.json("Server still love you!");
+      res.json("Server added to wish list!");
     });
 });
 
@@ -101,7 +101,7 @@ app.post("/addbook", (req, res) => {
   const data = req.body;
 
   db.addBook(req.body.userId, req.body.bookId, req.body.unixTime).then(() => {
-    res.json("Server still love you!");
+    res.json("Server book added to reading list!");
   });
 });
 
