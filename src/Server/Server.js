@@ -91,10 +91,11 @@ app.post("/returnbook", (req, res) => {
 
 //------------ add book to wish list route --------//
 app.post("/wishlist", (req, res) => {
-  console.log(req.body)
-  res.json("Server still love you!");
-})
- 
+  db.addWishList(req).then(() => {
+      res.json("Server still love you!");
+    });
+});
+
 //------------ add book route --------//
 app.post("/addbook", (req, res) => {
   const data = req.body;
@@ -133,7 +134,6 @@ app.post("/booksSearch", (req, res) => {
 
 //------------ register new user route --------//
 app.post("/registrationform", (req, res) => {
-
   db.getUserByEmail(req.body.userEmail).then((result) => {
     if (result[0].case) {
       const data = {
@@ -144,16 +144,18 @@ app.post("/registrationform", (req, res) => {
       res.json(data);
     } else {
       db.addNewUser(req).then((result) => {
-        db.checkUsersPassword(req.body.userEmail, req.body.userPassword).then((result2)=>{
-          console.log(result2);
-          const data = {
-            userAdded: true,
-            userExist: false,
-            message: "User added!",
-            userData: result2
-          };
-          res.json(data);
-        })
+        db.checkUsersPassword(req.body.userEmail, req.body.userPassword).then(
+          (result2) => {
+            console.log(result2);
+            const data = {
+              userAdded: true,
+              userExist: false,
+              message: "User added!",
+              userData: result2,
+            };
+            res.json(data);
+          }
+        );
       });
     }
   });
@@ -163,7 +165,7 @@ app.post("/registrationform", (req, res) => {
 app.post("/login", (req, res) => {
   const email = req.body.userEmail;
   const password = req.body.userPass;
-  
+
   db.getUserByEmail(email).then((result) => {
     if (!result[0].case) {
       const data = {

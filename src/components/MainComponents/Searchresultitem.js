@@ -44,7 +44,7 @@ const Searchresultitem = ({
         "Content-Type": "application/json",
       },
       body: JSON.stringify(credientials),
-    });
+    }); 
     const data = await response.json();
     console.log(data);
   };
