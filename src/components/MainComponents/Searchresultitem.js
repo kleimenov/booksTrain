@@ -25,7 +25,7 @@ const Searchresultitem = ({
 
   const addReadingList = () => {
     if (!status) {
-      addBook({
+      addBook({ 
         userId: userId,
         bookId: bookId,
         userName: userName,
@@ -46,9 +46,10 @@ const Searchresultitem = ({
       body: JSON.stringify(credientials),
     });
     const data = await response.json();
-    console.log(data);
+    //console.log(data);
   };
 
+  /*
   const getWishList = async (credientials) => {
     const response = await fetch("http://localhost:3002/allwishlist", {
       method: "POST",
@@ -60,16 +61,20 @@ const Searchresultitem = ({
     const data = await response.json();
     console.log(data);
   };
+  */
 
+  
   const addWishList = () => {
     addBookWishList({
       userId: userId,
       bookId: bookId,
       unixTime: new Date().getTime(),
     });
+    /*
     getWishList({
       userId: userId,
     });
+    */
   };
 
   if (!status) {

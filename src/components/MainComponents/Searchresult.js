@@ -36,7 +36,7 @@ const Searchresult = ({ searchResult, setResponse, userName, userId }) => {
     <div>
       <ul className="list-unstyled">
         {searchResult.map((item) => (
-          <Searchresultitem
+          <Searchresultitem 
             key={item.book_id}
             bookName ={item.book_name}
             bookAuthor ={item.author}

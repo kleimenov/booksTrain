@@ -13,6 +13,8 @@ const Homepage = (props) => {
   const [books, setBookslist] = useState([]);
   const [news, setNews] = useState([]);
   const [searchResponse, setResponse] = useState(false);
+  //const [wishList, setWishlist] = useState([])
+  //console.log(wishList)
 
   const url = "";
   const url2 = "https://www.googleapis.com/books/v1/volumes?q=Orwell";
@@ -70,7 +72,7 @@ const Homepage = (props) => {
             ))}
           </ul>
         </div>
-      </div>
+      </div> 
     );
   }
   if (searchResponse == []) {
