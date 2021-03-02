@@ -97,6 +97,11 @@ const addBook = (userId, bookId, unixTime) => {
     .then((res) => res.rows);
 };
 
+//7. Let's add book to user's wish list
+const addWishList = (userId, bookId, unixTime) => {
+  return pool.query("insert into users_wish_list ((user_id, book_id, add_date) values ($1, $2, $3))",[userId, bookId, unixTime]).then((res)=>res.rows);
+}
+
 //8. let's delete book from users_books table
 const removeBook = (userId, bookId) => {
   return pool
@@ -136,5 +141,6 @@ module.exports = {
   getSpecificUserBooks,
   addBook,
   removeBook,
-  addNewUser
+  addNewUser,
+  addWishList
 };
