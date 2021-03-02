@@ -98,7 +98,8 @@ const addBook = (userId, bookId, unixTime) => {
 };
 
 //7. Let's add book to user's wish list
-const addWishList = (userId, bookId, unixTime) => {
+const addWishList = (req) => {
+  const {userId, bookId, unixTime} = req.body;
   return pool.query("insert into users_wish_list ((user_id, book_id, add_date) values ($1, $2, $3))",[userId, bookId, unixTime]).then((res)=>res.rows);
 }
 
