@@ -150,7 +150,6 @@ app.post("/booksSearch", (req, res) => {
     db.getDataForSearchEngine(author, genre, country, bookName).then(
       (books) => {
         let wishPromises = [];
-        //console.log(books)
         for (let book of books) {
           let wishPromise = db
             .checkIfInWishList(userId, book.book_id)
@@ -160,7 +159,6 @@ app.post("/booksSearch", (req, res) => {
             });
           wishPromises = [...wishPromises, wishPromise];
         }
-
         Promise.all(wishPromises).then(books => res.json(books))
       }
     );
