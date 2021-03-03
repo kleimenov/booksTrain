@@ -11,7 +11,7 @@ async function searchRequest(credentials) {
   }).then((response) => response.json());
 }
 
-const Searchengine = ({ setResponse }) => {
+const Searchengine = ({ setResponse, userId }) => {
   useEffect(() => {
     searchRequest();
   }, []);
@@ -35,6 +35,7 @@ const Searchengine = ({ setResponse }) => {
     searchGenre: Genre,
     searchCountry: Country,
     searchBookName: BookName,
+    userId: userId.toString()
   };
 
   toLowerCase(data);
@@ -55,6 +56,7 @@ const Searchengine = ({ setResponse }) => {
 
     if (checkEmptyInputs(data, requestPermit)) {
       const serverResponse = await searchRequest(data);
+      //console.log(serverResponse);
       setResponse(serverResponse);
     } else {
       alert("Please fill out at least one input line (whatever you want)");

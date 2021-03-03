@@ -58,6 +58,7 @@ const getAllNews = () => {
 const getDataForSearchEngine = (author, genre, country, bookName) => {
   let fullQuery =
     "select library.book_id, library.book_name, library.author, library.genre, users_books.user_id from library left outer join users_books on library.book_id=users_books.book_id where ";
+  //"select library.book_id, library.book_name, library.author, library.genre, users_books.user_id, users_wish_list.user_id as user_id_wishlist, users_wish_list.book_id as book_id_wishlist from library left outer join users_books on library.book_id=q.book_id left outer join users_wish_list on library.book_id=users_wish_list.book_id where ";
 
   if (author) {
     fullQuery += `library.author LIKE '%${author}%' and `;
@@ -118,6 +119,17 @@ const getWishList = (userId) => {
     .then((res) => res.rows);
 };
 
+//7.2 get specific wish list user and book data
+
+const checkIfInWishList = (userId, bookId) => {
+  return pool
+    .query("select * from users_wish_list where user_id=$1 and book_id=$2", [
+      userId,
+      bookId,
+    ])
+    .then((res) => res.rows);
+};
+
 //8. let's delete book from users_books table
 const removeBook = (userId) => {
   return pool
@@ -147,8 +159,13 @@ const addNewUser = (req) => {
 //10. Remove book from wishlist
 
 const removeBookWishlist = (bookId, userid) => {
-  return pool.query("delete from users_wish_list where book_id=$1 and user_id=$2", [bookId, userid]).then((res) => res.rows);
-}
+  return pool
+    .query("delete from users_wish_list where book_id=$1 and user_id=$2", [
+      bookId,
+      userid,
+    ])
+    .then((res) => res.rows);
+};
 
 module.exports = {
   getAll,
@@ -163,5 +180,6 @@ module.exports = {
   addNewUser,
   addWishList,
   getWishList,
-  removeBookWishlist
+  removeBookWishlist,
+  checkIfInWishList
 };

@@ -97,18 +97,16 @@ app.post("/removebookwishlist", (req, res) => {
   db.removeBookWishlist(data.bookId, data.userId).then(() => {
     res.json("Server still love you!");
   });
-
-})
+});
 
 //------------ add book to wish list route --------//
 app.post("/wishlist", (req, res) => {
   const userId = req.body.userId;
   //console.log("before " +userId);
 
-
   db.addWishList(req).then((result) => {
     //console.log("after " +userId);
-    res.json("book added to the wish list")
+    res.json("book added to the wish list");
   });
 });
 
@@ -117,9 +115,8 @@ app.post("/allwishlist", (req, res) => {
   const userId = req.body.userId;
   db.getWishList(userId).then((result) => {
     res.json(result);
-  })
-})
-
+  });
+});
 
 //------------ add book route --------//
 app.post("/addbook", (req, res) => {
@@ -145,13 +142,26 @@ app.post("/booksSearch", (req, res) => {
   const country = req.body.searchCountry;
   const bookName = req.body.searchBookName;
   const data = req.body;
+  const userId = parseInt(req.body.userId, 10);
 
   if (!author && !genre && !country && !bookName) {
     res.json("Server still love you!");
   } else {
     db.getDataForSearchEngine(author, genre, country, bookName).then(
-      (result) => {
-        res.json(result);
+      (books) => {
+        let wishPromises = [];
+        //console.log(books)
+        for (let book of books) {
+          let wishPromise = db
+            .checkIfInWishList(userId, book.book_id)
+            .then((result) => {
+              isInWishlist = result[0] ? true : false;
+              return { ...book, isInWishlist: isInWishlist };
+            });
+          wishPromises = [...wishPromises, wishPromise];
+        }
+
+        Promise.all(wishPromises).then(books => res.json(books))
       }
     );
   }

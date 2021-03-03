@@ -44,6 +44,7 @@ const Searchresult = ({ searchResult, setResponse, userName, userId }) => {
             userId={userId}
             bookId={item.book_id}
             bookStatus={item.user_id}
+            wishStatus={item.isInWishlist}
           />
         ))}
       </ul>

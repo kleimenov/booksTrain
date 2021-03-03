@@ -8,9 +8,15 @@ const Searchresultitem = ({
   bookId,
   userId,
   bookStatus,
+  wishStatus
 }) => {
+
   const [status, setStatus] = useState(bookStatus ? true : false);
   const [whoRead, setReader] = useState(bookStatus);
+  const [userWish, setUserWish] = useState(wishStatus)
+
+
+  console.log(wishStatus)
 
   const addBook = async (credientials) => {
     const response = await fetch("http://localhost:3002/addbook", {
@@ -46,7 +52,6 @@ const Searchresultitem = ({
       body: JSON.stringify(credientials),
     });
     const data = await response.json();
-    //console.log(data);
   };
 
   /*
@@ -70,11 +75,7 @@ const Searchresultitem = ({
       bookId: bookId,
       unixTime: new Date().getTime(),
     });
-    /*
-    getWishList({
-      userId: userId,
-    });
-    */
+    setUserWish(!userWish)
   };
 
   if (!status) {
@@ -101,6 +102,17 @@ const Searchresultitem = ({
         <div className="d-flex flex-row justify-content-between w-50">
           <h5 className="text-secondary ml-2 pt-2">
             {bookName} / {bookAuthor} / in your reading list
+          </h5>
+        </div>
+      </li>
+    );
+  }
+  if (userWish) {
+    return (
+      <li className="my-2">
+        <div className="d-flex flex-row justify-content-between w-50">
+          <h5 className="text-secondary ml-2 pt-2">
+            {bookName} / {bookAuthor} / in your wish list
           </h5>
         </div>
       </li>

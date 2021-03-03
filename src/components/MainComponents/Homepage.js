@@ -83,6 +83,7 @@ const Homepage = (props) => {
         </h3>
         <Searchengine
           {...props}
+          userId={props.userId}
           searchResponse={searchResponse}
           setResponse={setResponse}
         />
