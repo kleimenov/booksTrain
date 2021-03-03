@@ -10,7 +10,11 @@ const Wishbook = ({ bookName, bookAuthor, bookId, userId, getWishlist }) => {
         <h5 className="text-secondary pt-1">
           {toCapitalize(bookName)} / {toCapitalize(bookAuthor)} /{" "}
         </h5>
-        <Removefromwishlist />
+        <Removefromwishlist
+          bookId={bookId}
+          userId={userId}
+          getWishlist={getWishlist}
+        />
       </div>
     </li>
   );

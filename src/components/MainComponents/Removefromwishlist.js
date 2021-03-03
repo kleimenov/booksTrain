@@ -1,9 +1,25 @@
 import React from "react";
 
-const Removefromwishlist = () => {
+const Removefromwishlist = ( {userId, bookId, getWishlist} ) => {
+
+  const removeBookWishlist = async (credentials) => {
+    const response = await fetch("http://localhost:3002/removebookwishlist", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(credentials),
+    });
+    const data = await response.json();
+    getWishlist({ userId: userId });
+  };
+  
   
   const clickHandler = () => {
-    console.log("Xyi");
+    removeBookWishlist({
+      userId: userId,
+      bookId: bookId,
+    });
   };
 
   return (

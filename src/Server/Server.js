@@ -89,6 +89,17 @@ app.post("/returnbook", (req, res) => {
   });
 });
 
+//
+
+app.post("/removebookwishlist", (req, res) => {
+  const data = req.body;
+
+  db.removeBookWishlist(data.bookId, data.userId).then(() => {
+    res.json("Server still love you!");
+  });
+
+})
+
 //------------ add book to wish list route --------//
 app.post("/wishlist", (req, res) => {
   const userId = req.body.userId;
