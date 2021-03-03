@@ -39,6 +39,7 @@ const Wishlist = ({ userData }) => {
           bookAuthor={item.author}
           bookId={item.book_id}
           userId={item.user_id}
+          getWishlist={getWishlist}
         />
       ))}
       </ul>
