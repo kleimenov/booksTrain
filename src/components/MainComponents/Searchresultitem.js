@@ -54,20 +54,6 @@ const Searchresultitem = ({
     const data = await response.json();
   };
 
-  /*
-  const getWishList = async (credientials) => {
-    const response = await fetch("http://localhost:3002/allwishlist", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(credientials),
-    });
-    const data = await response.json();
-    console.log(data);
-  };
-  */
-
   
   const addWishList = () => {
     addBookWishList({
