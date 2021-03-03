@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Wishbook from "./Wishbook";
-import Emptywishlist from "./Emptywishlist"
+import Emptywishlist from "./Emptywishlist";
 
 const Wishlist = ({ userData }) => {
   const [myWishlist, setmyWishlist] = useState([]);
@@ -24,8 +24,6 @@ const Wishlist = ({ userData }) => {
     setmyWishlist(data);
   };
 
-  console.log(myWishlist);
-
   if (myWishlist.length > 0) {
     return (
       <div>
@@ -47,9 +45,7 @@ const Wishlist = ({ userData }) => {
       </div>
     );
   }
-  return (
-    <Emptywishlist userName={userData.first_name}/>
-  )
+  return <Emptywishlist userName={userData.first_name} />;
 };
 
 export default Wishlist;
