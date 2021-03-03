@@ -1,6 +1,7 @@
 import React from "react";
 import Progressbar from "./Progressbar";
-import Returnbook from "./Returnbook";
+import Returnbook from "./Returnbook"; 
+import {countdounTime, toCapitalize} from "./Handlers"
 
 const Userbook = ({
   bookName,
@@ -10,6 +11,7 @@ const Userbook = ({
   userId,
   getBooksList,
 }) => {
+  /*
   const countdounTime = (date) => {
     const readingTerm = 14;
     const startUnixTime = parseInt(date);
@@ -31,7 +33,7 @@ const Userbook = ({
     }
     return newArr.join(" ");
   };
-
+*/
   const leftTime = countdounTime(date);
 
   return (

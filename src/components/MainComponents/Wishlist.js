@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Wishbook from "./Wishbook";
 
+
 const Wishlist = ({ userData }) => {
   const [myWishlist, setmyWishlist] = useState([]);
 
@@ -30,7 +31,7 @@ const Wishlist = ({ userData }) => {
       <h3 className="text-secondary py-2">
         {userData.first_name} this is your wish list
       </h3>
-      <ul>
+      <ul className="list-unstyled">
         {myWishlist.map((item) => (
           <Wishbook
           key={item.book_id}
