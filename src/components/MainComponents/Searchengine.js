@@ -56,7 +56,6 @@ const Searchengine = ({ setResponse, userId }) => {
 
     if (checkEmptyInputs(data, requestPermit)) {
       const serverResponse = await searchRequest(data);
-      //console.log(serverResponse);
       setResponse(serverResponse);
     } else {
       alert("Please fill out at least one input line (whatever you want)");
