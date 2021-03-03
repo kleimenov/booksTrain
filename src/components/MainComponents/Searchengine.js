@@ -20,7 +20,6 @@ const Searchengine = ({ setResponse, userId }) => {
   const [Genre, setGenre] = useState();
   const [Country, setCountry] = useState();
   const [BookName, setBookName] = useState();
-  //const [searchResponse, setResponse] = useState([]);
 
   const toLowerCase = (variable) => {
     for (let item in variable) {
@@ -35,7 +34,7 @@ const Searchengine = ({ setResponse, userId }) => {
     searchGenre: Genre,
     searchCountry: Country,
     searchBookName: BookName,
-    userId: userId.toString()
+    userId: userId.toString(),
   };
 
   toLowerCase(data);
