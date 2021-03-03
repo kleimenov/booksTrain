@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Wishbook from "./Wishbook";
-
+import Emptywishlist from "./Emptywishlist"
 
 const Wishlist = ({ userData }) => {
   const [myWishlist, setmyWishlist] = useState([]);
@@ -26,25 +26,30 @@ const Wishlist = ({ userData }) => {
 
   console.log(myWishlist);
 
+  if (myWishlist.length > 0) {
+    return (
+      <div>
+        <h3 className="text-secondary py-2">
+          {userData.first_name} this is your wish list
+        </h3>
+        <ul className="list-unstyled">
+          {myWishlist.map((item) => (
+            <Wishbook
+              key={item.book_id}
+              bookName={item.book_name}
+              bookAuthor={item.author}
+              bookId={item.book_id}
+              userId={item.user_id}
+              getWishlist={getWishlist}
+            />
+          ))}
+        </ul>
+      </div>
+    );
+  }
   return (
-    <div>
-      <h3 className="text-secondary py-2">
-        {userData.first_name} this is your wish list
-      </h3>
-      <ul className="list-unstyled">
-        {myWishlist.map((item) => (
-          <Wishbook
-          key={item.book_id}
-          bookName={item.book_name}
-          bookAuthor={item.author}
-          bookId={item.book_id}
-          userId={item.user_id}
-          getWishlist={getWishlist}
-        />
-      ))}
-      </ul>
-    </div>
-  );
+    <Emptywishlist userName={userData.first_name}/>
+  )
 };
 
 export default Wishlist;
