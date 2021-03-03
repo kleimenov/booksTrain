@@ -2,7 +2,7 @@ import React from "react";
 import Removefromwishlist from "./Removefromwishlist";
 import { toCapitalize } from "./Handlers";
 
-const Wishbook = ({ bookName, bookAuthor, bookId, userId , getWishlist}) => {
+const Wishbook = ({ bookName, bookAuthor, bookId, userId, getWishlist }) => {
   console.log(bookName);
   return (
     <li>
