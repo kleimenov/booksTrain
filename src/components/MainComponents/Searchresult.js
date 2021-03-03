@@ -3,9 +3,7 @@ import Searchresultitem from "./Searchresultitem";
 import { Button } from "react-bootstrap";
 import Searchengine from "./Searchengine";
 
-
 const Searchresult = ({ searchResult, setResponse, userName, userId }) => {
-
   const returnHandler = () => {
     setResponse(false);
   };
@@ -31,16 +29,16 @@ const Searchresult = ({ searchResult, setResponse, userName, userId }) => {
   };
 
   capitalizaResult(searchResult);
- 
+
   return (
     <div>
       <ul className="list-unstyled">
         {searchResult.map((item) => (
-          <Searchresultitem 
+          <Searchresultitem
             key={item.book_id}
-            bookName ={item.book_name}
-            bookAuthor ={item.author}
-            userName = {userName}
+            bookName={item.book_name}
+            bookAuthor={item.author}
+            userName={userName}
             userId={userId}
             bookId={item.book_id}
             bookStatus={item.user_id}
