@@ -15,9 +15,6 @@ const Searchresultitem = ({
   const [whoRead, setReader] = useState(bookStatus);
   const [userWish, setUserWish] = useState(wishStatus)
 
-
-  console.log(wishStatus)
-
   const addBook = async (credientials) => {
     const response = await fetch("http://localhost:3002/addbook", {
       method: "POST",
