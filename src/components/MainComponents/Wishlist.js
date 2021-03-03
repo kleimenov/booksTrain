@@ -24,7 +24,7 @@ const Wishlist = ({ userData }) => {
     setmyWishlist(data);
   };
 
-  //console.log(myWishlist);
+  console.log(myWishlist);
 
   return (
     <div>
@@ -37,6 +37,8 @@ const Wishlist = ({ userData }) => {
           key={item.book_id}
           bookName={item.book_name}
           bookAuthor={item.author}
+          bookId={item.book_id}
+          userId={item.user_id}
         />
       ))}
       </ul>
