@@ -1,13 +1,17 @@
 import React from "react";
-import { toCapitalize } from "./Handlers"
+import Removefromwishlist from "./Removefromwishlist";
+import { toCapitalize } from "./Handlers";
 
 const Wishbook = ({ bookName, bookAuthor }) => {
-    console.log(bookName)
+  console.log(bookName);
   return (
     <li>
-      <h5 className="text-secondary pt-2">
-      {toCapitalize(bookName)} / {toCapitalize(bookAuthor)} /{" "}
-      </h5>
+      <div className="d-flex flex-row justify-content-between w-50">
+        <h5 className="text-secondary pt-1">
+          {toCapitalize(bookName)} / {toCapitalize(bookAuthor)} /{" "}
+        </h5>
+        <Removefromwishlist />
+      </div>
     </li>
   );
 };
