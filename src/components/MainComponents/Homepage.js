@@ -42,26 +42,26 @@ const Homepage = (props) => {
     return (
       <div>
         <div className="start-page">
-          <h3 className="start-page-header-text">
-            Most popular for today!
-          </h3>
+          <h3 className="start-page-header-text">Most popular for today!</h3>
           <Clock date={new Date()} />
         </div>
-        <Carousel showThumbs={false} /*autoPlay*/>
-          {books.splice(0, 5).map((book) => (
-            <Books
-              key={book.id}
-              image={
-                book.volumeInfo.imageLinks
-                  ? book.volumeInfo.imageLinks.smallThumbnail
-                  : ""
-              }
-              title={book.volumeInfo.title}
-              author={book.volumeInfo.authors}
-              desc={book.volumeInfo.publishedDate}
-            />
-          ))}
-        </Carousel>
+        <div>
+          <Carousel showThumbs={false} /*autoPlay*/>
+            {books.splice(0, 5).map((book) => (
+              <Books
+                key={book.id}
+                image={
+                  book.volumeInfo.imageLinks
+                    ? book.volumeInfo.imageLinks.smallThumbnail
+                    : ""
+                }
+                title={book.volumeInfo.title}
+                author={book.volumeInfo.authors}
+                desc={book.volumeInfo.publishedDate}
+              />
+            ))}
+          </Carousel>
+        </div>
         <div>
           <h3 className="text-center text-secondary mt-4">Library news!</h3>
           <ul className="newscontainer py-2">
