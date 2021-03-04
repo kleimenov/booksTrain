@@ -66,6 +66,17 @@ code {
   color: rgb(109, 117, 125);
 }
 
+.start-page-news-text {
+  text-align: center;
+  color: rgb(109, 117, 125);
+  margin-top: 20px;
+}
+
+.start-page-newscontainer {
+  
+}
+
+
 @media (max-width: 800px) {
   .contianer {
     width: 600px;
@@ -105,6 +116,12 @@ code {
   }
   .start-page-header-text {
     display: none;
+  }
+  .carouselHolder {
+    display: none;
+  }
+  .start-page-news-text {
+    margin-top: 5px;
   }
 }
 

@@ -45,7 +45,7 @@ const Homepage = (props) => {
           <h3 className="start-page-header-text">Most popular for today!</h3>
           <Clock date={new Date()} />
         </div>
-        <div>
+        <div className="carouselHolder">
           <Carousel showThumbs={false} /*autoPlay*/>
             {books.splice(0, 5).map((book) => (
               <Books
@@ -63,8 +63,8 @@ const Homepage = (props) => {
           </Carousel>
         </div>
         <div>
-          <h3 className="text-center text-secondary mt-4">Library news!</h3>
-          <ul className="newscontainer py-2">
+          <h3 className="start-page-news-text">Library news!</h3>
+          <ul className="newscontainer">
             {news.map((artical) => (
               <News key={artical.news_id} news={artical.news_text} />
             ))}
