@@ -70,7 +70,7 @@ const Searchresultitem = ({
           </h5>
           <Button
             onClick={addReadingList}
-            className="btn-success p-0 px-1 py-0"
+            className="btn-success p-0 px-1 py-0 ml-1"
             type="submit"
           >
             +book
@@ -109,7 +109,7 @@ const Searchresultitem = ({
         </h5>
         <Button
           onClick={addWishList}
-          className="btn-warning p-0 px-1 py-0"
+          className="btn-warning p-0 px-1 py-0 ml-2"
           type="submit"
         >
           +add to wish list
