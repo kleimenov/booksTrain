@@ -215,7 +215,9 @@ code {
   margin: 5px;
 }
 
-
+.carousel-root .carousel .slide img {
+  width: 50%;
+}
 
 
 
@@ -315,9 +317,7 @@ code {
 
 
 
-.carousel-root .carousel .slide img {
-  width: 50%;
-}
+
 
 .news-list-news {
   position: relative;
