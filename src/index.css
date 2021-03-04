@@ -175,7 +175,13 @@ code {
   height: 100vh;
 }
 
-
+.books-list-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+}
 
 
 
@@ -265,13 +271,7 @@ code {
 
 
 
-.books-list-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 5px;
-}
+
 
 .book-title {
   font-size: 20px;
