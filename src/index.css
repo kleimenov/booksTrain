@@ -87,6 +87,12 @@ code {
   flex-direction: row;
 }
 
+
+
+
+
+
+
 @media (max-width: 800px) {
   .contianer {
     width: 600px;
