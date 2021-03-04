@@ -29,7 +29,7 @@ const Returnbook = ({ leftTime, userId, bookId, getBooksList }) => {
     <div>
       <button
         onClick={clickHandler}
-        className="btn return-book-button ml-2 px-1 py-0 text-white font-weight-bold"
+        className="btn return-book-button"
         style={buttonStyles}
       >
         Return book
