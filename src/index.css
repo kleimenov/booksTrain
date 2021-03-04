@@ -238,6 +238,10 @@ code {
   background-repeat: no-repeat;
 }
 
+.search-button-settings {
+  font-size: 20px;
+  font-weight: 600;
+}
 
 @media (max-width: 800px) {
   .contianer {
@@ -311,10 +315,7 @@ code {
 
 
 
-.search-button-settings {
-  font-size: 20px;
-  font-weight: 600;
-}
+
 
 .search-form-settings {
   font-size: 20px;
