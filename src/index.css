@@ -196,7 +196,10 @@ code {
   padding: 0;
 }
 
-
+.book-img {
+  margin: 0;
+  padding: 0;
+}
 
 
 
@@ -290,10 +293,7 @@ code {
 
 
 
-.book-img {
-  margin: 0;
-  padding: 0;
-}
+
 
 .carousel-root .carousel .slide {
   background: lightgray;
