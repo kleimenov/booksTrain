@@ -42,7 +42,7 @@ const Homepage = (props) => {
     return (
       <div>
         <div className="start-page">
-          <h3 className="text-center text-secondary">
+          <h3 className="start-page-header-text">
             Most popular for today!
           </h3>
           <Clock date={new Date()} />

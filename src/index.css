@@ -61,6 +61,11 @@ code {
   padding: 10px 0;
 }
 
+.start-page-header-text {
+  text-align: center;
+  color: rgb(109, 117, 125);
+}
+
 @media (max-width: 800px) {
   .contianer {
     width: 600px;
@@ -97,6 +102,9 @@ code {
 @media (max-width: 400px) {
   .contianer {
     width: 275px;
+  }
+  .start-page-header-text {
+    display: none;
   }
 }
 
