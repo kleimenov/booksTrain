@@ -211,6 +211,14 @@ code {
   margin-right: auto;
 }
 
+.carousel-root .carousel .thumbs-wrapper {
+  margin: 5px;
+}
+
+
+
+
+
 @media (max-width: 800px) {
   .contianer {
     width: 600px;
@@ -305,9 +313,7 @@ code {
 
 
 
-.carousel-root .carousel .thumbs-wrapper {
-  margin: 5px;
-}
+
 
 .carousel-root .carousel .slide img {
   width: 50%;
