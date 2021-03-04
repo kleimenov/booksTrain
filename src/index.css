@@ -188,6 +188,15 @@ code {
   text-shadow: 0 0 5px gray;
 }
 
+.book-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+  padding: 0;
+}
+
+
 
 
 
@@ -279,13 +288,7 @@ code {
 
 
 
-.book-desc {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 10px;
-  padding: 0;
-}
+
 
 .book-img {
   margin: 0;
