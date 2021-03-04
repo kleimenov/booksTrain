@@ -157,7 +157,6 @@ const addNewUser = (req) => {
 };
 
 //10. Remove book from wishlist
-
 const removeBookWishlist = (bookId, userid) => {
   return pool
     .query("delete from users_wish_list where book_id=$1 and user_id=$2", [
