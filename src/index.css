@@ -219,6 +219,12 @@ code {
   width: 50%;
 }
 
+.news-list-news {
+  position: relative;
+  padding-left: 15px;
+  list-style: none;
+  padding-bottom: 10px;
+}
 
 
 @media (max-width: 800px) {
@@ -319,12 +325,7 @@ code {
 
 
 
-.news-list-news {
-  position: relative;
-  padding-left: 15px;
-  list-style: none;
-  padding-bottom: 10px;
-}
+
 
 .news-list-news::before {
   content: "";
