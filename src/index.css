@@ -135,6 +135,23 @@ code {
   background-color: white;
 }
 
+.enroll-submit-button,
+.signIn-submit-button {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.enroll-submit-button:hover,
+.signIn-submit-button:hover {
+  color: gray;
+}
+
+.enroll-submit-button:active,
+.signIn-submit-button:active {
+  color: white;
+}
+
 
 @media (max-width: 800px) {
   .contianer {
@@ -208,22 +225,7 @@ code {
 
 
 
-.enroll-submit-button,
-.signIn-submit-button {
-  font-size: 20px;
-  font-weight: 600;
-  color: white;
-}
 
-.enroll-submit-button:hover,
-.signIn-submit-button:hover {
-  color: gray;
-}
-
-.enroll-submit-button:active,
-.signIn-submit-button:active {
-  color: white;
-}
 
 .registration-submit-button {
   font-size: 25px;
