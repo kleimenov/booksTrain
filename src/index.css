@@ -201,7 +201,9 @@ code {
   padding: 0;
 }
 
-
+.carousel-root .carousel .slide {
+  background: lightgray;
+}
 
 
 
@@ -295,9 +297,7 @@ code {
 
 
 
-.carousel-root .carousel .slide {
-  background: lightgray;
-}
+
 
 .carousel-root {
   width: 50%;
