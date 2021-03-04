@@ -41,7 +41,7 @@ const Homepage = (props) => {
   if (!props.token) {
     return (
       <div>
-        <div className="d-flex flex-row justify-content-around align-items-center py-2">
+        <div className="start-page">
           <h3 className="text-center text-secondary">
             Most popular for today!
           </h3>

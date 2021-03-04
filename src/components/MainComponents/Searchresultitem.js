@@ -64,7 +64,7 @@ const Searchresultitem = ({
   if (!status) {
     return (
       <li className="my-2">
-        <div className="d-flex flex-row justify-content-between w-50">
+        <div className="search-wrapper">
           <h5 className="text-secondary ml-2 pt-2">
             {bookName} / {bookAuthor}{" "}
           </h5>
@@ -82,7 +82,7 @@ const Searchresultitem = ({
   if (userId === whoRead) {
     return (
       <li className="my-2">
-        <div className="d-flex flex-row justify-content-between w-50">
+        <div className="search-wrapper">
           <h5 className="text-secondary ml-2 pt-2">
             {bookName} / {bookAuthor} / in your reading list
           </h5>
@@ -93,7 +93,7 @@ const Searchresultitem = ({
   if (userWish) {
     return (
       <li className="my-2">
-        <div className="d-flex flex-row justify-content-between w-50">
+        <div className="search-wrapper">
           <h5 className="text-secondary ml-2 pt-2">
             {bookName} / {bookAuthor} / in your wish list
           </h5>
@@ -103,7 +103,7 @@ const Searchresultitem = ({
   }
   return (
     <li className="my-2">
-      <div className="d-flex flex-row justify-content-between w-50">
+      <div className="search-wrapper">
         <h5 className="text-secondary ml-2 pt-2">
           {bookName} / {bookAuthor}{" "}
         </h5>
