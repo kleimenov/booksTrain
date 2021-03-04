@@ -87,6 +87,10 @@ code {
   flex-direction: row;
 }
 
+.green {
+  color: green;
+  font-size: 25px;
+}
 
 
 
@@ -161,10 +165,7 @@ code {
   }
 }
 
-.green {
-  color: green;
-  font-size: 25px;
-}
+
 
 .custom-button {
   color: white;
