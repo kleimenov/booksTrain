@@ -83,7 +83,6 @@ app.get("/news", (req, res) => {
 //------------ return book route --------//
 app.post("/returnbook", (req, res) => {
   const data = req.body;
-
   db.removeBook(data.userId, data.bookId).then(() => {
     res.json("Server still love you!");
   });
@@ -93,7 +92,6 @@ app.post("/returnbook", (req, res) => {
 
 app.post("/removebookwishlist", (req, res) => {
   const data = req.body;
-
   db.removeBookWishlist(data.bookId, data.userId).then(() => {
     res.json("Server still love you!");
   });
@@ -121,7 +119,6 @@ app.post("/allwishlist", (req, res) => {
 //------------ add book route --------//
 app.post("/addbook", (req, res) => {
   const data = req.body;
-
   db.addBook(req.body.userId, req.body.bookId, req.body.unixTime).then(() => {
     res.json("Server book added to reading list!");
   });
