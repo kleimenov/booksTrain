@@ -152,6 +152,18 @@ code {
   color: white;
 }
 
+.registration-submit-button {
+  font-size: 25px;
+  border: none;
+  background: #66a6ff;
+}
+
+.footer {
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+}
+
+
+
 
 @media (max-width: 800px) {
   .contianer {
@@ -227,15 +239,9 @@ code {
 
 
 
-.registration-submit-button {
-  font-size: 25px;
-  border: none;
-  background: #66a6ff;
-}
 
-.footer {
-  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
-}
+
+
 
 .FooterWrapper {
   display: flex;
