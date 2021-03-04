@@ -162,7 +162,11 @@ code {
   background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
 }
 
-
+.FooterWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 
 @media (max-width: 800px) {
@@ -243,11 +247,7 @@ code {
 
 
 
-.FooterWrapper {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+
 
 .homepage-background-img {
   background-image: url("./Assets/Images/Background-image-1.jpg");
