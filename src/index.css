@@ -168,6 +168,20 @@ code {
   align-items: center;
 }
 
+.homepage-background-img {
+  background-image: url("./Assets/Images/Background-image-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+
+
+
+
+
+
+
 
 @media (max-width: 800px) {
   .contianer {
@@ -249,12 +263,7 @@ code {
 
 
 
-.homepage-background-img {
-  background-image: url("./Assets/Images/Background-image-1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-}
+
 
 .books-list-wrapper {
   display: flex;
