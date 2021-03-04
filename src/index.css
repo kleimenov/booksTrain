@@ -183,6 +183,10 @@ code {
   margin-bottom: 5px;
 }
 
+.book-title {
+  font-size: 20px;
+  text-shadow: 0 0 5px gray;
+}
 
 
 
@@ -273,10 +277,7 @@ code {
 
 
 
-.book-title {
-  font-size: 20px;
-  text-shadow: 0 0 5px gray;
-}
+
 
 .book-desc {
   display: flex;
