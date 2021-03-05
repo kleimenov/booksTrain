@@ -9,6 +9,8 @@ import News from "./Newshomepage";
 import Clock from "./Clock";
 import Searchresult from "./Searchresult";
 
+
+
 const Homepage = (props) => {
   const [books, setBookslist] = useState([]);
   const [news, setNews] = useState([]);
@@ -28,11 +30,13 @@ const Homepage = (props) => {
     setBookslist(data.items);
   };
 
+
   const getAllNewsFromDatabase = async () => {
     const response = await fetch("http://localhost:3002/news");
     const data = await response.json();
     setNews(data);
   };
+
 
   const returnHandler = () => {
     setResponse(false);
