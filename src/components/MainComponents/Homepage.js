@@ -76,7 +76,7 @@ const Homepage = (props) => {
       </div>
     );
   }
-  if (searchResponse == []) {
+  if (searchResponse === []) {
     return (
       <div>
         <h3 className="text-center text-secondary py-2">
