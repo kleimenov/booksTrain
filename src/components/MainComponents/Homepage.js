@@ -16,7 +16,6 @@ const Homepage = (props) => {
   const [news, setNews] = useState([]);
   const [searchResponse, setResponse] = useState(false);
 
-  //const url = "";
   const url = "https://www.googleapis.com/books/v1/volumes?q=Orwell";
 
   useEffect(() => {
