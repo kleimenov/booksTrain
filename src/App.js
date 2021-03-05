@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 //import components
-import Header from "./components/Headercomponents/Header";
-import Footer from "./components/Footercomponents/Footer";
-import Homepage from "./components/Maincomponents/Homepage";
-import Loginform from "./components/Maincomponents/Loginform";
-import Registrationform from "./components/Maincomponents/Registrationform";
-import Mybooks from "./components/Maincomponents/Mybooks";
-import Wishlist from "./components/Maincomponents/Wishlist";
+import Header from "./Components/Headercomponents/Header";
+import Footer from "./Components/Footercomponents/Footer";
+import Homepage from "./Components/Maincomponents/Homepage";
+import Loginform from "./Components/Maincomponents/Loginform";
+import Registrationform from "./Components/Maincomponents/Registrationform";
+import Mybooks from "./Components/Maincomponents/Mybooks";
+import Wishlist from "./Components/Maincomponents/Wishlist";
 
 function App() {
   
