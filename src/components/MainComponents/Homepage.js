@@ -16,8 +16,8 @@ const Homepage = (props) => {
   const [news, setNews] = useState([]);
   const [searchResponse, setResponse] = useState(false);
 
-  const url = "";
-  const url2 = "https://www.googleapis.com/books/v1/volumes?q=Orwell";
+  //const url = "";
+  const url = "https://www.googleapis.com/books/v1/volumes?q=Orwell";
 
   useEffect(() => {
     getBooksList();
@@ -25,7 +25,7 @@ const Homepage = (props) => {
   }, []);
 
   const getBooksList = async () => {
-    const response = await fetch(url2);
+    const response = await fetch(url);
     const data = await response.json();
     setBookslist(data.items);
   };
