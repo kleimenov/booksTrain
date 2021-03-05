@@ -29,7 +29,7 @@ const Recsys = ({ userBooksData, userData }) => {
     });
   });
 
-  //TF-IDF and Vectors
+
 
   return (
     <div>
