@@ -13,6 +13,7 @@ const Recsys = ({ userBooksData, userData }) => {
     setAllBooks(data);
   };
 
+  /*
   const trainData = [];
   const userTrainData = [];
 
@@ -28,6 +29,7 @@ const Recsys = ({ userBooksData, userData }) => {
       content: item.description,
     });
   });
+ */
 
   return (
     <div>
