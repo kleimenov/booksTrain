@@ -29,8 +29,6 @@ const Recsys = ({ userBooksData, userData }) => {
     });
   });
 
-
-
   return (
     <div>
       <h5 className="text-secondary py-2">
