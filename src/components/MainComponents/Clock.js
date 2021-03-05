@@ -6,7 +6,7 @@ const Clock = () => {
   );
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setCurrentTime(new Date().toLocaleTimeString());
     }, 1000);
   });
